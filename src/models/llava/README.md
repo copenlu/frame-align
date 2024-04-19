@@ -458,11 +458,3 @@ If you find LLaVA useful for your research and applications, please cite using t
 For future project ideas, please check out:
 - [SEEM: Segment Everything Everywhere All at Once](https://github.com/UX-Decoder/Segment-Everything-Everywhere-All-At-Once)
 - [Grounded-Segment-Anything](https://github.com/IDEA-Research/Grounded-Segment-Anything) to detect, segment, and generate anything by marrying [Grounding DINO](https://github.com/IDEA-Research/GroundingDINO) and [Segment-Anything](https://github.com/facebookresearch/segment-anything).
-
-
-Debug:
-
-Reinstall CUDA tooklit and driver
-1. https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#removing-cuda-toolkit-and-driver
-2. https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=runfile_local
-3. Incase of nvcc -V not working, check "https://forums.developer.nvidia.com/t/nvcc-version-returns-nothing-despite-correct-install/146557/2"

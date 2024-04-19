@@ -1,7 +1,56 @@
 frame-align
 ==============================
-
 Project exploring alignment of frames across modalities
+
+
+## Install
+
+Note, this installation was tested on 
+- Ubuntu 22.04
+- cuda 12.4
+- nvidia driver version 550.54.1
+
+
+Step 1. Clone this repository and navigate to frame-align folder
+```bash
+git clone https://github.com/copenlu/frame-align.git
+cd frame-align
+```
+
+The installation also installs LLAVA model. If you are not using Linux, see instructions for installing LLaVA model here for [macOS](https://github.com/haotian-liu/LLaVA/blob/main/docs/macOS.md) and [Windows](https://github.com/haotian-liu/LLaVA/blob/main/docs/Windows.md).
+
+< TO DO: Update the instructions to avoid this confusion of OS >
+
+
+Step 2. Install Package
+
+```Shell
+conda create -n frame-align python=3.10 -y
+conda activate frame-align
+pip install --upgrade pip  # enable PEP 660 support
+pip install -e .
+```
+
+3. Install additional packages for training cases
+
+```
+pip install -e ".[train]"
+pip install flash-attn --no-build-isolation
+```
+Our set up used flash-attn==2.5.7 but it depends on your cuda version to check for dependency issues.
+
+
+### Upgrade to latest code base
+
+```Shell
+git pull
+pip install -e .
+
+# if you see some import errors when you upgrade,
+# please try running the command below (without #)
+# pip install flash-attn --no-build-isolation --no-cache-dir
+```
+
 
 Project Organization
 ------------
