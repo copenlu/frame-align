@@ -4,14 +4,11 @@ import random
 import numpy as np
 import pandas as pd
 
-from utils.text_prompts import SYS_PROMPT, POST_PROMPT, text_prompt_dict
-from pdb import set_trace
+from text_prompts import SYS_PROMPT, POST_PROMPT, text_prompt_dict
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
 random.seed(42)
 torch.manual_seed(42)
-
-print("Done")
 
 bnb_config = BitsAndBytesConfig(load_in_8bit=True)
 
@@ -61,20 +58,21 @@ def annotate_frames(model_code)-> None:
             output_text = tokenizer.decode(outputs[0][input_length:], skip_special_tokens=True)
             try:
                 output_json = json.loads(output_text)
-                article_annotations[task] = output_json
+                article_annotations.update(output_json)
             except Exception as e:
-                print("Skipped- ", e)
-                article_annotations[task] = None
+                print(f"Skipped-{index}-{task}: {e}")
+                pass
         article_annotations["article_text"] = article_text
         article_annotations["title"] = title
         article_annotations["id"] = index
 
-        # with open(f"./data/annotated/news_data_100_metadata_annotated.jsonl", "a") as f:
-        #     json.dump(article_annotations, f)
-        #     f.write("\n")
+        with open(f"./data/annotated/news_data_100_metadata_annotated_{model_name_short}.jsonl", "a") as f:
+            json.dump(article_annotations, f)
+            f.write("\n")
 
 def main():
-    annotate_frames(model_code)
+    for model_code in ['mistralai/Mistral-7B-Instruct-v0.2', 'meta-llama/Meta-Llama-3.1-8B']:
+        annotate_frames(model_code)
 
 if __name__ == "__main__":
     main()
