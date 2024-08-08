@@ -11,7 +11,6 @@ from prompts_gemma import PROMPT_LIST_GEMMA
 
 from pdb import set_trace
 import requests, os
-from pathlib import Path
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, AutoModel
 from transformers import AutoProcessor, LlavaForConditionalGeneration, PaliGemmaForConditionalGeneration
 
@@ -44,7 +43,7 @@ def vlm_with_prompt(model_id):
         "OpenGVLab/InternVL-Chat-V1-5": AutoModel
     }
 
-    output_file = model_id.split("/")[-1] + ".jsonl"
+    output_file = model_id.split("/")[-1] + "frame.jsonl"
     os.remove(output_file) if os.path.exists(output_file) else None
 
     for image_file, text, headline in zip(image_urls, texts, headlines):
@@ -70,7 +69,7 @@ def vlm_with_prompt(model_id):
                 quantization_config = quantization_config,
                 # parameter only exists for intern-vl
                 # fix this
-                trust_remote_code=True if model_id == "OpenGVLab/InternVL-Chat-V1-5" else False
+                # trust_remote_code=True if model_id == "OpenGVLab/InternVL-Chat-V1-5" else False
             ).eval() # check if we need this for llava
 
             processor = AutoProcessor.from_pretrained(model_id)
@@ -104,7 +103,8 @@ def vlm_with_prompt(model_id):
             "power": decoded_texts[9],
             "intimacy": decoded_texts[10],
             "image_emotion": decoded_texts[11],
-            "people_emotion": decoded_texts[12]
+            "people_emotion": decoded_texts[12],
+            "frame": decoded_texts[13],
         }
 
         with open(output_file, "a") as f:

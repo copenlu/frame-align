@@ -425,8 +425,39 @@ The format of the output should be as a json file that looks follows:
 
 """
 
+FRAMES = """
+    1: Economic - costs, benefits, or other financial implications,
+    2: Capacity and resources - availability of physical, human, or financial resources, and capacity of current systems, 
+    3: Morality - religious or ethical implications,
+    4: Fairness and equality - balance or distribution of rights, responsibilities, and resources,
+    5: Legality, constitutionality and jurisprudence - rights, freedoms, and authority of individuals, corporations, and government,
+    6: Policy prescription and evaluation - discussion of specific policies aimed at addressing problems,
+    7: Crime and punishment - effectiveness and implications of laws and their enforcement,
+    8: Security and defense - threats to welfare of the individual, community, or nation,
+    9: Health and safety - health care, sanitation, public safety,
+    10: Quality of life - threats and opportunities for the individual's wealth, happiness, and well-being,
+    11: Cultural identity - traditions, customs, or values of a social group in relation to a policy issue,
+    12: Public opinion - attitudes and opinions of the general public, including polling and demographics,
+    13: Political - considerations related to politics and politicians, including lobbying, elections, and attempts to sway voters,
+    14: External regulation and reputation - international reputation or foreign policy of the U.S,
+    15: Other - any coherent group of frames not covered by the above categories."""
+
+SYS_PROMPT = f"You are an intelligent and logical journalism scholar conducting analysis of news articles. Your task is to read the article and answer the following question about the article. "
+
+FRAMING_PROMPT = f"""Framing is a way of classifying and categorizing information that allows audiences to make sense of and give meaning to the world around them (Goffman, 1974).
+Entman (1993) has defined framing as “making some aspects of reality more salient in a text in order to promote a particular problem definition, causal interpretation, moral evaluation, and/or treatment recommendation for the item described”.
+Frames serve as metacommunicative structures that use reasoning devices such as metaphors, lexical choices, images, symbols, and actors to evoke a latent message for media users (Gamson, 1995).
+A set of generic news frames with an id, name and description are: {FRAMES}.
+Your task is to see the image and based on the understanding of the image, choose one of the above frames and provide justification for it. Format your output as a json entry with the fields 'justification', 'frame_id', 'frame_name'.
+'frame_name' should be one of the above listed frames."""
+
+POST_PROMPT = "Output only the json and no other text."
+
+# framing prompt
+prompt_n = SYS_PROMPT + FRAMING_PROMPT + POST_PROMPT
+
 
 # add prefix_instruction to all the prompts
-PROMPT = [prompt_a, prompt_b, prompt_c, prompt_d, prompt_e, prompt_f, prompt_g, prompt_h, prompt_i, prompt_j, prompt_k, prompt_l, prompt_m]
+PROMPT = [prompt_a, prompt_b, prompt_c, prompt_d, prompt_e, prompt_f, prompt_g, prompt_h, prompt_i, prompt_j, prompt_k, prompt_l, prompt_m, prompt_n]
 
 PROMPT_LIST_GEMMA = [prefix_instruction + prompt for prompt in PROMPT]
