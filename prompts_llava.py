@@ -442,7 +442,9 @@ FRAMES = f"""
     12: Public opinion - attitudes and opinions of the general public, including polling and demographics,
     13: Political - considerations related to politics and politicians, including lobbying, elections, and attempts to sway voters,
     14: External regulation and reputation - international reputation or foreign policy of the U.S,
-    15: Other - any coherent group of frames not covered by the above categories."""
+    15: None - no frame could be identified because of lack of information in the image."""
+
+    # 15: Other - frame is present and can be any coherent group of frames not covered by the above categories.
 
 SYS_PROMPT = f"""USER: You are an intelligent and logical journalism scholar conducting analysis of news articles. Your task is to read the article and answer the following question about the article. """
 
@@ -462,6 +464,25 @@ Your task is to see the image and based on the understanding of the image, choos
     "frame_id": "13",
     "frame_name": "Political"
 }
+
+{
+    "justification": "The image shows people wearing masks and maintaining social distance. The image evokes a sense of health and safety.",
+    "frame_id": "9",
+    "frame_name": "Health and safety"
+}
+
+
+{
+    "justification": "The image shows a group of people standing in front of a non-significant building. There is no clear indication of any specific frame.",
+    "frame_id": "15",
+    "frame_name": "None"
+}
+
+{
+    "justification": "The image shows a photo of man standing doing nothing. There is no other information about the background or the context.",
+    "frame_id": "15",
+    "frame_name": "None"
+
 </examples>
 
 <image>\n And now for the image you see, what frame is present in the image? Output only the json and no other text. 
@@ -473,6 +494,6 @@ prompt_n = SYS_PROMPT + FRAMING_PROMPT + PROMPT_TASK
 
 
 # add prefix_instruction to all the prompts
-PROMPT = [prompt_a, prompt_b, prompt_c, prompt_d, prompt_e, prompt_f, prompt_g, prompt_h, prompt_i, prompt_j, prompt_k, prompt_l, prompt_m, prompt_n]
+PROMPT_LLAVA = [prompt_a, prompt_b, prompt_c, prompt_d, prompt_e, prompt_f, prompt_g, prompt_h, prompt_i, prompt_j, prompt_k, prompt_l, prompt_m, prompt_n]
 
-PROMPT_LIST = [prefix_instruction + prompt for prompt in PROMPT]
+PROMPT_LIST_LLAVA = [prefix_instruction + prompt for prompt in PROMPT_LLAVA]

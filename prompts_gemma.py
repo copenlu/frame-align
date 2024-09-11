@@ -440,7 +440,7 @@ FRAMES = """
     12: Public opinion - attitudes and opinions of the general public, including polling and demographics,
     13: Political - considerations related to politics and politicians, including lobbying, elections, and attempts to sway voters,
     14: External regulation and reputation - international reputation or foreign policy of the U.S,
-    15: Other - any coherent group of frames not covered by the above categories."""
+    15: None - no frame could be identified because of lack of information in the image."""
 
 SYS_PROMPT = f"You are an intelligent and logical journalism scholar conducting analysis of news articles. Your task is to read the article and answer the following question about the article. "
 

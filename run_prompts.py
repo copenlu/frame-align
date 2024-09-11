@@ -6,7 +6,7 @@ import numpy as np
 from PIL import Image
 import pandas as pd
 
-from prompts import PROMPT_LIST
+from prompts_llava import PROMPT_LIST_LLAVA
 from prompts_gemma import PROMPT_LIST_GEMMA
 
 from pdb import set_trace
@@ -30,7 +30,7 @@ def enforce_reproducibility(seed=1000):
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-data_csv = "merged_gpt4_llava_mistral.csv"
+data_csv = "data/merged_topic_samples_jul23.csv"
 data_df = pd.read_csv(data_csv)
 image_urls, texts, headlines = data_df["img_url"].tolist(), data_df["text"].tolist(), data_df["title"].tolist()
 
@@ -40,7 +40,7 @@ def vlm_with_prompt(model_id):
         "llava-hf/llava-1.5-7b-hf": LlavaForConditionalGeneration,
         "google/paligemma-3b-mix-224": PaliGemmaForConditionalGeneration,
         "google/paligemma-3b-pt-448": PaliGemmaForConditionalGeneration,
-        "OpenGVLab/InternVL-Chat-V1-5": AutoModel
+        # "OpenGVLab/InternVL-Chat-V1-5": AutoModel
     }
 
     output_file = model_id.split("/")[-1] + "frame.jsonl"
@@ -51,10 +51,10 @@ def vlm_with_prompt(model_id):
         raw_image = Image.open(requests.get(image_file, stream=True).raw)
         
         PROMPT_MAPPING = {
-            "llava-hf/llava-1.5-7b-hf": PROMPT_LIST,
+            "llava-hf/llava-1.5-7b-hf": PROMPT_LIST_LLAVA,
             "google/paligemma-3b-mix-224": PROMPT_LIST_GEMMA,
             "google/paligemma-3b-pt-448": PROMPT_LIST_GEMMA,
-            "OpenGVLab/InternVL-Chat-V1-5": PROMPT_LIST
+            # "OpenGVLab/InternVL-Chat-V1-5": PROMPT_LIST
         }
         for prompt in PROMPT_MAPPING[model_id]:
         
@@ -130,7 +130,7 @@ if __name__ == '__main__':
     
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_id", type=str, help="The name of the model whose data to convert", default='OpenGVLab/InternVL-Chat-V1-5',
-                        choices=['llava-hf/llava-1.5-7b-hf', "google/paligemma-3b-mix-224", "google/paligemma-3b-pt-448", "OpenGVLab/InternVL-Chat-V1-5"])
+                        choices=['llava-hf/llava-1.5-7b-hf', "google/paligemma-3b-mix-224", "google/paligemma-3b-pt-448"]) # "OpenGVLab/InternVL-Chat-V1-5" is too heavy
     args = parser.parse_args()
     
     vlm_with_prompt(args.model_id)
