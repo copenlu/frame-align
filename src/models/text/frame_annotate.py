@@ -47,16 +47,13 @@ def annotate_frames()->None:
     tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-Instruct-v0.2", padding_side="left", cache_dir="/projects/copenlu/data/mistral/")
     
     tokenizer.pad_token = tokenizer.eos_token
-
-    news_df = pd.read_csv("./data/raw/news_data_100.csv", index_col=[0])
-    news_df['text'] = news_df['chunk2'] + ' ' + news_df['chunk3'] + ' ' + \
-                news_df['chunk4'] + ' ' + news_df['chunk5'] + ' ' + news_df['chunk6']
-    news_df['title'] = news_df['chunk1']
+    data_path = Path("~/projects/frame-align/data/raw/2023-24/")
+    news_df = pd.read_csv(data_path/"July-23"/"topic_samples.csv")
 
     article_json = {}
 
-    for i, (index, row) in enumerate(news_df.sample(frac=1).iterrows()):
-        text = row['text']
+    for i, (index, row) in enumerate(news_df.iterrows()):
+        text = row['maintext']
         title = row['title']
         
         inputs = tokenizer.encode("You are a journalism scholar doing analysis of news articles. A list of generic frames and their description is: " + frames + "\n Your task is to annotate the article below for one of the listed frames and provide reasoning for it. " + text + "\n Output the generic frame and the reasoning. Format your output in a json format with fields 'frame' and 'reasoning'", return_tensors="pt", padding=True).to(device)

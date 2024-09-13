@@ -3,17 +3,22 @@ import torch
 import random
 import argparse
 import numpy as np
-from PIL import Image
 import pandas as pd
-
-from prompts_llava import PROMPT_LIST_LLAVA
-from prompts_gemma import PROMPT_LIST_GEMMA
-
-from pdb import set_trace
 import requests, os
+
+from PIL import Image
+from pathlib import Path
+from pdb import set_trace
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, AutoModel
 from transformers import AutoProcessor, LlavaForConditionalGeneration, PaliGemmaForConditionalGeneration
 
+from prompts_llava import PROMPT_LIST_LLAVA
+from prompts_gemma import PROMPT_LIST_GEMMA
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 quantization_config = BitsAndBytesConfig(load_in_8bit=True)
 
@@ -30,49 +35,60 @@ def enforce_reproducibility(seed=1000):
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-data_csv = "data/merged_topic_samples_jul23.csv"
+annotated_data_path = Path("data/annotated/")
+data_csv = "data/raw/2023-24/July-23/topic_samples.csv"
 data_df = pd.read_csv(data_csv)
-image_urls, texts, headlines = data_df["img_url"].tolist(), data_df["text"].tolist(), data_df["title"].tolist()
+
+ids, image_urls, headlines = data_df["id"].tolist(), data_df["image_url"].tolist(), data_df["title"].tolist()
 
 def vlm_with_prompt(model_id):
 
     MODEL_CLASS_MAPPING = {
         "llava-hf/llava-1.5-7b-hf": LlavaForConditionalGeneration,
         "google/paligemma-3b-mix-224": PaliGemmaForConditionalGeneration,
+        "google/paligemma-3b-mix-448": PaliGemmaForConditionalGeneration,
         "google/paligemma-3b-pt-448": PaliGemmaForConditionalGeneration,
         # "OpenGVLab/InternVL-Chat-V1-5": AutoModel
     }
 
-    output_file = model_id.split("/")[-1] + "frame.jsonl"
-    os.remove(output_file) if os.path.exists(output_file) else None
+    ModelClass = MODEL_CLASS_MAPPING[model_id]
 
-    for image_file, text, headline in zip(image_urls, texts, headlines):
-        decoded_texts = []
-        raw_image = Image.open(requests.get(image_file, stream=True).raw)
-        
-        PROMPT_MAPPING = {
+    model = ModelClass.from_pretrained(
+            model_id, 
+            device_map=device,
+            torch_dtype=torch.float16, 
+            low_cpu_mem_usage=True,
+            quantization_config = quantization_config,
+            # parameter only exists for intern-vl
+            # fix this
+            # trust_remote_code=True if model_id == "OpenGVLab/InternVL-Chat-V1-5" else False
+        ).eval() # check if we need this for llava
+
+    processor = AutoProcessor.from_pretrained(model_id)
+
+    PROMPT_MAPPING = {
             "llava-hf/llava-1.5-7b-hf": PROMPT_LIST_LLAVA,
             "google/paligemma-3b-mix-224": PROMPT_LIST_GEMMA,
-            "google/paligemma-3b-pt-448": PROMPT_LIST_GEMMA,
-            # "OpenGVLab/InternVL-Chat-V1-5": PROMPT_LIST
+            "google/paligemma-3b-mix-448": PROMPT_LIST_GEMMA
         }
+    
+    output_file = annotated_data_path/f"topic_sampled_jul23_vision_{model_id.split("/")[-1].split("-")[0]}.jsonl"
+    os.remove(output_file) if os.path.exists(output_file) else None
+
+    for uuid, image_file, headline in zip(ids, image_urls, headlines):
+
+        decoded_texts = []
+        logger.info(f"Processing uuid: {uuid}")
+
+        # Check if the image is loaded
+        try:
+            raw_image = Image.openg(requests.get(image_file, stream=True).raw).convert("RGB")
+        except Exception as e:
+            logger.error(f"Image error {e} - uuid: {uuid}, image_file: {image_file}")
+            continue
+
+        # Process the image with the model
         for prompt in PROMPT_MAPPING[model_id]:
-        
-            ModelClass = MODEL_CLASS_MAPPING[model_id]
-            print(f"ModelClass: {ModelClass}")
-
-            model = ModelClass.from_pretrained(
-                model_id, 
-                device_map=device,
-                torch_dtype=torch.float16, 
-                low_cpu_mem_usage=True,
-                quantization_config = quantization_config,
-                # parameter only exists for intern-vl
-                # fix this
-                # trust_remote_code=True if model_id == "OpenGVLab/InternVL-Chat-V1-5" else False
-            ).eval() # check if we need this for llava
-
-            processor = AutoProcessor.from_pretrained(model_id)
             
             inputs = processor(prompt, raw_image, return_tensors='pt').to(model.device, torch.float16)
             output = model.generate(**inputs, max_new_tokens=200, do_sample=False)
@@ -88,9 +104,9 @@ def vlm_with_prompt(model_id):
 
         # Combine all key-value pairs into a single dictionary
         data_entry = {
+            "uuid" : uuid,
             "image_file": image_file,
             "headline": headline,
-            "text": text,
             "caption": decoded_texts[0],
             "category": decoded_texts[1],
             "actors": decoded_texts[2],
@@ -129,8 +145,8 @@ if __name__ == '__main__':
     # enforce_reproducibility()
     
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model_id", type=str, help="The name of the model whose data to convert", default='OpenGVLab/InternVL-Chat-V1-5',
-                        choices=['llava-hf/llava-1.5-7b-hf', "google/paligemma-3b-mix-224", "google/paligemma-3b-pt-448"]) # "OpenGVLab/InternVL-Chat-V1-5" is too heavy
+    parser.add_argument("--model-id", type=str, help="The name of the model whose data to convert", default='google/paligemma-3b-mix-448',
+                        choices=['llava-hf/llava-1.5-7b-hf', "google/paligemma-3b-mix-224", "google/paligemma-3b-mix-448", "google/paligemma-3b-pt-448"]) # "OpenGVLab/InternVL-Chat-V1-5" is too heavy
     args = parser.parse_args()
     
     vlm_with_prompt(args.model_id)

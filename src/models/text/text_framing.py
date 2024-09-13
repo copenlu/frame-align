@@ -41,7 +41,7 @@ def annotate_frames(model_code)-> None:
                 news_df['chunk4'] + ' ' + news_df['chunk5'] + ' ' + news_df['chunk6']
     news_df['title'] = news_df['chunk1']
 
-    for _, (index, row) in enumerate(news_df.sample(frac=1).iterrows()):
+    for i, (uuid, row) in enumerate(news_df.iterrows()):
         article_text = row['text']
         title = row['title']
 
@@ -60,18 +60,19 @@ def annotate_frames(model_code)-> None:
                 output_json = json.loads(output_text)
                 article_annotations.update(output_json)
             except Exception as e:
-                print(f"Skipped-{index}-{task}: {e}")
+                print(f"Skipped-{i}-{task}: {e}")
                 pass
         article_annotations["article_text"] = article_text
         article_annotations["title"] = title
-        article_annotations["id"] = index
+        article_annotations["id"] = i
+        article_annotations["uuid"] = uuid 
 
         with open(f"./data/annotated/news_data_100_metadata_annotated_{model_name_short}.jsonl", "a") as f:
             json.dump(article_annotations, f)
             f.write("\n")
 
 def main():
-    for model_code in ['mistralai/Mistral-7B-Instruct-v0.2', 'meta-llama/Meta-Llama-3.1-8B']:
+    for model_code in ['meta-llama/Meta-Llama-3-8B-Instruct', 'meta-llama/Meta-Llama-3.1-8B']:
         annotate_frames(model_code)
 
 if __name__ == "__main__":
