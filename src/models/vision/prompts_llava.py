@@ -458,34 +458,8 @@ Your task is to see the image and based on the understanding of the image, choos
 'frame_name' should be one of the above listed frames
 
 
-<examples>
-{
-    "justification": "The image shows a group of people protesting in front of a government building. The image evokes a sense of political unrest and public opinion.",
-    "frame_id": "13",
-    "frame_name": "Political"
-}
+<image>\n And now for the image you see, what frame is present in the image? Choose one of the above frames and provide justification for it. 
 
-{
-    "justification": "The image shows people wearing masks and maintaining social distance. The image evokes a sense of health and safety.",
-    "frame_id": "9",
-    "frame_name": "Health and safety"
-}
-
-
-{
-    "justification": "The image shows a group of people standing in front of a non-significant building. There is no clear indication of any specific frame.",
-    "frame_id": "15",
-    "frame_name": "None"
-}
-
-{
-    "justification": "The image shows a photo of man standing doing nothing. There is no other information about the background or the context.",
-    "frame_id": "15",
-    "frame_name": "None"
-
-</examples>
-
-<image>\n And now for the image you see, what frame is present in the image? Output only the json and no other text. 
 
 \nASSISTANT: """
 

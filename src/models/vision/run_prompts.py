@@ -35,9 +35,19 @@ def enforce_reproducibility(seed=1000):
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-annotated_data_path = Path("data/annotated/")
-data_csv = "data/raw/2023-24/July-23/topic_samples.csv"
+# print current path
+# Determine the path to the annotated data directory relative to the script's location
+script_dir = Path(__file__).resolve().parent
+
+logger.info(f"Script directory: {script_dir}")
+
+data_csv = script_dir / "../../../data/raw/topic_samples.csv"
+
+logger.info(f"Data CSV path: {data_csv}")
+
 data_df = pd.read_csv(data_csv)
+
+data_df = data_df.iloc[:10]
 
 ids, image_urls, headlines = data_df["id"].tolist(), data_df["image_url"].tolist(), data_df["title"].tolist()
 
@@ -72,7 +82,7 @@ def vlm_with_prompt(model_id):
             "google/paligemma-3b-mix-448": PROMPT_LIST_GEMMA
         }
     
-    output_file = annotated_data_path/f"topic_sampled_jul23_vision_{model_id.split("/")[-1].split("-")[0]}.jsonl"
+    output_file = script_dir / "../../../data/processed" / f"topic_sampled_jul23_vision_{model_id.split('/')[-1].split('-')[0]}.jsonl"
     os.remove(output_file) if os.path.exists(output_file) else None
 
     for uuid, image_file, headline in zip(ids, image_urls, headlines):
@@ -107,19 +117,19 @@ def vlm_with_prompt(model_id):
             "uuid" : uuid,
             "image_file": image_file,
             "headline": headline,
-            "caption": decoded_texts[0],
-            "category": decoded_texts[1],
-            "actors": decoded_texts[2],
-            "actor_roles": decoded_texts[3],
-            "symbols": decoded_texts[4],
-            "representation": decoded_texts[5],
-            "numbers": decoded_texts[6],
-            "expressions": decoded_texts[7],
-            "gender": decoded_texts[8],
-            "power": decoded_texts[9],
-            "intimacy": decoded_texts[10],
-            "image_emotion": decoded_texts[11],
-            "people_emotion": decoded_texts[12],
+            # "caption": decoded_texts[0],
+            # "category": decoded_texts[1],
+            # "actors": decoded_texts[2],
+            # "actor_roles": decoded_texts[3],
+            # "symbols": decoded_texts[4],
+            # "representation": decoded_texts[5],
+            # "numbers": decoded_texts[6],
+            # "expressions": decoded_texts[7],
+            # "gender": decoded_texts[8],
+            # "power": decoded_texts[9],
+            # "intimacy": decoded_texts[10],
+            # "image_emotion": decoded_texts[11],
+            # "people_emotion": decoded_texts[12],
             "frame": decoded_texts[13],
         }
 
@@ -145,7 +155,7 @@ if __name__ == '__main__':
     # enforce_reproducibility()
     
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model-id", type=str, help="The name of the model whose data to convert", default='google/paligemma-3b-mix-448',
+    parser.add_argument("--model-id", type=str, help="The name of the model whose data to convert", default='llava-hf/llava-1.5-7b-hf',
                         choices=['llava-hf/llava-1.5-7b-hf', "google/paligemma-3b-mix-224", "google/paligemma-3b-mix-448", "google/paligemma-3b-pt-448"]) # "OpenGVLab/InternVL-Chat-V1-5" is too heavy
     args = parser.parse_args()
     
