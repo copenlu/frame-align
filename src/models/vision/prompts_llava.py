@@ -254,10 +254,10 @@ The format of the output should be as a json file that looks follows:
 
 prompt_i ="""
 
-What is the perceivable gender in the image? Perceivable gender is the way others view a person along a continuum from masculine to feminine. It is based on the person's appearance, behavior, and other characteristics.
+What is the perceivable gender in the image? Perceivable gender is the way others view a person along a continuum from masculine to feminine. It is based on the person's appearance, behavior, and other characteristics. Describe all the people in the image and their perceived gender.
 
 <format>
-The format of the output should be as a json file that looks
+If there are 2 people, the format of the output should be as a json file that looks
 
 {
     "description of the person 1": "<description of the person 1>"

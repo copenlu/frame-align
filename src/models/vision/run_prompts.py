@@ -108,10 +108,12 @@ def vlm_with_prompt(model_id):
             continue
 
         # Process the image with the model
-        for prompt in PROMPT_MAPPING[model_id]:
-            if prompt not in [PROMPT_MAPPING[model_id][i] for i in [0, 4, 8, 13]]: #these are: caption, symbols, gender, frame
+        for index, prompt in enumerate(PROMPT_MAPPING[model_id]):
+            if prompt not in [PROMPT_MAPPING[model_id][i] for i in [0, 4, 8, 13]]: # these are: caption, symbols, gender, frame
+                # logger.info(f"Skipping prompt number {index} - {prompt}")
                 continue
             
+            logger.info(f"Processing prompt number {index}")
             inputs = processor(prompt, raw_image, return_tensors='pt').to(model.device, torch.float16)
             output = model.generate(**inputs, max_new_tokens=200, do_sample=False)
             input_len = inputs["input_ids"].shape[-1]
@@ -133,16 +135,16 @@ def vlm_with_prompt(model_id):
             # "category": decoded_texts[1],
             # "actors": decoded_texts[2],
             # "actor_roles": decoded_texts[3],
-            "symbols": decoded_texts[4],
+            "symbols": decoded_texts[1],
             # "representation": decoded_texts[5],
             # "numbers": decoded_texts[6],
             # "expressions": decoded_texts[7],
-            "gender": decoded_texts[8],
+            "gender": decoded_texts[2],
             # "power": decoded_texts[9],
             # "intimacy": decoded_texts[10],
             # "image_emotion": decoded_texts[11],
             # "people_emotion": decoded_texts[12],
-            "frame": decoded_texts[13],
+            "frame": decoded_texts[3],
         }
 
         with open(output_file, "a") as f:
