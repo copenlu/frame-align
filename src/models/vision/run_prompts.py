@@ -47,7 +47,8 @@ logger.info(f"Data CSV path: {data_csv}")
 
 data_df = pd.read_csv(data_csv)
 
-data_df = data_df.iloc[:10]
+# data_df = data_df.iloc[2:10] #1st image still gives error. check the error: The channel dimension is ambiguous. Got image shape (1, 1, 3). Assuming channels are the first dimension. 
+
 
 ids, image_urls, headlines = data_df["id"].tolist(), data_df["image_url"].tolist(), data_df["title"].tolist()
 
@@ -89,16 +90,27 @@ def vlm_with_prompt(model_id):
 
         decoded_texts = []
         logger.info(f"Processing uuid: {uuid}")
+        logger.info(f"Image URL: {image_file}")
 
         # Check if the image is loaded
         try:
-            raw_image = Image.openg(requests.get(image_file, stream=True).raw).convert("RGB")
+            raw_image = Image.open(requests.get(image_file, stream=True).raw).convert("RGB")
+            # Check the shape of the image tensor
+            image_tensor = torch.tensor(np.array(raw_image))
+            if image_tensor.shape[-1] != 3:
+                raise ValueError(f"Unexpected image shape: {image_tensor.shape}")
+            if image_tensor.shape[0] == 1 and image_tensor.shape[1] == 1:
+                logger.info(f"Skipping image with shape {image_tensor.shape} - uuid: {uuid}")
+                continue
         except Exception as e:
-            logger.error(f"Image error {e} - uuid: {uuid}, image_file: {image_file}")
+            logger.info(f"Image URL: {image_file}")
+            logger.error(f"Image error {e} - uuid: {uuid}")
             continue
 
         # Process the image with the model
         for prompt in PROMPT_MAPPING[model_id]:
+            if prompt not in [PROMPT_MAPPING[model_id][i] for i in [0, 4, 8, 13]]: #these are: caption, symbols, gender, frame
+                continue
             
             inputs = processor(prompt, raw_image, return_tensors='pt').to(model.device, torch.float16)
             output = model.generate(**inputs, max_new_tokens=200, do_sample=False)
@@ -117,15 +129,15 @@ def vlm_with_prompt(model_id):
             "uuid" : uuid,
             "image_file": image_file,
             "headline": headline,
-            # "caption": decoded_texts[0],
+            "caption": decoded_texts[0],
             # "category": decoded_texts[1],
             # "actors": decoded_texts[2],
             # "actor_roles": decoded_texts[3],
-            # "symbols": decoded_texts[4],
+            "symbols": decoded_texts[4],
             # "representation": decoded_texts[5],
             # "numbers": decoded_texts[6],
             # "expressions": decoded_texts[7],
-            # "gender": decoded_texts[8],
+            "gender": decoded_texts[8],
             # "power": decoded_texts[9],
             # "intimacy": decoded_texts[10],
             # "image_emotion": decoded_texts[11],

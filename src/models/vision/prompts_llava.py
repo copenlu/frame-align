@@ -5,22 +5,22 @@ USER: You are an intelligent and logical assistant. Your job is to see the image
 
 prompt_a = """
 
-Caption the shown image in detail and do not forget to include the people, objects, and the scene in the image if any.
+Caption the shown image in detail but don't count the things you see. Describe the image in detail. Example, if you see people, dont count them, describe what they are doing, what they are wearing, etc. If you see a scene with vehicles, don't count the vehicles but rather describe the scene in detail.
 
 <format>
 The format of the output should be as a json file that looks follows:
 {
-    "caption": "<caption>"
+    "caption": "<caption in detail>"
 }
 </format>
 
 <examples>
 {
-    "caption": "A group of people are sitting on a bench in a park. There are trees in the background and a dog is running in the foreground."
+    "caption": "A group of people are sitting on a bench in a park. There are trees in the background and a dog is running in the foreground. The sky is clear and blue and the sun is shining. We can also see a yellow buildig with school written on it."
 }
 
 {
-    "caption": "The image shows a man in a suit standing in front of a large building called the White House. There are American flags on either side of the building."
+    "caption": "The image shows a man in a suit standing in front of a large building called the White House. There are American flags on either side of the building. The building is white with columns and a dome on top. The flag is flying in the wind."
 }
 </examples>
 
@@ -270,26 +270,9 @@ The format of the output should be as a json file that looks
 
 </format>
 
-<examples>
 
-{
-    "description of the person 1": "the person in the suit"
-    "perceived gender 1": "male"
 
-    "description of the person 2": "a boy in a dress"
-    "perceived gender 2": "queer"
-
-    "description of the person 3": "a person with short hair"
-    "perceived gender 3": "non-binary"
-
-    "description of the person 4": "a woman with long hair in a dress"
-    "perceived gender 4": "female"
-
-}
-
-</examples>
-
-<image>\n And now for the image you see, what is the perceived gender in the image? [INST]
+<image>\n And now for the image you see, what is the perceived gender in the image?
 
 \nASSISTANT:
 """
@@ -458,7 +441,7 @@ Your task is to see the image and based on the understanding of the image, choos
 'frame_name' should be one of the above listed frames
 
 
-<image>\n And now for the image you see, what frame is present in the image? Choose one of the above frames and provide justification for it. 
+<image>\n And now for the image you see, what frame is present in the image? Choose one of the above frames and provide justification for it. Write the frame_id, frame_name and reasons in the json format.
 
 
 \nASSISTANT: """
