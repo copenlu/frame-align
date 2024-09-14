@@ -14,17 +14,8 @@ The format of the output should be as a json file that looks follows:
 }
 </format>
 
-<examples>
-{
-    "caption": "A group of people are sitting on a bench in a park. There are trees in the background and a dog is running in the foreground. The sky is clear and blue and the sun is shining. We can also see a yellow buildig with school written on it."
-}
 
-{
-    "caption": "The image shows a man in a suit standing in front of a large building called the White House. There are American flags on either side of the building. The building is white with columns and a dome on top. The flag is flying in the wind."
-}
-</examples>
-
-<image>\n And now caption the image in detail based on the image you see.
+<image>\n And now caption the image in detail based on the image you see. Write it in json format with fields as "caption".
 
 \nASSISTANT:
 """
@@ -203,7 +194,7 @@ The format of the output should be as a json file that looks follows:
 \nASSISTANT:"""
 
 prompt_h ="""
-<image>\n For the image shown, what is the facial expression of the main subject in the image? Say 'None' if none exists. Write it in json format with fields as "facial_expression" and "explanation".
+<image>\n For the image shown, what is the facial expression of the main subject in the image? Subject should be visible. Say 'None' if none exists. Write it in json format with fields as "main subject", "facial expression" and "explanation".
  
 \nASSISTANT:
 """

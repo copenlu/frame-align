@@ -47,7 +47,7 @@ logger.info(f"Data CSV path: {data_csv}")
 
 data_df = pd.read_csv(data_csv)
 
-data_df = data_df.iloc[2:20] 
+data_df = data_df.iloc[2:5] 
 ids, image_urls, headlines = data_df["id"].tolist(), data_df["image_url"].tolist(), data_df["title"].tolist()
 
 def vlm_with_prompt(model_id):
@@ -169,7 +169,7 @@ def vlm_with_prompt(model_id):
 
     # Convert the list of dictionaries to a pandas DataFrame
     df = pd.json_normalize(data)
-    csv_file = output_file.replace(".jsonl", ".csv")
+    csv_file = str(output_file).replace(".jsonl", ".csv")
     os.remove(csv_file) if os.path.exists(csv_file) else None
     df.to_csv(csv_file, index=False)
 
