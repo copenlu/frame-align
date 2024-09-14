@@ -424,7 +424,7 @@ FRAMES = f"""
     11: Cultural identity - traditions, customs, or values of a social group in relation to a policy issue,
     12: Public opinion - attitudes and opinions of the general public, including polling and demographics,
     13: Political - considerations related to politics and politicians, including lobbying, elections, and attempts to sway voters,
-    14: External regulation and reputation - international reputation or foreign policy of the U.S,
+    14: External regulation and reputation - international reputation or foreign policy,
     15: None - no frame could be identified because of lack of information in the image."""
 
     # 15: Other - frame is present and can be any coherent group of frames not covered by the above categories.
@@ -437,14 +437,12 @@ Frames serve as metacommunicative structures that use reasoning devices such as 
 A set of generic news frames with an id, name and description are: {FRAMES}."""
 
 PROMPT_TASK = """
-Your task is to see the image and based on the understanding of the image, choose one of the above frames and provide justification for it. Format your output as a json entry with the fields 'justification', 'frame_id', 'frame_name'.
-'frame_name' should be one of the above listed frames
+Your task is to see the image and based on the understanding of the image, choose the correct frame.
 
+<image>\n And now for the image you see, what frame is present in the image?  Look at all the frames first and then choose the correct frame. Write it in json format with fields as "frame_id", "frame_name" and "frame_jusitification".
 
-<image>\n And now for the image you see, what frame is present in the image? Choose one of the above frames and provide justification for it. Write the frame_id, frame_name and reasons in the json format.
-
-
-\nASSISTANT: """
+\nASSISTANT:
+"""
 
 # framing prompt
 prompt_n = SYS_PROMPT + FRAMING_PROMPT + PROMPT_TASK

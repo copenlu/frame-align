@@ -166,7 +166,7 @@ def vlm_with_prompt(model_id):
 
 
 if __name__ == '__main__':
-    # enforce_reproducibility()
+    enforce_reproducibility()
     
     parser = argparse.ArgumentParser()
     parser.add_argument("--model-id", type=str, help="The name of the model whose data to convert", default='llava-hf/llava-1.5-7b-hf',
