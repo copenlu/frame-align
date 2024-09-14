@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 
 from pathlib import Path
+from pdb import set_trace
 from text_prompts import SYS_PROMPT, POST_PROMPT, text_prompt_dict
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
@@ -46,6 +47,8 @@ def annotate_frames(model_code)-> None:
 
         article_annotations = {}
         for task, task_prompt in text_prompt_dict.items():
+
+            set_trace()
 
             messages = get_messages(model_code, article_text, task_prompt)
             inputs = tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True, return_tensors="pt")

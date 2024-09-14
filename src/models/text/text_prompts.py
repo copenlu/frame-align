@@ -22,20 +22,20 @@ TOPIC_PROMPT = "Output the topic of the article, along with a justification for 
 
 SUMMARY_PROMPT = "Output a brief summary of the article. The summary should be 1-2 sentences. Format your output as a json entry with the field 'summary'."
 
-ENTITY_PROMPT = """Output the main subjects or entities in the article.
+ENTITY_PROMPT = """Output one main subject or entity in the article that is central to the article and is portrayed in a positive or negative light.
 Entities are people or organisations that play a central role in the article.
-For each entity, provide the name of the entity and the sentiment towards the entity communicated in the article.
-Sentiment can be positive, negative or neutral. Also provide a justification for the sentiment.
-Format your output as a json entry with the field 'entities'. Each entry in the 'entities' list should have the fields 'entity_name', 'justification_sentiment', 'entity_sentiment'."""
+Provide the name the entity, the sentiment towards the entity communicated in the article, and a justification for the sentiment.
+Sentiment can be positive, negative or neutral.
+Format your output as a json entry with the fields 'entity_name', 'justification_sentiment', 'entity_sentiment'."""
     
 GENERIC_FRAMING_PROMPT = f"""Framing is a way of classifying and categorizing information that allows audiences to make sense of and give meaning to the world around them (Goffman, 1974).
 Entman (1993) has defined framing as “making some aspects of reality more salient in a text in order to promote a particular problem definition, causal interpretation, moral evaluation, and/or treatment recommendation for the item described”.
 Frames serve as metacommunicative structures that use reasoning devices such as metaphors, lexical choices, images, symbols, and actors to evoke a latent message for media users (Gamson, 1995).
 A set of generic news frames with an id, name and description are: {FRAMES}.
 Your task is to code articles for one of the above frames and provide justification for it. Format your output as a json entry with the fields 'frame_justification', 'frame_id', 'frame_name'.
-'frame_name' should be one of the above listed frames."""
+'frame_name' should be one of the above listed frames. Only output one frame per article."""
 
-TONE_PROMPT = "Output the tone of the article. The tone is one or two words that describes the communicative tone that is used in the article by its author. Some examples of tone are Fatalistic, Optimistic, Neutral, Passionate, Pessimistic. Provide a justification for the tone. Format your output as a json entry with the fields 'tone' and 'justification_tone'."
+# TONE_PROMPT = "Output the tone of the article. The tone is one or two words that describes the communicative tone that is used by the author when writing the article. Some examples of tone are Fatalistic, Optimistic, Neutral, Passionate, Pessimistic. Provide a justification for the tone. Format your output as a json entry with the fields 'justification_tone' and 'tone'."
 
 ISSUE_FRAMING_PROMPT = """Framing is a way of classifying and categorizing information that allows audiences to make sense of and give meaning to the world around them (Goffman, 1974).
 Entman (1993) has defined framing as “making some aspects of reality more salient in a text in order to promote a particular problem definition, causal interpretation, moral evaluation, and/or treatment recommendation for the item described”.
@@ -49,6 +49,6 @@ text_prompt_dict = {
     "Summary": SUMMARY_PROMPT,
     "Entity": ENTITY_PROMPT,
     "GenericFraming": GENERIC_FRAMING_PROMPT,
-    "Tone": TONE_PROMPT,
+    # "Tone": TONE_PROMPT,
     "IssueFraming": ISSUE_FRAMING_PROMPT
 }
