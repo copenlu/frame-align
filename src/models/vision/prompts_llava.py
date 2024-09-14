@@ -67,32 +67,9 @@ The format of the output should be as a json file that looks follows:
 
 prompt_c = """
 
-In the shown image, who are the actors (people of importance)? Actors are identifiable individuals, collectives, or institutions, usually mentioned by name, which are not only subject of the article but who are given the opportunity - via direct or indirect speech - to communicate their point of view. Actors can be persons, groups, committees, organizations, or institutions. Journalists can be coded as actors as well when they not merely act as chronicler of events and statements but add context, interpretation and/or evaluation to the article, indicated by a statement which is not solely based or does not merely sum up interpretations and/or evaluations by other quoted actors. 
+In the shown image, what/who is the main actor? Actors are identifiable individuals, collectives, or institutions, usually mentioned by name, which are not only subject of the news image but who are given the opportunity - via direct or indirect speech - to communicate their point of view. Actors can be persons, groups, committees, organizations, or institutions. Journalists can be coded as actors as well when they not merely act as chronicler of events and statements but add context, interpretation and/or evaluation to the article, indicated by a statement which is not solely based or does not merely sum up interpretations and/or evaluations by other quoted actors. 
 
-<format>
-The format of the output should be as a json file that looks follows:
-{
-    "actor": "<actor>"
-}
-
-</format>
-
-<examples>
-{
-    "actor": "The President"
-}
-
-{
-    "actor": "the African Union"
-}
-
-{
-    "actor": "environmental NGO Thinktank"
-}
-
-</examples>
-
-<image>\n And now for the actors in the image, who are the actors in the image. 
+<image>\n And now for the given the image, provide the main actor in the image, the sentiment towards the actor communicated in the image, and a justification for the sentiment. Sentiment can be positive, negative or neutral. Write it in json format with fields as "main_actor", "sentiment" and "justification".
 
 \nASSISTANT:
 """
@@ -104,7 +81,7 @@ Mention roles of the actors in the image play in the society. . Actors are ident
 <format>
 The format of the output should be as a json file that looks follows:
 {
-    "actor": "<actor>"
+    "actor": "<actor>",
     "role": "<role>"
 }
 
@@ -112,12 +89,12 @@ The format of the output should be as a json file that looks follows:
 
 <examples>
 {
-    "actor": "The President"
+    "actor": "The President",
     "role in society": "The President is the head of the country and is responsible for making important decisions that affect the citizens."
 }
 
 {
-    "actor": "The environmental NGO Thinktank"
+    "actor": "The environmental NGO Thinktank",
     "role in society": "The environmental NGO Thinktank is responsible for researching and advocating for policies that protect the environment."
 }
 
@@ -136,8 +113,10 @@ In the shown image, what symbolic meaning image is trying to convey. Symbolic me
 <format>
 The format of the output should be as a json file that looks follows:
 {
-    "symbolic thing": "<symbolic thing>"
-    "symbolic meaning": "<symbolic meaning>"
+    "symbolic thing": "<symbolic thing>",
+    "symbolic meaning": "<symbolic meaning in one word>",
+    "explanation": "<explanation>"
+
 }
 
 </format>
@@ -145,13 +124,15 @@ The format of the output should be as a json file that looks follows:
 <examples>
 
 {
-    "symbolic thing in image": "The color red"
-    "symbolic meaning": "The color red in the image symbolizes danger and passion."
+    "symbolic thing": "color red",
+    "symbolic meaning": "danger",
+    "explanation": "The color red in the image symbolizes danger and warns the viewer to be cautious."
 }
 
 {   
-    "symbolic thing in image": "raised fist"
-    "symbolic meaning": "The raised fist in the image symbolizes power and unity."
+    "symbolic thing": "raised fist",
+    "symbolic meaning": "power",
+    "explanation": "The raised fist in the image symbolizes power and strength, suggesting that the person is fighting for their rights."
 }
 
 </examples>
@@ -222,45 +203,20 @@ The format of the output should be as a json file that looks follows:
 \nASSISTANT:"""
 
 prompt_h ="""
-
-What are the facial expressions of the people in the image? Describe each person and their facial expressions. Say 'None' if none exists.
-
-<format>
-The format of the output should be as a json file that looks follows:
-{
-    "actor 1": <description of the actor 1>
-    "facial expression": "<facial expression>"
-
-    "actor 2": <description of the actor 2>
-    "facial expression": "<facial expression>"
-}
-</format>
-
-<examples>
-{
-    "actor 1": "the man in the suit"
-    "facial expression": "smiling"
-
-    "actor 2": "the police officer"
-    "facial expression": "serious"
-
-}
-</examples>
-
-<image>\n Now see the image shown and describe people and their facial expressions. Say 'None' if none exists. 
-
+<image>\n For the image shown, what is the facial expression of the main subject in the image? Say 'None' if none exists. Write it in json format with fields as "facial_expression" and "explanation".
+ 
 \nASSISTANT:
 """
 
 prompt_i ="""
 
-What is the perceivable gender in the image? Perceivable gender is the way others view a person along a continuum from masculine to feminine. It is based on the person's appearance, behavior, and other characteristics. Describe all the people in the image and their perceived gender.
+What is the perceivable gender in the image? Perceivable gender is the way others view a person along a continuum from masculine to feminine. It is based on the person's appearance, behavior, and other characteristics. Describe all the people in the image and their perceived gender. Write it in json format with fields as "description of the person" and "perceived gender".
 
 <format>
 If there are 2 people, the format of the output should be as a json file that looks
 
 {
-    "description of the person 1": "<description of the person 1>"
+    "description of the person 1": "<description of the person 1>",
     "perceived gender 1": <perceived gender 1>
     
 
@@ -269,7 +225,6 @@ If there are 2 people, the format of the output should be as a json file that lo
 }
 
 </format>
-
 
 
 <image>\n And now for the image you see, what is the perceived gender in the image?
@@ -439,7 +394,7 @@ A set of generic news frames with an id, name and description are: {FRAMES}."""
 PROMPT_TASK = """
 Your task is to see the image and based on the understanding of the image, choose the correct frame.
 
-<image>\n And now for the image you see, what frame is present in the image?  Look at all the frames first and then choose the correct frame. Write it in json format with fields as "frame_id", "frame_name" and "frame_jusitification".
+<image>\n And now for the image you see, what frame is present in the image? Look at all the frames first and then choose the correct frame. Write it in json format with fields as "frame_id", "frame_name" and "frame_jusitification".
 
 \nASSISTANT:
 """

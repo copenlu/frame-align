@@ -47,9 +47,7 @@ logger.info(f"Data CSV path: {data_csv}")
 
 data_df = pd.read_csv(data_csv)
 
-# data_df = data_df.iloc[2:10] #1st image still gives error. check the error: The channel dimension is ambiguous. Got image shape (1, 1, 3). Assuming channels are the first dimension. 
-
-
+data_df = data_df.iloc[2:20] 
 ids, image_urls, headlines = data_df["id"].tolist(), data_df["image_url"].tolist(), data_df["title"].tolist()
 
 def vlm_with_prompt(model_id):
@@ -92,9 +90,13 @@ def vlm_with_prompt(model_id):
         logger.info(f"Processing uuid: {uuid}")
         logger.info(f"Image URL: {image_file}")
 
-        # Check if the image is loaded
         try:
-            raw_image = Image.open(requests.get(image_file, stream=True).raw).convert("RGB")
+            logger.info(f"Opening image")
+            response = requests.get(image_file, stream=True, timeout=20)  # Add a timeout (in seconds)
+            response.raise_for_status()  # Raise an HTTPError if the status is not 200
+            raw_image = Image.open(response.raw).convert("RGB")
+            logger.info(f"Image opened")
+            
             # Check the shape of the image tensor
             image_tensor = torch.tensor(np.array(raw_image))
             if image_tensor.shape[-1] != 3:
@@ -102,14 +104,21 @@ def vlm_with_prompt(model_id):
             if image_tensor.shape[0] == 1 and image_tensor.shape[1] == 1:
                 logger.info(f"Skipping image with shape {image_tensor.shape} - uuid: {uuid}")
                 continue
+        except requests.exceptions.Timeout:
+            logger.error(f"Request timed out - uuid: {uuid}")
+            continue
+        except requests.exceptions.RequestException as e:
+            logger.error(f"Request failed: {e} - uuid: {uuid}")
+            continue
         except Exception as e:
             logger.info(f"Image URL: {image_file}")
             logger.error(f"Image error {e} - uuid: {uuid}")
             continue
 
+
         # Process the image with the model
         for index, prompt in enumerate(PROMPT_MAPPING[model_id]):
-            if prompt not in [PROMPT_MAPPING[model_id][i] for i in [0, 4, 8, 13]]: # these are: caption, symbols, gender, frame
+            if prompt not in [PROMPT_MAPPING[model_id][i] for i in [0, 2, 4, 7, 8, 13]]: # these are: caption, symbols, gender, frame
                 # logger.info(f"Skipping prompt number {index} - {prompt}")
                 continue
             
@@ -133,18 +142,18 @@ def vlm_with_prompt(model_id):
             "headline": headline,
             "caption": decoded_texts[0],
             # "category": decoded_texts[1],
-            # "actors": decoded_texts[2],
+            "actors": decoded_texts[1],
             # "actor_roles": decoded_texts[3],
-            "symbols": decoded_texts[1],
+            "symbols": decoded_texts[2],
             # "representation": decoded_texts[5],
             # "numbers": decoded_texts[6],
-            # "expressions": decoded_texts[7],
-            "gender": decoded_texts[2],
+            "expressions": decoded_texts[3],
+            "gender": decoded_texts[4],
             # "power": decoded_texts[9],
             # "intimacy": decoded_texts[10],
             # "image_emotion": decoded_texts[11],
             # "people_emotion": decoded_texts[12],
-            "frame": decoded_texts[3],
+            "frame": decoded_texts[5],
         }
 
         with open(output_file, "a") as f:
