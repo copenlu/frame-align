@@ -7,6 +7,10 @@ import pandas as pd
 
 from pathlib import Path
 from pdb import set_trace
+import logging
+
+logging.basicConfig(filename='app.log', level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 client = anthropic.Anthropic()
 
@@ -25,9 +29,14 @@ def main():
     if not topics_file.exists():
         get_bertopic_topics(topics_file)
     topics = pickle.load(open("data/raw/bertopic_topics.pkl", "rb"))
+    meta_topic_dict = Path("data/raw/meta_topics.json")
+    if meta_topic_dict.exists():
+        meta_topic_dict = json.load(meta_topic_dict.open())
+    else:
+        meta_topic_dict = {}
+    topics_to_process = [topic for topic in topics if topic not in meta_topic_dict]
     topics_at_a_time = 200
-    meta_topic_dict = {}
-    for i in range(0,len(topics), topics_at_a_time):
+    for i in range(0,len(topics_to_process), topics_at_a_time):
         try:
             message = client.messages.create(
                 model="claude-3-5-sonnet-20240620",
@@ -45,20 +54,26 @@ def main():
                         "content": [
                             {
                                 "type": "text",
-                                "text": str(topics[i:i+topics_at_a_time])
+                                "text": str(topics_to_process[i:i+topics_at_a_time])
                             }
                         ]
                     }
                 ])
-            print(message.content[0].text, "\n")
+            logger.info(message.content[0].text)
             try:
                 out_dict = ast.literal_eval(message.content[0].text)
-            except:
+                logger.info(f"Adding {len(out_dict)} topics to meta_topic_dict")
+            except Exception as e:
+                logger.error(e)
+                logger.error(message.content[0].text)
                 print(message.content[0].text, "\n")
             meta_topic_dict.update(out_dict)
             time.sleep(5) # to avoid rate limit
-        except:
+        except Exception as e:
+            logger.error(e)
+            print(e)
             json.dump(meta_topic_dict, open("data/raw/meta_topics.json", "w"))
+            continue
     json.dump(meta_topic_dict, open("data/raw/meta_topics.json", "w"))
 
 if __name__ == "__main__":
