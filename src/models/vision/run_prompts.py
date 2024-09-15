@@ -159,7 +159,7 @@ def vlm_with_prompt(model_id):
             # Parse the JSON string for the actors data            
             actors_data = clean_and_parse_json(decoded_texts[1])
             # "main_actor", "sentiment", sentiment_justification" and "facial_expression"
-            main_actor, actor_sentiment, actor_sentiment_justification, actor_expression, actor_expression_justification = actors_data.get('main_actor'), actors_data.get('sentiment'), actors_data.get('sentiment_justification'), actors_data.get('facial_expression'), actors_data.get('facial_expression_justification')
+            main_actor, actor_sentiment, actor_sentiment_justification, actor_expression, actor_expression_justification, actor_perceivable_gender, perceivable_gender_justification = actors_data.get('main_actor'), actors_data.get('sentiment'), actors_data.get('sentiment_justification'), actors_data.get('facial_expression'), actors_data.get('facial_expression_justification'), actors_data.get('perceivable_gender'), actors_data.get('perceivable_gender_justification')
 
             # Parse the JSON string for the symbols data
             symbols_data = clean_and_parse_json(decoded_texts[2])
@@ -187,6 +187,8 @@ def vlm_with_prompt(model_id):
                 "actor_sentiment_justification": actor_sentiment_justification,
                 "actor_expression": actor_expression,
                 "actor_expression_justification": actor_expression_justification,
+                "perceivable_gender": actor_perceivable_gender,
+                "perceivable_gender_justification": perceivable_gender_justification,
                 "symbolic_thing": symbolic_thing,
                 "symbolic_meaning": symbolic_meaning,
                 "symbolic_explanation": symbolic_explanation,
