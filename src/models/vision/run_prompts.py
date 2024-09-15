@@ -1,4 +1,4 @@
-import json
+import json, re
 import torch
 import random
 import argparse
@@ -47,7 +47,7 @@ logger.info(f"Data CSV path: {data_csv}")
 
 data_df = pd.read_csv(data_csv)
 
-data_df = data_df.iloc[2:5] 
+# data_df = data_df.iloc[2:5] 
 ids, image_urls, headlines = data_df["id"].tolist(), data_df["image_url"].tolist(), data_df["title"].tolist()
 
 def vlm_with_prompt(model_id):
@@ -84,6 +84,7 @@ def vlm_with_prompt(model_id):
     output_file = script_dir / "../../../data/processed" / f"topic_sampled_jul23_vision_{model_id.split('/')[-1].split('-')[0]}.jsonl"
     os.remove(output_file) if os.path.exists(output_file) else None
 
+    error_uuids = []
     for uuid, image_file, headline in zip(ids, image_urls, headlines):
 
         decoded_texts = []
@@ -118,8 +119,8 @@ def vlm_with_prompt(model_id):
 
         # Process the image with the model
         for index, prompt in enumerate(PROMPT_MAPPING[model_id]):
-            if prompt not in [PROMPT_MAPPING[model_id][i] for i in [0, 2, 4, 7, 8, 13]]: # these are: caption, symbols, gender, frame
-                # logger.info(f"Skipping prompt number {index} - {prompt}")
+            # 0: caption, 1: actors, 2: symbols, 3: expressions, 4: frame
+            if prompt not in [PROMPT_MAPPING[model_id][i] for i in [0, 1, 2, 3]]:
                 continue
             
             logger.info(f"Processing prompt number {index}")
@@ -130,31 +131,73 @@ def vlm_with_prompt(model_id):
             # append the decoded text to the list
             decoded_output = processor.decode(output[0][input_len:], skip_special_tokens=True)
 
-            # To do: remove ASSISTANT for llava
             answer = decoded_output.split("ASSISTANT:")[1].strip().replace("\n", "") if "ASSISTANT:" in decoded_output else decoded_output
             # json_answer = json.loads(answer)
             decoded_texts.append(answer)
+        
 
-        # Combine all key-value pairs into a single dictionary
-        data_entry = {
-            "uuid" : uuid,
-            "image_file": image_file,
-            "headline": headline,
-            "caption": decoded_texts[0],
-            # "category": decoded_texts[1],
-            "actors": decoded_texts[1],
-            # "actor_roles": decoded_texts[3],
-            "symbols": decoded_texts[2],
-            # "representation": decoded_texts[5],
-            # "numbers": decoded_texts[6],
-            "expressions": decoded_texts[3],
-            "gender": decoded_texts[4],
-            # "power": decoded_texts[9],
-            # "intimacy": decoded_texts[10],
-            # "image_emotion": decoded_texts[11],
-            # "people_emotion": decoded_texts[12],
-            "frame": decoded_texts[5],
-        }
+        def clean_and_parse_json(json_str):
+            # Remove invalid escape sequences
+            # Replace '\_' with '_' and remove '\n'
+            json_str = json_str.replace('\\_', '_').replace('\\n', '')
+            # Optionally, remove any other invalid escape sequences
+            json_str = re.sub(r'\\([^"\\/bfnrtu])', r'\1', json_str)
+            
+            try:
+                # Parse the cleaned JSON string
+                data = json.loads(json_str)
+                return data
+            except json.JSONDecodeError as e:
+                print(f"Failed to parse JSON: {e}")
+                return None  # or handle the error as needed
+
+        
+        # Try and except block to handle errors
+        try:
+            caption = json.loads(decoded_texts[0])['caption']
+
+            # Parse the JSON string for the actors data            
+            actors_data = clean_and_parse_json(decoded_texts[1])
+            # "main_actor", "sentiment", sentiment_justification" and "facial_expression"
+            main_actor, actor_sentiment, actor_sentiment_justification, actor_expression, actor_expression_justification = actors_data.get('main_actor'), actors_data.get('sentiment'), actors_data.get('sentiment_justification'), actors_data.get('facial_expression'), actors_data.get('facial_expression_justification')
+
+            # Parse the JSON string for the symbols data
+            symbols_data = clean_and_parse_json(decoded_texts[2])
+            symbolic_thing, symbolic_meaning, symbolic_explanation = symbols_data.get('symbolic thing'), symbols_data.get('symbolic meaning'), symbols_data.get('explanation') if symbols_data.get('explanation') else "N/A"
+
+            # # Parse the JSON string for expressions data
+            # print("expressions data")
+            # logger.info(f"Expressions data: {decoded_texts[3]}")
+            # expressions_data = clean_and_parse_json(decoded_texts[3])
+            # main_subject, main_subject_expression, subject_expression_explanation = expressions_data.get('main subject'), expressions_data.get('facial expression'), expressions_data.get('explanation')
+
+            # Parse the JSON string for frame data
+            frame_data = clean_and_parse_json(decoded_texts[3])
+            frame_id, frame_name, frame_justification = frame_data.get('frame_id'), frame_data.get('frame_name'), frame_data.get('frame_justification')
+
+
+            # Combine all key-value pairs into a single dictionary
+            data_entry = {
+                "uuid" : uuid,
+                "image_file": image_file,
+                "headline": headline,
+                "caption": caption,
+                "main_actor": main_actor,
+                "actor_sentiment": actor_sentiment,
+                "actor_sentiment_justification": actor_sentiment_justification,
+                "actor_expression": actor_expression,
+                "actor_expression_justification": actor_expression_justification,
+                "symbolic_thing": symbolic_thing,
+                "symbolic_meaning": symbolic_meaning,
+                "symbolic_explanation": symbolic_explanation,
+                "frame_id": frame_id,
+                "frame_name": frame_name,
+                "frame_justification": frame_justification
+            }
+        except Exception as e:
+            logger.error(f"Error processing image: {e} - url: {image_file}")            
+            error_uuids.append(uuid)
+            continue
 
         with open(output_file, "a") as f:
             f.write(json.dumps(data_entry) + "\n")
@@ -172,6 +215,12 @@ def vlm_with_prompt(model_id):
     csv_file = str(output_file).replace(".jsonl", ".csv")
     os.remove(csv_file) if os.path.exists(csv_file) else None
     df.to_csv(csv_file, index=False)
+
+    # Save error_uuids list to a txt file:
+    error_file = script_dir / "../../../data/processed" / f"error_uuids.txt"
+    with open(error_file, 'w') as f:
+        for item in error_uuids:
+            f.write("%s\n" % item)
 
 
 if __name__ == '__main__':
