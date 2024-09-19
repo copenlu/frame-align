@@ -7,3 +7,5 @@ torchvision
 transformers
 bitsandbytes
 accelerate
+openai
+vllm

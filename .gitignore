@@ -90,3 +90,6 @@ slurm*
 
 # Mypy cache
 .mypy_cache/
+
+#env
+frame-env/

@@ -1,79 +1,80 @@
+import ast
+import time
 import json
-import torch
-import random
-import numpy as np
+import pickle
+import anthropic
 import pandas as pd
 
-from text_prompts import SYS_PROMPT, POST_PROMPT, text_prompt_dict
-from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+from pathlib import Path
+from pdb import set_trace
+import logging
 
-random.seed(42)
-torch.manual_seed(42)
+logging.basicConfig(filename='app.log', level=logging.INFO)
+logger = logging.getLogger(__name__)
 
-bnb_config = BitsAndBytesConfig(load_in_8bit=True)
+client = anthropic.Anthropic()
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-model_code = 'mistralai/Mistral-7B-Instruct-v0.2'
-
-def get_messages(model_name:str, article:str, task_prompt:str) -> list:
-    if 'mistral' in model_name:
-        messages = [{"role": "user", "content": SYS_PROMPT + task_prompt + f"Article: {article}\n" + POST_PROMPT}]
-    else:
-        messages = [{"role": "system", "content": SYS_PROMPT}, {"role": "user", "content": task_prompt + f"Article: {article}\n" + POST_PROMPT}]
-    return messages
-
-def annotate_frames(model_code)-> None:
-    model_name_short = model_code.split('/')[1].split('-')[0]
-
-    tokenizer = AutoTokenizer.from_pretrained(model_code, cache_dir="/projects/copenlu/data/models/")
-    model = AutoModelForCausalLM.from_pretrained(model_code,
-            quantization_config=bnb_config,
-            torch_dtype=torch.bfloat16,
-            device_map="auto",
-            trust_remote_code=True,
-            cache_dir="/projects/copenlu/data/models/")
-        
-    tokenizer.pad_token = tokenizer.eos_token
-
-    news_df = pd.read_csv("./data/raw/news_data_100.csv", index_col=[0])
-    news_df['text'] = news_df['chunk2'] + ' ' + news_df['chunk3'] + ' ' + \
-                news_df['chunk4'] + ' ' + news_df['chunk5'] + ' ' + news_df['chunk6']
-    news_df['title'] = news_df['chunk1']
-
-    for i, (uuid, row) in enumerate(news_df.iterrows()):
-        article_text = row['text']
-        title = row['title']
-
-        article_annotations = {}
-        for task, task_prompt in text_prompt_dict.items():
-
-            messages = get_messages(model_code, article_text, task_prompt)
-            inputs = tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True, return_tensors="pt")
-
-            inputs = inputs.to(device)
-            input_length = inputs.shape[1]
-
-            outputs = model.generate(inputs, max_new_tokens=5000, pad_token_id=tokenizer.pad_token_id)
-            output_text = tokenizer.decode(outputs[0][input_length:], skip_special_tokens=True)
-            try:
-                output_json = json.loads(output_text)
-                article_annotations.update(output_json)
-            except Exception as e:
-                print(f"Skipped-{i}-{task}: {e}")
-                pass
-        article_annotations["article_text"] = article_text
-        article_annotations["title"] = title
-        article_annotations["id"] = i
-        article_annotations["uuid"] = uuid 
-
-        with open(f"./data/annotated/news_data_100_metadata_annotated_{model_name_short}.jsonl", "a") as f:
-            json.dump(article_annotations, f)
-            f.write("\n")
-
+def get_bertopic_topics(topics_file=None):
+    data_path = Path("data/raw/2023-24/")
+    topics = []
+    for month_dir in data_path.iterdir():
+        df = pd.read_csv(month_dir/"datawithtopics_merged.csv")
+        topics.extend(df['auto_topic_label'].unique().tolist())
+    topics = list(set(topics))
+    pickle.dump(topics, open(topics_file, "wb"))
+    return None
+    
 def main():
-    for model_code in ['meta-llama/Meta-Llama-3-8B-Instruct', 'meta-llama/Meta-Llama-3.1-8B']:
-        annotate_frames(model_code)
+    topics_file = Path("data/raw/bertopic_topics.pkl")
+    if not topics_file.exists():
+        get_bertopic_topics(topics_file)
+    topics = pickle.load(open("data/raw/bertopic_topics.pkl", "rb"))
+    meta_topic_dict = Path("data/raw/meta_topics.json")
+    if meta_topic_dict.exists():
+        meta_topic_dict = json.load(meta_topic_dict.open())
+    else:
+        meta_topic_dict = {}
+    topics_to_process = [topic for topic in topics if topic not in meta_topic_dict]
+    topics_at_a_time = 200
+    for i in range(0,len(topics_to_process), topics_at_a_time):
+        try:
+            message = client.messages.create(
+                model="claude-3-5-sonnet-20240620",
+                max_tokens=8000,
+                temperature=0,
+                system="""
+                    Below is a list of underscore separated keywords related to a topic output by BERTopic when analyzing a set of US based news articles.
+                    Your job is to come up high level categories for each of them like Business, Politics, Sports etc.
+                    If the set of keywords is not in English, is gibberish, or you cannot get a broad topic for them, output no_topic.
+                    Output a dictionary with the keywords as keys and broad topics for the corresponding keywords as values, in the same order. Output no other tokens, only the dictionary. List:
+                    """,
+                messages=[
+                    {
+                        "role": "user",
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": str(topics_to_process[i:i+topics_at_a_time])
+                            }
+                        ]
+                    }
+                ])
+            logger.info(message.content[0].text)
+            try:
+                out_dict = ast.literal_eval(message.content[0].text)
+                logger.info(f"Adding {len(out_dict)} topics to meta_topic_dict")
+            except Exception as e:
+                logger.error(e)
+                logger.error(message.content[0].text)
+                print(message.content[0].text, "\n")
+            meta_topic_dict.update(out_dict)
+            time.sleep(5) # to avoid rate limit
+        except Exception as e:
+            logger.error(e)
+            print(e)
+            json.dump(meta_topic_dict, open("data/raw/meta_topics.json", "w"))
+            continue
+    json.dump(meta_topic_dict, open("data/raw/meta_topics.json", "w"))
 
 if __name__ == "__main__":
     main()
