@@ -8,9 +8,8 @@ import requests
 from PIL import Image
 from pathlib import Path
 from pdb import set_trace
-from openai import OpenAI
 from vllm import LLM, SamplingParams
-from prompts_vllm_llava import PROMPT_LIST_LLAVA_vLLM
+from prompts_llava import PROMPT_DICT_LLAVA
 
 random.seed(42)
 torch.manual_seed(42)
@@ -21,41 +20,33 @@ logger = logging.getLogger(__name__)
 
 # llava model
 model_name = "llava-hf/llava-1.5-7b-hf"
+
 PROMPT_MAPPING = {
-        "llava-hf/llava-1.5-7b-hf": PROMPT_LIST_LLAVA_vLLM
-    }
+        "llava-hf/llava-1.5-7b-hf": PROMPT_DICT_LLAVA
+        }
 
-client = OpenAI(
-    base_url="http://localhost:8000/v1",
-    api_key="framing") # check this
+sampling_params = SamplingParams(temperature=0.2,
+                                max_tokens=1000)
 
-def get_messages(model_id:str, prompt:str, image_file:str) -> list:
-    messages = [{
-        "role": "user",
-        "content": [
-            {"type": "text", "text": prompt},
-            {"type": "image_url", "image_url": {"url": image_file}},
-        ],
-    }]
-    return messages
-
+vlm = LLM(model=model_name)
 
 def annotate_frames(model_code)-> None:
     model_name_short = model_code.split('/')[1].split('-')[0]
 
-    script_dir = Path(__file__).resolve().parent
+    # script_dir = Path(__file__).resolve().parent
 
-    logger.info(f"Script directory: {script_dir}")
-    data_csv = script_dir / "../../../data/raw/topic_samples.csv"
+    # logger.info(f"Script directory: {script_dir}")
+    data_csv = "./data/raw/2023-24/July-23/topic_samples.csv"
     logger.info(f"Data CSV path: {data_csv}")
     data_df = pd.read_csv(data_csv)
     ids, image_urls, headlines = data_df["id"].tolist(), data_df["image_url"].tolist(), data_df["title"].tolist()
 
+    model_prompt_dict = PROMPT_MAPPING[model_code]
+
     # news_df = pd.read_csv(data_path/"July-23"/"topic_samples.csv")
 
-    img_annotations = {}
     for uuid, image_file, headline in zip(ids, image_urls, headlines):
-        decoded_texts = []
+        img_annotations = {}
         try:
             logger.info(f"Opening image")
             response = requests.get(image_file, stream=True, timeout=20)  # Add a timeout (in seconds)
@@ -70,6 +61,7 @@ def annotate_frames(model_code)-> None:
             if image_tensor.shape[0] == 1 and image_tensor.shape[1] == 1:
                 logger.info(f"Skipping image with shape {image_tensor.shape} - uuid: {uuid}")
                 continue
+            del image_tensor
 
         except Exception as e:
             logger.info(f"Image URL: {image_file}")
@@ -79,32 +71,29 @@ def annotate_frames(model_code)-> None:
         logger.info(f"Processing uuid: {uuid}")
         logger.info(f"Image URL: {image_file}")
 
-        for index, prompt in enumerate(PROMPT_MAPPING[model_id]):
+        for task, prompt in model_prompt_dict.items(): 
 
-            messages = get_messages(model_code, prompt, image_file)
-            completion = client.chat.completions.create(
-                model=model_code,
-                messages=messages
-            )
-
-            import pdb; pdb.set_trace()
-            print(f"Chat completion output-{index}: {completion.choices[0].message.content}")
-            output_text = completion.choices[0].message
+            # Inference with image embeddings as input
+            inputs = {
+                "prompt": prompt,
+                "multi_modal_data": {"image": raw_image}
+            }
+            outputs = vlm.generate(inputs, sampling_params=sampling_params)
+            
             try:
-                output_json = json.loads(output_text.content)
+                output_json = json.loads(outputs[0].outputs[0].text)
                 img_annotations.update(output_json)
 
             except Exception as e:
-                print(f"Skipped-{i}-{task}: {e}")
+                print(f"Skipped-{uuid}-{task}: {e}")
                 pass
-        # article_annotations["article_text"] = article_text
-        # article_annotations["title"] = title
-        # article_annotations["id"] = i
-        # article_annotations["uuid"] = uuid 
+        img_annotations["image_url"] = image_file
+        img_annotations["title"] = headline
+        img_annotations["uuid"] = uuid
 
-        # with open(f"./data/annotated/topic_sampled_jul23_annotated_{model_name_short}_vllm.jsonl", "a") as f:
-        #     json.dump(article_annotations, f)
-        #     f.write("\n")
+        with open(f"./data/annotated/topic_sampled_jul23_annotated_{model_name_short}_vllm.jsonl", "a") as f:
+            json.dump(img_annotations, f)
+            f.write("\n")
 
 def main():
     annotate_frames(model_name)
