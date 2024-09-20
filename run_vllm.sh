@@ -5,4 +5,4 @@
 #SBATCH --gres=gpu:titanrtx:1
 #SBATCH --time=72:00:00
 
-python src/models/vision/framing_vllm.py
+python src/models/text/text_framing_sample_vllm.py
