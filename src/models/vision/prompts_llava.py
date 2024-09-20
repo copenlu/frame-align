@@ -3,141 +3,46 @@ prefix_instruction = """
 USER: You are an intelligent and logical assistant. Your job is to see the image and then read the question. You need to answer the question based on the image. If the answer could not be answered using just the image, you should put it as "None.
 """
 
-prompt_a = """
+prompt_caption = """
 
-Caption the shown image in detail and do not forget to include the people, objects, and the scene in the image if any.
+Caption the shown image in detail but don't count the things you see. Describe the image in detail. Example, if you see people, dont count them, describe what they are doing, what they are wearing, etc. If you see a scene with vehicles, don't count the vehicles but rather describe the scene in detail.
 
 <format>
 The format of the output should be as a json file that looks follows:
 {
-    "caption": "<caption>"
+    "caption": "<caption in detail>"
 }
 </format>
 
-<examples>
-{
-    "caption": "A group of people are sitting on a bench in a park. There are trees in the background and a dog is running in the foreground."
-}
 
-{
-    "caption": "The image shows a man in a suit standing in front of a large building called the White House. There are American flags on either side of the building."
-}
-</examples>
-
-<image>\n And now caption the image in detail based on the image you see.
+<image>\n And now caption the image in detail based on the image you see. Write it in json format with fields as "caption".
 
 \nASSISTANT:
 """
 
-prompt_b = """
+prompt_actor = """
 
-Categorise the shown image in one of the following categories: 1) Scenery (2) Actors (3) Symbols . Also give a brief explanation of why you chose the category.
+In the shown image, what/who is the main actor? Actors are identifiable individuals, collectives, or institutions, usually mentioned by name, which are not only subject of the news image but who are given the opportunity - via direct or indirect speech - to communicate their point of view. Actors can be persons, groups, committees, organizations, or institutions. Journalists can be coded as actors as well when they not merely act as chronicler of events and statements but add context, interpretation and/or evaluation to the article, indicated by a statement which is not solely based or does not merely sum up interpretations and/or evaluations by other quoted actors. 
 
-<format>
-The format of the output should be as a json file that looks follows:
-{
-    "category": "<category>"
-    "explanation of the category": "<explanation>"
-}
+Also what is the perceivable gender in the image? Perceivable gender is the way others view a person along a continuum from masculine to feminine. It is based on the person's appearance, behavior, and other characteristics.
 
-</format>
+<image>\n And now for the given the image, provide the main actor in the image, the sentiment with which the actor is portrayed in the image, and a justification for the sentiment. Sentiment can be positive, negative or neutral. If the main actor is a person, output the facial expression of the person, justify the facial expression and their perceivable gender. If it is not a person, output facial expression as "None" and "perceivable gender" as "None".
 
-<examples>
-{   
-    "category": "Scenery"
-    "explanation of the category": "The image shows a beautiful landscape with mountains and a river in the background."
-}
-
-{
-    "category": "Actors"
-    "explanation of the category": "The image shows a group of people who are the main focus of the image. They look like they are having a conversation."
-}
-
-{
-    "category": "Symbols"
-    "explanation of the category": "The image shows a logo of united nations. It has a globe in the center and olive branches around it."
-}
-
-</examples>
-
-<image>\n And now for the image you see, categorise the image into: a) Scenery b) Actors c) Symbols. Also give a brief explanation of why you chose the category.
+Write it in json format with fields as "main-actor", "sentiment", sentiment-justification", "facial-expression", "facial-expression-justification" and "perceivable-gender", "perceivable-gender-justification".
 
 \nASSISTANT:
 """
 
-prompt_c = """
+prompt_symbolic = """
 
-In the shown image, who are the actors (people of importance)? Actors are identifiable individuals, collectives, or institutions, usually mentioned by name, which are not only subject of the article but who are given the opportunity - via direct or indirect speech - to communicate their point of view. Actors can be persons, groups, committees, organizations, or institutions. Journalists can be coded as actors as well when they not merely act as chronicler of events and statements but add context, interpretation and/or evaluation to the article, indicated by a statement which is not solely based or does not merely sum up interpretations and/or evaluations by other quoted actors. 
-
-<format>
-The format of the output should be as a json file that looks follows:
-{
-    "actor": "<actor>"
-}
-
-</format>
-
-<examples>
-{
-    "actor": "The President"
-}
-
-{
-    "actor": "the African Union"
-}
-
-{
-    "actor": "environmental NGO Thinktank"
-}
-
-</examples>
-
-<image>\n And now for the actors in the image, who are the actors in the image. 
-
-\nASSISTANT:
-"""
-
-prompt_d = """
-
-Mention roles of the actors in the image play in the society. . Actors are identifiable individuals, collectives, or institutions, usually mentioned by name, which are not only subject of the article but who are given the opportunity - via direct or indirect speech - to communicate their point of view. Actors can be persons, groups, committees, organizations, or institutions. Journalists can be coded as actors as well when they not merely act as chronicler of events and statements but add context, interpretation and/or evaluation to the article, indicated by a statement which is not solely based or does not merely sum up interpretations and/or evaluations by other quoted actors. 
+In the shown image, what symbolic meaning is the image trying to convey. Symbolic meanings is the hidden meaning in the image not explicitly shown.
 
 <format>
 The format of the output should be as a json file that looks follows:
 {
-    "actor": "<actor>"
-    "role": "<role>"
-}
-
-</format>
-
-<examples>
-{
-    "actor": "The President"
-    "role in society": "The President is the head of the country and is responsible for making important decisions that affect the citizens."
-}
-
-{
-    "actor": "The environmental NGO Thinktank"
-    "role in society": "The environmental NGO Thinktank is responsible for researching and advocating for policies that protect the environment."
-}
-
-</examples>
-
-<image>\n And now for the actors in the image, what roles the actors in the image play in the society. 
-
-
-\nASSISTANT:
-"""
-
-prompt_e = """
-
-In the shown image, what symbolic meaning image is trying to convey. Symbolic meaning are hidden meaning in the images not explicitly shown in the images.
-
-<format>
-The format of the output should be as a json file that looks follows:
-{
-    "symbolic thing": "<symbolic thing>"
-    "symbolic meaning": "<symbolic meaning>"
+    "symbolic-object": "<symbolic thing>",
+    "symbolic-meaning": "<symbolic meaning in one or two words>",
+    "symbolic-meaning-explanation": "<explanation>"
 }
 
 </format>
@@ -145,13 +50,15 @@ The format of the output should be as a json file that looks follows:
 <examples>
 
 {
-    "symbolic thing in image": "The color red"
-    "symbolic meaning": "The color red in the image symbolizes danger and passion."
+    "symbolic-object": "color red",
+    "symbolic-meaning": "danger",
+    "symbolic-meaning-explanation": "The color red in the image symbolizes danger and warns the viewer to be cautious."
 }
 
 {   
-    "symbolic thing in image": "raised fist"
-    "symbolic meaning": "The raised fist in the image symbolizes power and unity."
+    "symbolic-object": "raised fist",
+    "symbolic-meaning": "power",
+    "symbolic-meaning-explanation": "The raised fist in the image symbolizes power and strength, suggesting that the person is fighting for their rights."
 }
 
 </examples>
@@ -161,270 +68,12 @@ The format of the output should be as a json file that looks follows:
 \nASSISTANT:
 """
 
-prompt_f = """
 
-For each actor present in the image, are they represented a) positively b) neutral or c) negatively. Give a brief explanation of why you chose the category.
-
-<format>
-The format of the output should be as a json file that looks follows:
-{
-    "actor": "<actor>"
-    "representation": "<representation>"
-    "explanation": "<explanation>"
-}
-
-</format>
-
-<examples>
-{
-    "actor": "The President"
-    "representation": "Positive"
-    "explanation": "The President is shown smiling and shaking hands with people. This suggests that they are friendly and approachable."
-}
-
-{
-    "actor": "The CEO of a company"
-    "representation": "Negative"
-    "explanation": "The CEO is shown frowning and looking angry. This suggests that they are unhappy or upset about something."
-}
-
-</examples>
-
-<image>\n And now for each actor present in the image, are they represented positively, neutral or negatively. Give a brief explanation of why you chose the category. 
-
-\nASSISTANT:
-"""
-
-prompt_g = """
-
-How many people in the image.
-
-<format>
-The format of the output should be as a json file that looks follows:
-{
-    "number of people": "<number of people>"
-}
-</format>
-
-<examples>
-{
-    "number of people": "3"
-}
-
-{
-    "number of people": "5"
-}
-
-</examples>
-
-<image>\n  And now for the image you see, how many people are there. 
-
-\nASSISTANT:"""
-
-prompt_h ="""
-
-What are the facial expressions of the people in the image? Describe each person and their facial expressions. Say 'None' if none exists.
-
-<format>
-The format of the output should be as a json file that looks follows:
-{
-    "actor 1": <description of the actor 1>
-    "facial expression": "<facial expression>"
-
-    "actor 2": <description of the actor 2>
-    "facial expression": "<facial expression>"
-}
-</format>
-
-<examples>
-{
-    "actor 1": "the man in the suit"
-    "facial expression": "smiling"
-
-    "actor 2": "the police officer"
-    "facial expression": "serious"
-
-}
-</examples>
-
-<image>\n Now see the image shown and describe people and their facial expressions. Say 'None' if none exists. 
-
-\nASSISTANT:
-"""
-
-prompt_i ="""
-
-What is the perceivable gender in the image? Perceivable gender is the way others view a person along a continuum from masculine to feminine. It is based on the person's appearance, behavior, and other characteristics.
-
-<format>
-The format of the output should be as a json file that looks
-
-{
-    "description of the person 1": "<description of the person 1>"
-    "perceived gender 1": <perceived gender 1>
-    
-
-    "description of the person 2": "<description of the person 2>"
-    "perceived gender 2": <perceived gender 2>
-}
-
-</format>
-
-<examples>
-
-{
-    "description of the person 1": "the person in the suit"
-    "perceived gender 1": "male"
-
-    "description of the person 2": "a boy in a dress"
-    "perceived gender 2": "queer"
-
-    "description of the person 3": "a person with short hair"
-    "perceived gender 3": "non-binary"
-
-    "description of the person 4": "a woman with long hair in a dress"
-    "perceived gender 4": "female"
-
-}
-
-</examples>
-
-<image>\n And now for the image you see, what is the perceived gender in the image? [INST]
-
-\nASSISTANT:
-"""
-
-prompt_j ="""
-
-Are there actors in the image shown in a position of power? Example: Looking down vs looking up at someone, looking straight in the eye = honesty, looking away = suspect.
-
-<format>
-The format of the output should be as a json file that looks follows:
-{
-    "actor": "<actor>"
-    "position of power": "<yes or no>"
-    "explanation": "<explanation>"
-}
-
-</format>
-
-<examples>
-{
-    "actor": "The President"
-    "position of power": "Yes"
-    "position of power": "Looking straight in the eye with seriousness"
-}
-
-{
-    "actor": "The children in the image"
-    "position of power": "No"
-    "position of power": "Looking up at the teacher with curiosity"
-}
-
-</examples>
-
-<image>\n And now for the actors in the image, are they shown in a position of power?
-
-\nASSISTANT:
-"""
-
-prompt_k = """
-
-What is the level of intimacy between the subjects in the image. The level of intimacy is determined by the distance between the subjects in the image.
-a) extreme close up between the subjects = high
-b) distance between the subjects = low
-<format>
-The format of the output should be as a json file that looks follows:
-{
-    "level of intimacy": "<level of intimacy>"
-}
-
-</format>
-
-<examples>
-{
-    "level of intimacy": "low"
-    "explanation": "The image shows a group of people standing far apart from each other. This suggests that there is a low level of intimacy with the subject."
-}
-
-{
-    "level of intimacy": "high
-    "explanation": "The actors in the image stand close to each other. This suggests that there is a high level of intimacy with the subject."
-}
-
-</examples>
-
-<image>\n And now for the image you see, what is the level of intimacy between the subjects in the image.
-
-\nASSISTANT:
-"""
-
-prompt_l = """ 
-What emotions does the image convey? Emotions are the feelings that the image evokes in the viewer. Give a brief explanation of why you chose the emotion.
-
-<format>
-The format of the output should be as a json file that looks follows:
-{
-    "emotion": "<emotion>"
-    "explanation": "<explanation>"
-}
-
-</format>
-
-<examples>
-{
-    "emotion": "happiness"
-    "explanation": "The image shows people smiling and laughing. This suggests that the image conveys happiness."
-}
-
-{
-    "emotion": "sadness"
-    "explanation": "The image shows a person crying. This suggests that the image conveys sadness."
-}
-
-</examples>
-
-<image>\n And now for the image you see, what emotions does the image convey?
-
-\nASSISTANT:
-"""
-
-prompt_m = """
-
-What emotions are conveyed by the people in the image? Describe each person and the emotions they are conveying. Say 'None' if none exists.
-
-<format>
-The format of the output should be as a json file that looks follows:
-{
-    "actor 1": <description of the actor 1>
-    "emotion": "<emotion>"
-    "explanation": "<explanation>"
-
-    "actor 2": <description of the actor 2>
-    "emotion": "<emotion>"
-    "explanation": "<explanation>"
-}
-
-</format>
-
-<examples>
-{
-    "actor 1": "the politician standing in the image"
-    "emotion": "serious"
-    "explanation": "The politician looks serious and focused. This suggests that they are thinking deeply about something."
-
-    "actor 2": "the child playing in the image"
-    "emotion": "happy"
-    "explanation": "The child looks happy and excited. This suggests that they are having fun."
-
-}
-
-</examples>
-
-<image>\n And now for the image you see, describe each person and the emotions they are conveying. Say 'None' if none exists.
-
-\nASSISTANT:
-"""
+# prompt_3 ="""
+# <image>\n For the image shown, what is the facial expression of the main subject in the image? Subject should be visible. Say 'None' if none exists. Write it in json format with fields as "main subject", "facial expression" and "explanation".
+ 
+# \nASSISTANT:
+# """
 
 
 FRAMES = f"""
@@ -441,7 +90,7 @@ FRAMES = f"""
     11: Cultural identity - traditions, customs, or values of a social group in relation to a policy issue,
     12: Public opinion - attitudes and opinions of the general public, including polling and demographics,
     13: Political - considerations related to politics and politicians, including lobbying, elections, and attempts to sway voters,
-    14: External regulation and reputation - international reputation or foreign policy of the U.S,
+    14: External regulation and reputation - international reputation or foreign policy,
     15: None - no frame could be identified because of lack of information in the image."""
 
     # 15: Other - frame is present and can be any coherent group of frames not covered by the above categories.
@@ -454,46 +103,18 @@ Frames serve as metacommunicative structures that use reasoning devices such as 
 A set of generic news frames with an id, name and description are: {FRAMES}."""
 
 PROMPT_TASK = """
-Your task is to see the image and based on the understanding of the image, choose one of the above frames and provide justification for it. Format your output as a json entry with the fields 'justification', 'frame_id', 'frame_name'.
-'frame_name' should be one of the above listed frames
+Your task is to see the image and based on the understanding of the image, choose the correct frame.
 
+<image>\n And now for the image you see, identify the symbolic meaning and actors used to evoke a latent message for news media users. Using this information, what frame is present in the image? Look at all the frames first and then choose the correct frame. Write it in json format with fields as "frame-id", "frame-name" and "frame-jusitification".
 
-<examples>
-{
-    "justification": "The image shows a group of people protesting in front of a government building. The image evokes a sense of political unrest and public opinion.",
-    "frame_id": "13",
-    "frame_name": "Political"
-}
-
-{
-    "justification": "The image shows people wearing masks and maintaining social distance. The image evokes a sense of health and safety.",
-    "frame_id": "9",
-    "frame_name": "Health and safety"
-}
-
-
-{
-    "justification": "The image shows a group of people standing in front of a non-significant building. There is no clear indication of any specific frame.",
-    "frame_id": "15",
-    "frame_name": "None"
-}
-
-{
-    "justification": "The image shows a photo of man standing doing nothing. There is no other information about the background or the context.",
-    "frame_id": "15",
-    "frame_name": "None"
-
-</examples>
-
-<image>\n And now for the image you see, what frame is present in the image? Output only the json and no other text. 
-
-\nASSISTANT: """
+\nASSISTANT:
+"""
 
 # framing prompt
-prompt_n = SYS_PROMPT + FRAMING_PROMPT + PROMPT_TASK
+prompt_generic = SYS_PROMPT + FRAMING_PROMPT + PROMPT_TASK
 
+# PROMPT_LIST_LLAVA = [prefix_instruction + prompt for prompt in PROMPT_LLAVA]
 
-# add prefix_instruction to all the prompts
-PROMPT_LLAVA = [prompt_a, prompt_b, prompt_c, prompt_d, prompt_e, prompt_f, prompt_g, prompt_h, prompt_i, prompt_j, prompt_k, prompt_l, prompt_m, prompt_n]
+PROMPT_DICT_LLAVA = {'caption': prompt_caption, 'actor': prompt_actor, 'symbolic': prompt_symbolic, 'generic-frame': prompt_generic}
 
-PROMPT_LIST_LLAVA = [prefix_instruction + prompt for prompt in PROMPT_LLAVA]
+PROMPT_DICT_LLAVA = {k: prefix_instruction + v for k, v in PROMPT_DICT_LLAVA.items()}
