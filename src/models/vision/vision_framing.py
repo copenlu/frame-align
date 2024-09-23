@@ -1,6 +1,7 @@
 import json
 import torch
 import random
+import argparse
 import numpy as np
 import pandas as pd
 import logging
@@ -18,9 +19,6 @@ torch.manual_seed(42)
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# llava model
-model_name = "llava-hf/llava-1.5-7b-hf"
-
 PROMPT_MAPPING = {
         "llava-hf/llava-1.5-7b-hf": PROMPT_DICT_LLAVA
         }
@@ -28,22 +26,14 @@ PROMPT_MAPPING = {
 sampling_params = SamplingParams(temperature=0.2,
                                 max_tokens=1000)
 
-vlm = LLM(model=model_name)
-
-def annotate_frames(model_code)-> None:
+def annotate_frames(model_code, data_file)-> None:
     model_name_short = model_code.split('/')[1].split('-')[0]
+    vlm = LLM(model=model_code)
 
-    # script_dir = Path(__file__).resolve().parent
-
-    # logger.info(f"Script directory: {script_dir}")
-    data_csv = "./data/raw/2023-24/July-23/topic_samples.csv"
-    logger.info(f"Data CSV path: {data_csv}")
-    data_df = pd.read_csv(data_csv)
+    data_df = pd.read_csv(data_file)
     ids, image_urls, headlines = data_df["id"].tolist(), data_df["image_url"].tolist(), data_df["title"].tolist()
 
     model_prompt_dict = PROMPT_MAPPING[model_code]
-
-    # news_df = pd.read_csv(data_path/"July-23"/"topic_samples.csv")
 
     for uuid, image_file, headline in zip(ids, image_urls, headlines):
         img_annotations = {}
@@ -72,18 +62,15 @@ def annotate_frames(model_code)-> None:
         logger.info(f"Image URL: {image_file}")
 
         for task, prompt in model_prompt_dict.items(): 
-
             # Inference with image embeddings as input
             inputs = {
                 "prompt": prompt,
                 "multi_modal_data": {"image": raw_image}
             }
             outputs = vlm.generate(inputs, sampling_params=sampling_params)
-            
             try:
                 output_json = json.loads(outputs[0].outputs[0].text)
                 img_annotations.update(output_json)
-
             except Exception as e:
                 print(f"Skipped-{uuid}-{task}: {e}")
                 pass
@@ -91,12 +78,16 @@ def annotate_frames(model_code)-> None:
         img_annotations["title"] = headline
         img_annotations["uuid"] = uuid
 
-        with open(f"./data/annotated/topic_sampled_jul23_annotated_{model_name_short}_vllm.jsonl", "a") as f:
+        with open(f"./data/annotated/vision/topic_samples_{model_name_short}.jsonl", "a") as f:
             json.dump(img_annotations, f)
             f.write("\n")
 
 def main():
-    annotate_frames(model_name)
+    parser = argparse.ArgumentParser(description='Annotate image frames using a VLLM model')
+    parser.add_argument('--model_name', type=str, help='Model name', default='llava-hf/llava-1.5-7b-hf')
+    parser.add_argument('--data_file', type=str, help='Data file with image urls', default="./data/raw/2023-24/topic_samples.csv")
+    args = parser.parse_args()
+    annotate_frames(args.model_name, args.data_file)
 
 if __name__ == "__main__":
     main()
