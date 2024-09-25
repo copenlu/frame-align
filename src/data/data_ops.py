@@ -11,7 +11,7 @@ def add_topics_to_data(data_path):
             continue
         df = pd.read_csv(month_dir/"datawithtopics_merged.csv")
         df['month'] = month_dir.name
-        df['topic_label'] = df['auto_topic_label'].apply(lambda x: topic_label_dict[x])
+        df['claude_topic_label'] = df['auto_topic_label'].apply(lambda x: topic_label_dict[x])
         df.to_csv(month_dir/"datawithtopiclabels.csv", index=False)
 
 def get_combined_topics(data_path):

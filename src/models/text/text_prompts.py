@@ -16,7 +16,7 @@ FRAMES = """
     14: External regulation and reputation - international reputation or foreign policy of the U.S,
     15: Other - any coherent group of frames not covered by the above categories."""
 
-SYS_PROMPT = f"You are an intelligent and logical journalism scholar conducting analysis of news articles. Your task is to read the article and answer the following question about the article. "
+SYS_PROMPT = f"You are an intelligent and logical journalism scholar conducting analysis of news articles. Your task is to read the article and answer the following question about the article. Only output the json and no other text.\n"
 
 TOPIC_PROMPT = "Output the topic of the article, along with a justification for the answer. The topic should be a single word or phrase. Format your output as a json entry with the field 'topic_justification' and 'topic'."
 
@@ -26,7 +26,7 @@ ENTITY_PROMPT = """Output one main subject or entity in the article that is cent
 Entities are people or organisations that play a central role in the article.
 Provide the name the entity, the sentiment towards the entity communicated in the article, and a justification for the sentiment.
 Sentiment can be positive, negative or neutral.
-Format your output as a json entry with the fields 'entity_name', 'justification_sentiment', 'entity_sentiment'."""
+Format your output as a json entry with the fields 'entity_name', 'justification_entity_sentiment', 'entity_sentiment'."""
     
 GENERIC_FRAMING_PROMPT = f"""Framing is a way of classifying and categorizing information that allows audiences to make sense of and give meaning to the world around them (Goffman, 1974).
 Entman (1993) has defined framing as “making some aspects of reality more salient in a text in order to promote a particular problem definition, causal interpretation, moral evaluation, and/or treatment recommendation for the item described”.
@@ -42,7 +42,7 @@ Entman (1993) has defined framing as “making some aspects of reality more sali
 Frames serve as metacommunicative structures that use reasoning devices such as metaphors, lexical choices, images, symbols, and actors to evoke a latent message for media users (Gamson, 1995).
 There are several ways to cover a specific issue in the news. For instance, the issue of climate change can be framed as a scientific issue, a political issue, a moral issue, a health issue etc. with frames such as Global Doom, Local Tragedies, Sustainable future, etc. Based on the topic of the article, come up with an issue-specific frame that is relevant to the topic of the article. Provide a justification for the frame. Format your output as a json entry with the fields 'issue_frame_justification' and 'issue_frame'."""
 
-POST_PROMPT = "Output only the json and no other text."
+POST_PROMPT = " Output only the json and no other text."
 
 text_prompt_dict = {
     "Topic": TOPIC_PROMPT,

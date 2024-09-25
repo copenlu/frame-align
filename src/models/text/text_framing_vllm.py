@@ -14,14 +14,15 @@ random.seed(42)
 torch.manual_seed(42)
 
 def get_messages(model_code:str, article:str, task_prompt:str) -> list:
-    if 'mistral' in model_code:
-        messages = [{"role": "user", "content": SYS_PROMPT + task_prompt + f"Article: {article}\n" + POST_PROMPT}]
-    else:
-        messages = [{"role": "system", "content": SYS_PROMPT}, {"role": "user", "content": task_prompt + f"Article: {article}\n" + POST_PROMPT}]
+    # if 'mistral' in model_code:
+    #     messages = [{"role": "user", "content": SYS_PROMPT + task_prompt + f"Article: {article}\n" + POST_PROMPT}]
+    # else:
+    messages = [{"role": "system", "content": SYS_PROMPT}, {"role": "user", "content": task_prompt + f"Article: {article}\n" + POST_PROMPT}]
     return messages
 
 def annotate_frames(model_code, data_file)-> None:
     model_name_short = model_code.split('/')[1].split('-')[0]
+    data_name = Path(data_file).name.split(".")[0]
     
     news_df = pd.read_csv(data_file)
 
@@ -45,15 +46,18 @@ def annotate_frames(model_code, data_file)-> None:
             try:
                 output_json = json.loads(output_text)
                 article_annotations.update(output_json)
-
             except Exception as e:
-                print(f"Skipped-{i}-uuid-{uuid}-{task}: {e}")
-                pass
+                try:
+                    output_json = json.loads(output_text.split(":")[1])
+                    article_annotations.update(output_json)
+                except Exception as e:
+                    print(f"Skipped-{i}-uuid-{uuid}-{task}: {e}")
+                    pass
         article_annotations["article_text"] = article_text
         article_annotations["title"] = title
         article_annotations["id"] = uuid
 
-        with open(f"./data/annotated/text/topic_samples_{model_name_short}.jsonl", "a") as f:
+        with open(f"./data/annotated/text/{data_name}_{model_name_short}.jsonl", "a") as f:
             json.dump(article_annotations, f)
             f.write("\n")
 
