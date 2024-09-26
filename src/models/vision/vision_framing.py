@@ -19,6 +19,13 @@ torch.manual_seed(42)
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
+month_dir = Path("/projects/frame_align/data/raw/2023-11-01_2023-11-30/")
+pickle_path = month_dir / "selected_uuids.pkl"
+load_uuids = pd.read_pickle(pickle_path)
+# convert to list
+selected_uuids = list(load_uuids)
+
+
 PROMPT_MAPPING = {
         "llava-hf/llava-1.5-7b-hf": PROMPT_DICT_LLAVA
         }
@@ -31,6 +38,8 @@ def annotate_frames(model_code, data_file)-> None:
     vlm = LLM(model=model_code)
 
     data_df = pd.read_csv(data_file)
+
+    data_df = data_df[data_df["id"].isin(selected_uuids)]
     ids, image_urls, headlines = data_df["id"].tolist(), data_df["image_url"].tolist(), data_df["title"].tolist()
 
     model_prompt_dict = PROMPT_MAPPING[model_code]
@@ -85,7 +94,7 @@ def annotate_frames(model_code, data_file)-> None:
 def main():
     parser = argparse.ArgumentParser(description='Annotate image frames using a VLLM model')
     parser.add_argument('--model_name', type=str, help='Model name', default='llava-hf/llava-1.5-7b-hf')
-    parser.add_argument('--data_file', type=str, help='Data file with image urls', default="./data/raw/2023-24/topic_samples.csv")
+    parser.add_argument('--data_file', type=str, help='Data file with image urls', default="/projects/frame_align/data/raw/2023-24/topic_samples.csv")
     args = parser.parse_args()
     annotate_frames(args.model_name, args.data_file)
 
