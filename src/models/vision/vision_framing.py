@@ -19,6 +19,7 @@ torch.manual_seed(42)
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
+# To Fix: Replace this with args data_file
 month_dir = Path("/projects/frame_align/data/raw/2023-11-01_2023-11-30/")
 pickle_path = month_dir / "selected_uuids.pkl"
 load_uuids = pd.read_pickle(pickle_path)
@@ -44,6 +45,7 @@ def annotate_frames(model_code, data_file)-> None:
 
     model_prompt_dict = PROMPT_MAPPING[model_code]
 
+    # ADD tqdm here to see progress
     for uuid, image_file, headline in zip(ids, image_urls, headlines):
         img_annotations = {}
         try:
@@ -87,9 +89,19 @@ def annotate_frames(model_code, data_file)-> None:
         img_annotations["title"] = headline
         img_annotations["uuid"] = uuid
 
-        with open(f"./data/annotated/vision/topic_samples_{model_name_short}.jsonl", "a") as f:
+        # logging location of current directory
+        logger.info(f"context: {Path.cwd()}")
+        
+        # ALso vision dir doesnt exist. Create it. Update this to use the month_dir variable
+        output_file = f"/projects/frame_align/data/raw/2023-11-01_2023-11-30/annotated/vision/topic_samples_{model_name_short}.jsonl"
+        # create the directory if it does not exist else write to the file
+        Path(output_file).parent.mkdir(parents=True, exist_ok=True)
+        with open(output_file, "a") as f:
             json.dump(img_annotations, f)
             f.write("\n")
+        # with open(f"data/annotated/vision/topic_samples_{model_name_short}.jsonl", "a") as f:
+        #     json.dump(img_annotations, f)
+        #     f.write("\n")
 
 def main():
     parser = argparse.ArgumentParser(description='Annotate image frames using a VLLM model')
