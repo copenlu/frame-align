@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=sy_img   # Job name
-#SBATCH --array=0-11           # Number of tasks
+#SBATCH --array=0-11          # Number of tasks
 #SBATCH --exclude=hendrixgpu05fl,hendrixgpu06fl
 #SBATCH --nodes=1             # 1 node
 #SBATCH --cpus-per-task=4     # 8 CPUs per task
@@ -24,17 +24,19 @@ source frame-cluster-env/bin/activate
 hostname
 echo $CUDA_VISIBLE_DEVICES
 
+base_dir="/projects/frame_align/data"
+
 # Define directories (update these with actual paths)
-base_dir="/home/vsl333/datasets/news-bert-data/bertopic/allcsvtopics"
 image_dir="/projects/frame_align/data/news-img-data"
 
 # Get the directory name for the current SLURM array task
-directory_name=$(sed -n "$((SLURM_ARRAY_TASK_ID + 1))p" data_download/directories.txt)
+directory_name=$(sed -n "$((SLURM_ARRAY_TASK_ID + 1))p" src/data/data_download/directories.txt)
 
 # Print some debug info
+# TO DO: Add "2023-06-01_2023-06-30" to directories.txt later
 echo "Processing directory: $directory_name"
 hostname
 echo $CUDA_VISIBLE_DEVICES
 
 # Run the Python script with the appropriate arguments
-python3 data_download/download_img.py "$base_dir" "$directory_name" "$image_dir"
+python3 src/data/data_download/download_img.py "$base_dir" "$directory_name" "$image_dir"
