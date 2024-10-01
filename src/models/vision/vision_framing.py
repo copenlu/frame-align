@@ -27,7 +27,7 @@ data="new_data"
 if data=="old_data":
     og_img_path = f"/projects/frame_align/data/img_data/"
 if data=="new_data":
-    og_img_path = f"/projects/frame_align/data/news-img-data/"
+    og_img_path = f"/projects/frame_align/data/news_img_data/"
 
 logger.info(f"Image path: {og_img_path}")
 data_csv_path = f"/projects/frame_align/data/raw/2023-2024/"
