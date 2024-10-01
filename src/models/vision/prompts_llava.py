@@ -47,22 +47,6 @@ The format of the output should be as a json file that looks follows:
 
 </format>
 
-<examples>
-
-{
-    "symbolic-object": "color red",
-    "symbolic-meaning": "danger",
-    "symbolic-meaning-explanation": "The color red in the image symbolizes danger and warns the viewer to be cautious."
-}
-
-{   
-    "symbolic-object": "raised fist",
-    "symbolic-meaning": "power",
-    "symbolic-meaning-explanation": "The raised fist in the image symbolizes power and strength, suggesting that the person is fighting for their rights."
-}
-
-</examples>
-
 <image>\n And now for the image you see, what symbolic meaning is the image trying to convey. 
 
 \nASSISTANT:

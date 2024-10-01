@@ -1,8 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=sy_img   # Job name
 #SBATCH --array=0-11          # Number of tasks
-#SBATCH --exclude=hendrixgpu05fl,hendrixgpu06fl
-#SBATCH --nodes=1             # 1 node
 #SBATCH --cpus-per-task=4     # 8 CPUs per task
 #SBATCH --mem=20GB            # 20GB of memory
 #SBATCH --time=48:00:00        # runtime
@@ -27,7 +25,7 @@ echo $CUDA_VISIBLE_DEVICES
 base_dir="/projects/frame_align/data"
 
 # Define directories (update these with actual paths)
-image_dir="/projects/frame_align/data/news-img-data"
+image_dir="/projects/frame_align/data/shuffled-news-img-data"
 
 # Get the directory name for the current SLURM array task
 directory_name=$(sed -n "$((SLURM_ARRAY_TASK_ID + 1))p" src/data/data_download/directories.txt)

@@ -21,9 +21,16 @@ logger = logging.getLogger(__name__)
 
 script_dir = Path(__file__).resolve().parent    
 logger.info(f"Script directory: {script_dir}")
-og_img_path = f"/projects/frame_align/data/img_data/"
-data_csv_path = f"/projects/frame_align/data/raw/2023-2024/"
 
+data="new_data"
+
+if data=="old_data":
+    og_img_path = f"/projects/frame_align/data/img_data/"
+if data=="new_data":
+    og_img_path = f"/projects/frame_align/data/news-img-data/"
+
+logger.info(f"Image path: {og_img_path}")
+data_csv_path = f"/projects/frame_align/data/raw/2023-2024/"
 
 PROMPT_MAPPING = {
         "llava-hf/llava-1.5-7b-hf": PROMPT_DICT_LLAVA
@@ -39,9 +46,17 @@ def annotate_frames(model_code, dir_name)-> None:
     # type of dir name
     logging.info(f"Type of dir name: {type(dir_name)}")
 
-    pkl_path = os.path.join(og_img_path, dir_name, f"{dir_name}_downloaded_uuids.pkl")
+    if data=="old_data":
+        pkl_path = os.path.join(og_img_path, dir_name, f"{dir_name}_downloaded_uuids.pkl")
+    if data=="new_data":
+        pkl_path = os.path.join(og_img_path, f"{dir_name}_downloaded_uuids.pkl")
+
+    logging.info(f"Loading pickle file from path: {pkl_path}")
+    
     data_csv = os.path.join(data_csv_path, dir_name, "datawithtopiclabels.csv")
-    img_dir_path = os.path.join(og_img_path, dir_name, "correct_downloaded_imgs")
+
+    img_dir_path = os.path.join(og_img_path, dir_name)
+
     unfound_images = []
     # load pickle file
     with open(pkl_path, "rb") as f:
@@ -52,10 +67,15 @@ def annotate_frames(model_code, dir_name)-> None:
     df = pd.read_csv(data_csv)
     # only choose the one in downloaded uuids
     data_df = df[df["id"].isin(downloaded_uuids)]
+
     
     logger.info(f"Will rundata for downloaded images, DF shape: {data_df.shape}")
 
-    output_file = os.path.join(og_img_path, dir_name , f"annotated/vision/{dir_name}_{model_name_short}.jsonl")
+    if data=="old_data":
+        pass
+        # output_file = os.path.join(og_img_path, dir_name , "annotated/vision/", f"{dir_name}_{model_name_short}.jsonl")
+    if data=="new_data":
+        output_file = os.path.join(f"/projects/frame_align/data/new_img_annotated/vision/", dir_name , f"{dir_name}_{model_name_short}.jsonl")
     # delete the file if it exists
     if os.path.exists(output_file):
         logging.info(f"Existed! Deleting existing file: {output_file}")
@@ -65,6 +85,7 @@ def annotate_frames(model_code, dir_name)-> None:
     vlm = LLM(model=model_code)
 
     ids, image_urls, headlines = data_df["id"].tolist(), data_df["image_url"].tolist(), data_df["title"].tolist()
+    logging.info(f"Number of images to process: {len(ids)}")
 
     model_prompt_dict = PROMPT_MAPPING[model_code]
 

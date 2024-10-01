@@ -16,7 +16,9 @@ logger = logging.getLogger(__name__)
 
 def download_images(og_img_dir, directory_name, id_list, image_url_list, image_dir):
     # shuffle urls
-    random.shuffle(image_url_list)
+    # random.shuffle(image_url_list)
+
+
     failed_urls = {}
     failed_ids = {"id": [], "error": []}
 
@@ -81,6 +83,9 @@ def filter_urls(base_dir, directory_name):
     logging.info(f"Reading {csv_file} from {directory_path}")
     df = pd.read_csv(os.path.join(directory_path, csv_file))
 
+    # shuffle them
+    df = df.sample(frac=1).reset_index(drop=True)
+
     print(df.columns)
     # get 'id' and 'image_url' columns and drop rows with missing image_url
     df_image = df[['id', 'image_url']].dropna(subset=['image_url']) 
@@ -104,9 +109,11 @@ if __name__ == "__main__":
     # base_dir = "/home/vsl333/datasets/news-bert-data/bertopic/allcsvtopics"
     args = parser.parse_args()
 
+    # og_img_dir = the bath where "undownloaded_uuids.csv" is located
     og_img_dir = args.base_dir + "/img_data"
 
     data_df, id_list, image_url_list = filter_urls(og_img_dir, args.directory_name)
+    
     logging.info(f"Downloading images for {args.directory_name}")
     download_images(og_img_dir, args.directory_name, id_list, image_url_list, args.image_dir)
     logging.info(f"Download complete for {args.directory_name}")
