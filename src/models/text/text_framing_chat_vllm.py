@@ -14,12 +14,6 @@ random.seed(42)
 torch.manual_seed(42)
 
 def get_messages(model_code:str, article:str, task:str, task_prompt:str) -> list:
-    # # if 'mistral' in model_code:
-    #     if task == "Topic":
-    #         messages = [{"role": "user", "content": SYS_PROMPT + task_prompt + f"Article: {article}\n" + POST_PROMPT}]
-    #     else:
-    #         messages = [{"role": "user", "content": SYS_PROMPT + task_prompt + POST_PROMPT}]
-    # else:
     if task == "Topic":
         messages = [{"role": "system", "content": SYS_PROMPT}, {"role": "user", "content": task_prompt + f"Article: {article}\n" + POST_PROMPT}]
     else:

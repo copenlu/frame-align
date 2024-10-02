@@ -35,20 +35,20 @@ A set of generic news frames with an id, name and description are: {FRAMES}.
 Your task is to code articles for one of the above frames and provide justification for it. Format your output as a json entry with the fields 'frame_justification', 'frame_id', 'frame_name'.
 'frame_name' should be one of the above listed frames. Only output one frame per article."""
 
-# TONE_PROMPT = "Output the tone of the article. The tone is one or two words that describes the communicative tone that is used by the author when writing the article. Some examples of tone are Fatalistic, Optimistic, Neutral, Passionate, Pessimistic. Provide a justification for the tone. Format your output as a json entry with the fields 'justification_tone' and 'tone'."
+TONE_PROMPT = "Output the tone of the article. The tone is one or two words that describes the communicative tone that is used by the author when writing the article. Some examples of tone are Fatalistic, Optimistic, Neutral, Passionate, Pessimistic. Provide a justification for the tone. Format your output as a json entry with the fields 'justification_tone' and 'tone'."
 
 ISSUE_FRAMING_PROMPT = """Framing is a way of classifying and categorizing information that allows audiences to make sense of and give meaning to the world around them (Goffman, 1974).
 Entman (1993) has defined framing as “making some aspects of reality more salient in a text in order to promote a particular problem definition, causal interpretation, moral evaluation, and/or treatment recommendation for the item described”.
 Frames serve as metacommunicative structures that use reasoning devices such as metaphors, lexical choices, images, symbols, and actors to evoke a latent message for media users (Gamson, 1995).
 There are several ways to cover a specific issue in the news. For instance, the issue of climate change can be framed as a scientific issue, a political issue, a moral issue, a health issue etc. with frames such as Global Doom, Local Tragedies, Sustainable future, etc. Based on the topic of the article, come up with an issue-specific frame that is relevant to the topic of the article. Provide a justification for the frame. Format your output as a json entry with the fields 'issue_frame_justification' and 'issue_frame'."""
 
-POST_PROMPT = " Output only the json and no other text."
+POST_PROMPT = " Output only the json and no other text. Make sure to add escape characters where necessary to make it a valid json output."
 
 text_prompt_dict = {
     "Topic": TOPIC_PROMPT,
     "Summary": SUMMARY_PROMPT,
     "Entity": ENTITY_PROMPT,
     "GenericFraming": GENERIC_FRAMING_PROMPT,
-    # "Tone": TONE_PROMPT,
+    "Tone": TONE_PROMPT,
     "IssueFraming": ISSUE_FRAMING_PROMPT
 }

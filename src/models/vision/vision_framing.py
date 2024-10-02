@@ -75,7 +75,8 @@ def annotate_frames(model_code, dir_name)-> None:
         pass
         # output_file = os.path.join(og_img_path, dir_name , "annotated/vision/", f"{dir_name}_{model_name_short}.jsonl")
     if data=="new_data":
-        output_file = os.path.join(f"/projects/frame_align/data/new_img_annotated/vision/", dir_name , f"{dir_name}_{model_name_short}.jsonl")
+        output_file = os.path.join(f"/projects/frame_align/data/annotated/vision/", f"{dir_name}_{model_name_short}.jsonl")
+        output_fail_file = os.path.join(f"/projects/frame_align/data/annotated/vision/", f"{dir_name}_{model_name_short}_fail.tsv")
     # delete the file if it exists
     if os.path.exists(output_file):
         logging.info(f"Existed! Deleting existing file: {output_file}")
@@ -133,12 +134,19 @@ def annotate_frames(model_code, dir_name)-> None:
                 "multi_modal_data": {"image": raw_image}
             }
             outputs = vlm.generate(inputs, sampling_params=sampling_params)
+            output_text = outputs[0].outputs[0].text
             try:
-                output_json = json.loads(outputs[0].outputs[0].text)
+                output_json = json.loads(output_text)
                 img_annotations.update(output_json)
             except Exception as e:
-                print(f"Skipped-{uuid}-{task}: {e}")
-                pass
+                try:
+                    output_json = json.loads(output_text[output_text.index('{'):output_text.rindex('}')+1])
+                    img_annotations.update(output_json)
+                except Exception as e:
+                    print(f"Skipped-uuid-{uuid}-{task}: {e}")
+                    with open(output_fail_file, "a") as f:
+                        f.write(f"{uuid}\t{task}\t{output_text}\n")
+                    continue
         img_annotations["image_url"] = image_file
         img_annotations["title"] = headline
         img_annotations["uuid"] = uuid
