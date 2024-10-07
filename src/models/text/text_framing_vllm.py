@@ -1,6 +1,7 @@
 import json
 import torch
 import random
+import pickle
 import argparse
 import numpy as np
 import pandas as pd
@@ -18,19 +19,21 @@ def get_messages(model_code:str, article:str, task_prompt:str) -> list:
 
 def annotate_frames(model_code, data_file, output_dir)-> None:
     model_name_short = model_code.split('/')[1].split('-')[0]
+    # Find uuids to run
+    part = "part2"
+
     # Month for which data is running
     data_name = Path(data_file).parent.stem
+    uuids_to_run = pickle.load(open(f"/projects/frame_align/data/pkl/{data_name}_{part}.pkl", "rb"))
 
-    output_file = Path(f"{output_dir}/{data_name}_{model_name_short}.jsonl")
+    output_file = Path(f"{output_dir}/{data_name}_{part}.jsonl")
+    output_fail_file = Path(f"{output_dir}/{data_name}_{part}_fail.tsv")
 
-    output_fail_file = Path(f"{output_dir}/{data_name}_{model_name_short}_fail.tsv")
-    if output_file.exists():
-        print(f"Output file {output_file} already exists.")
-        annotated_uuids = pd.read_json(output_file, lines=True)['id'].tolist()
     news_df = pd.read_csv(data_file).sample(frac=1, random_state=42).reset_index(drop=True)
+    news_df = news_df[news_df['id'].isin(uuids_to_run)]
 
     if 'mistral' in model_code:
-        llm = LLM(model=model_code, tokenizer_mode="mistral", config_format="mistral", load_format="mistral")
+        llm = LLM(model=model_code, tokenizer_mode="mistral", config_format="mistral", load_format="mistral", max_model_len=8096, dtype='half')
     else:
         llm = LLM(model=model_code)
 
@@ -39,9 +42,6 @@ def annotate_frames(model_code, data_file, output_dir)-> None:
     for i, row in news_df.iterrows():
         article_text = row['maintext']
         uuid = row['id']
-        if uuid in annotated_uuids:
-            print(f"Skipping {uuid} as already annotated.")
-            continue
 
         article_annotations = {}
         for task, task_prompt in text_prompt_dict.items():
