@@ -20,7 +20,7 @@ def get_messages(model_code:str, article:str, task_prompt:str) -> list:
 def annotate_frames(model_code, data_file, output_dir)-> None:
     model_name_short = model_code.split('/')[1].split('-')[0]
     # Find uuids to run
-    part = "part2"
+    part = "part1"
 
     # Month for which data is running
     data_name = Path(data_file).parent.stem
@@ -28,6 +28,9 @@ def annotate_frames(model_code, data_file, output_dir)-> None:
 
     output_file = Path(f"{output_dir}/{data_name}_{part}.jsonl")
     output_fail_file = Path(f"{output_dir}/{data_name}_{part}_fail.tsv")
+    if output_file.exists():
+        print(f"Output file {output_file} already exists. Skipping annotation.")
+        return
 
     news_df = pd.read_csv(data_file).sample(frac=1, random_state=42).reset_index(drop=True)
     news_df = news_df[news_df['id'].isin(uuids_to_run)]
