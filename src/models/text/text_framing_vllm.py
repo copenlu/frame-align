@@ -28,6 +28,9 @@ def annotate_frames(model_code, data_file, output_dir)-> None:
 
     output_file = Path(f"{output_dir}/{data_name}_{part}.jsonl")
     output_fail_file = Path(f"{output_dir}/{data_name}_{part}_fail.tsv")
+    if output_file.exists():
+        print(f"Output file {output_file} already exists. Skipping annotation.")
+        return
 
     news_df = pd.read_csv(data_file).sample(frac=1, random_state=42).reset_index(drop=True)
     news_df = news_df[news_df['id'].isin(uuids_to_run)]
