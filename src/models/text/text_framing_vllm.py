@@ -20,7 +20,7 @@ def get_messages(model_code:str, article:str, task_prompt:str) -> list:
 def annotate_frames(model_code, data_file, output_dir)-> None:
     model_name_short = model_code.split('/')[1].split('-')[0]
     # Find uuids to run
-    part = "part2"
+    part = "part1"
 
     # Month for which data is running
     data_name = Path(data_file).parent.stem

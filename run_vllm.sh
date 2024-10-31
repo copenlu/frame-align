@@ -15,4 +15,4 @@ month_dir=${directories[$SLURM_ARRAY_TASK_ID]}
 echo "CUDA_VISIBLE_DEVICES: $CUDA_VISIBLE_DEVICES"
 echo "processing file: ${month_dir}/datawithtopiclabels.csv"
 
-python src/models/text/text_framing_vllm.py --data_file "${month_dir}/datawithtopiclabels.csv" --output_dir "/projects/frame_align/data/annotated/fixed/part2/" --model_code mistralai/Mistral-7B-Instruct-v0.3
+python src/models/text/text_framing_vllm.py --data_file "${month_dir}/datawithtopiclabels.csv" --output_dir "/projects/frame_align/data/srishti_part1/" --model_code mistralai/Mistral-7B-Instruct-v0.3
