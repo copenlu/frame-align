@@ -5,7 +5,7 @@
 #SBATCH --partition=gpu    # Partition to submit to
 #SBATCH --cpus-per-task=2     # 8 CPUs per task
 #SBATCH --mem=20GB            # 30GB of memory
-#SBATCH --time=10-00:00:00        # runtime
+#SBATCH --time=30:00:00        # runtime
 
 
 base_dir="/projects/frame_align/data/raw/2023-2024"

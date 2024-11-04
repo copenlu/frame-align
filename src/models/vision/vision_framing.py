@@ -33,7 +33,8 @@ logger.info(f"Image path: {og_img_path}")
 data_csv_path = f"/projects/frame_align/data/raw/2023-2024/"
 
 PROMPT_MAPPING = {
-        "llava-hf/llava-1.5-7b-hf": PROMPT_DICT_LLAVA
+        "llava-hf/llava-1.5-7b-hf": PROMPT_DICT_LLAVA,
+        "mistralai/Pixtral-12B-2409": PROMPT_DICT_LLAVA
         }
 
 sampling_params = SamplingParams(temperature=0.2, max_tokens=1000)
@@ -82,8 +83,8 @@ def annotate_frames(model_code, dir_name)-> None:
         logging.info(f"Existed! Deleting existing file: {output_file}")
         os.remove(output_file)
 
-
-    vlm = LLM(model=model_code)
+    # vlm = LLM(model=model_code)
+    vlm = LLM(model=model_code, tokenizer_model="mistral")
 
     ids, image_urls, headlines = data_df["id"].tolist(), data_df["image_url"].tolist(), data_df["title"].tolist()
     logging.info(f"Number of images to process: {len(ids)}")
@@ -172,7 +173,7 @@ def annotate_frames(model_code, dir_name)-> None:
 
 def main():
     parser = argparse.ArgumentParser(description='Annotate image frames using a VLLM model')
-    parser.add_argument('--model_name', type=str, help='Model name', default='llava-hf/llava-1.5-7b-hf')
+    parser.add_argument('--model_name', type=str, help='Model name', default='mistralai/Pixtral-12B-2409')
     parser.add_argument('--data_file', type=str, help='Data file with image urls', default="/projects/frame_align/data/raw/2023-24/default/datawithtopiclabels.csv")
     parser.add_argument('--dir_name', type=str, help='Directory name for saving annotated frames', default="default")
     args = parser.parse_args()
