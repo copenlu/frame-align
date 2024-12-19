@@ -61,7 +61,8 @@ The format of the output should be as a json file that looks follows:
 
 
 FRAMES = f"""
-    1: Economic - costs, benefits, or other financial implications,
+    1: Economic - costs, benefits, or other financial implications. The image can includes things including but not limited to  money, funding, taxes, bank, money, meetings with a logo of a financial institution. 
+
     2: Capacity and resources - availability of physical, human, or financial resources, and capacity of current systems, 
     3: Morality - religious or ethical implications,
     4: Fairness and equality - balance or distribution of rights, responsibilities, and resources,
@@ -86,10 +87,26 @@ Entman (1993) has defined framing as “making some aspects of reality more sali
 Frames serve as metacommunicative structures that use reasoning devices such as metaphors, lexical choices, images, symbols, and actors to evoke a latent message for media users (Gamson, 1995).
 A set of generic news frames with an id, name and description are: {FRAMES}."""
 
+POST_PROMPT_FIX = """
+# tell where to put None∏
+# refine prompts for what is available in the image before choosing- choose from codebook
+# refine to mention that extra informmation should not be assumed
+# get rid of definition if not needed
+"""
+
 PROMPT_TASK = """
 Your task is to see the image and based on the understanding of the image, choose the correct frame.
 
-<image>\n And now for the image you see, identify the symbolic meaning and actors used to evoke a latent message for news media users. Using this information, what frame is present in the image? Look at all the frames first and then choose the correct frame. Write it in json format with fields as "frame-id", "frame-name" and "frame-jusitification".
+<image>\n And now for the image you see, identify the symbolic meaning and actors used to evoke a latent message for news media users. Using this information, what frame is present in the image? Look at all the frames first and then choose the correct frame. {POST_PROMPT_FIX} Write it in json format with fields as "frame-id", "frame-name" and "frame-jusitification".
+
+\nASSISTANT:
+"""
+
+OPEN_ENDED_PROMPT_TASK = """
+Your task is to see the image and based on the understanding of the image, choose the correct frame.
+
+<image>\n And now for the image you see, identify the symbolic meaning and actors used to evoke a latent message for news media users. Using this information, what frame is present in the image? Look at all the frames first and then choose the correct frame. {POST_PROMPT_FIX}
+You are allowed to explain the reasoning before choosing the answer. Write it in json format with field as "frame-answer-with-reason".
 
 \nASSISTANT:
 """
@@ -97,8 +114,11 @@ Your task is to see the image and based on the understanding of the image, choos
 # framing prompt
 prompt_generic = SYS_PROMPT + FRAMING_PROMPT + PROMPT_TASK
 
+prompt_open_ended = SYS_PROMPT + FRAMING_PROMPT + OPEN_ENDED_PROMPT_TASK
+
 # PROMPT_LIST_LLAVA = [prefix_instruction + prompt for prompt in PROMPT_LLAVA]
 
-PROMPT_DICT_LLAVA = {'caption': prompt_caption, 'actor': prompt_actor, 'symbolic': prompt_symbolic, 'generic-frame': prompt_generic}
+PROMPT_DICT_LLAVA = {'caption': prompt_caption, 'actor': prompt_actor, 'symbolic': prompt_symbolic, 'generic-frame': prompt_generic, 
+'open-ended-frame': prompt_open_ended}
 
 PROMPT_DICT_LLAVA = {k: prefix_instruction + v for k, v in PROMPT_DICT_LLAVA.items()}
