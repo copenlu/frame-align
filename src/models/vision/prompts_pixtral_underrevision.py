@@ -61,11 +61,11 @@ The format of the output should be as a json file that looks follows:
 
 
 FRAMES = f"""
-    1: Economic - costs, benefits, or other finance related. The image can includes things including but not limited to  money, funding, taxes, bank, meetings with a logo of a financial institution. 
+    1: Economic - costs, benefits, or other finance related. The image can includes things including but not limited to  money, funding, taxes, bank, meetings with a logo of a financial institution. If you are using logo of a financial instituion to classify it as economic, make sure it is clearly visible. If it is not clearly visible, it should be classified as 'None'. A professional attire in itself doesn not mean economic frame. 
 
     2: Capacity and resources - availability of physical, human, or financial resources, and capacity of current systems. In the image, we can see things including but not limited to a geographical area, labour, people working in an institution, or images that convey scarcity or surplus in some way. 
     
-    3: Morality - religious or ethical implications. In the image, we can see things including but not limited to god, death, protests related to moral issues.
+    3: Morality - religious or ethical implications. In the image, we can see things including but not limited to god, death, priests, church, protests related to moral issues.
     
     4: Fairness and equality - balance or distribution of rights, responsibilities, and resources. In the image, we can see things including but not limited to the fight for civil or political rights or calls to stopping discrimination.
     
@@ -73,23 +73,25 @@ FRAMES = f"""
     
     6: Policy prescription and evaluation - discussion of specific policies aimed at addressing problems. In the image, we can see things including but not limited to discussions on rule, rule making bodies, or people explicitly discussing policies.
     
-    7: Crime and punishment - effectiveness and implications of laws and their enforcement. In the image, we can see things including but not limited to criminal activities, violence, and police presence.
+    7: Crime and punishment - effectiveness and implications of laws and their enforcement. In the image, we can see things including but not limited to criminal activities, violence, and police presence. Competitve sports with players and referrees does not 
+    imply enforcement of laws and should not be classified as crime and punishment.
     
     8: Security and defense - threats to the individual, community, or nation. In the image, we can see things including but not limited to military uniforms, defense personnel, border patrol, war.
     
-    9: Health and safety - health care, sanitation, public safety. In the image, we can see things including but not limited to doctors, nurses, injury, disease, or events with environmental impact that may impact health and safety.
+    9: Health and safety - health care, sanitation, public safety. In the image, we can see things including but not limited to doctors, nurses, injury, disease, or events with environmental impact that may impact health and safety. Images with objects like coffee, drinks, food items or activities like sports which no clear message of positively or negatively affecting health or safety should be classified as 'None'. 
     
-    10: Quality of life - threats and opportunities for the individual's wealth, happiness, and well-being. In the image, we can see things including but not limited to happiness, joy, hardships of people, homelessness. This can also things like happy children, food items or people enjoying a meal.
+    10: Quality of life - threats and opportunities for the individual's wealth, happiness, and well-being. In the image, we can see things that improves happiness or demonstrates quality of life in some form. It also includes things that demonstrate deterioration of quality of life by showing hardships of people, homelessness etc. This may also include happy children, food items that demonstrate good quality of life or people enjoying a nice meal.
     
-    11: Cultural identity - traditions, customs, or values of a social group in relation to a policy issue. In the image, we can see things including but not limited to concerts, cultural dance, art, and prominent people related to these topics.
+    11: Cultural identity - traditions, customs, or values of a social group in relation to a policy issue. In the image, we can see things including but not limited to concerts, cultural dance, sports, art, celebrities, artists and prominent people related to these topics. Examples, a person wearing a traditional dress, a painting, a photo album, a logo of a company. This can also include sports only if sports shows clear information of countries e.g. jerseys, flags etc. Otherwise, it should be classified as 'None'.
     
-    12: Public opinion - attitudes and opinions of the general public, including polling and demographics. Includes generic protests, riots, and strikes and inclding but not limited to sharing petitions and encouraging people to take political action.
+    12: Public opinion - attitudes and opinions of the general public, including polling and demographics. Includes generic protests, riots, and strikes and including but not limited to sharing petitions and encouraging people to take political action. It will also include news broadcasts, talk shows, and interviews with people that are related to public opinion at large. 
     
-    13: Political - considerations related to politics and politicians, including lobbying, elections, and attempts to sway voters. In the image, we can see things related to politicians, elections, voting, political campaigns. Just formal clothing does not mean political frame.
+    13: Political - considerations related to politics and politicians, including lobbying, elections, and attempts to sway voters. In the image, we can see things related to politicians, elections, voting, political campaigns. Just formal clothing does not mean political frame. If the images does not have a political person which is recognizable, it should not be classified as political. Simply having a formal attire is not enough to classify it as political.
     
     14: External regulation and reputation - international reputation or foreign policy. In the image, we can see things including but not limited to international organizations, global discussions, cross country forums or foreign policy.
     
-    15: None - no frame could be identified because of lack of information in the image. This should be selected when no other frame is applicable.
+    15: None - no frame could be identified because of lack of information in the image. This should be selected when no other frame is applicable. Example, a handshake with no other information, a person in formal attire with no other information, a logo of a company with no other information, a landscape with no other information, a person in a photo album with no other information, a person speaking with no other information about the content of the speech or person's identity, a formal event with 
+    no other information etc.
     """
 
 SYS_PROMPT = f"""You are an intelligent and logical journalism scholar conducting analysis of news articles. Your task is to see an image present in a news article and answer the question based on the image."""
@@ -101,8 +103,7 @@ FRAMING_PROMPT = f"""A set of generic news frames with an id, name and descripti
 
 POST_PROMPT_FIX = """
 If the image has some minor elements like a photo album or painting in the background or the clothing of the subject, this should be ignored as it does not capture the larger communicative intent. For every case where an image does not clearly fit into one of the frames, you should select "None". 
-For instance, an image should only be termed as political when the subjects are clearly politicians. If the image is of a person in formal attire, it should not be classified as political unless there is other information present in the image that clearly indicates a political frame. Similarly, if the image is of a handshake or something else with financial implications, it should not automatically be classified as economic unless there is other information present in the image that clearly indicates matters economic matters. Rather, these should be classified as "None".
-"""
+For instance, an image should only be termed as political when the subjects are clearly politicians. If the image is of a person in formal attire, it should not be classified as political unless there is other information present in the image that clearly indicates a political frame. Similarly, if the image is simply of a handshake with no other information, it will be 'None'. If handshake is with image of a bank, it could be economic; in a press conference it could mean External regulation and reputation.   Images related to sports which have specific information of countries should be classified as 'cultural identity' otherwise 'None'. If an image has multiple intents, choose the most relevant one."""
 
 # For e.g., a handshake doesnot mean economic tranasction. Image showing happy children shows quality of life or cultural identiyy rather than threat or security. lanscape or open public space might be related to quality of life or capacity and resources. If it is a logo of a company, classify it as a none. Formal attire does not necesarily mean political frame, it can be cultural identity as well or may be none if no other information is present.
 # Also note the difference between morality and fairness. Morality vs Fairness 

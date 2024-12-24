@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=medium_f   # Job name
+#SBATCH --job-name=sy_framing   # Job name
 #SBATCH --array=0
 #SBATCH --gres=gpu:a40:1 
 #SBATCH --cpus-per-task=4     # 8 CPUs per task
