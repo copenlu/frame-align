@@ -64,7 +64,7 @@ def annotate_frames(model_code, dir_name, data_csv_path)-> None:
 
     data_csv_df = pd.read_csv(data_csv_path)
     # data_csv_df = data_csv_df.sample(n=100, random_state=42)
-    downloaded_uuids = data_csv_df["text_id"].tolist()
+    downloaded_uuids = data_csv_df["id"].tolist()
 
     logger.info(f"Processing UUIDs: {len(downloaded_uuids)}")
     logger.info(f"Loading CSV from path: {data_csv_path}")
@@ -94,14 +94,16 @@ def annotate_frames(model_code, dir_name, data_csv_path)-> None:
     # Issues: https://github.com/vllm-project/vllm/issues/8863
     
     
-    ids, headlines, text_frame_names = data_csv_df["text_id"].tolist(), data_csv_df["title"].tolist(), data_csv_df["text_frame_name"].tolist()
+    # ids, headlines, text_frame_names = data_csv_df["text_id"].tolist(), data_csv_df["title"].tolist(), data_csv_df["text_frame_name"].tolist()
+    ids, headlines, topics = data_csv_df["id"].tolist(), data_csv_df["title"].tolist(), data_csv_df["topic_label"].tolist()
+
     logging.info(f"Number of images to process: {len(ids)}")
 
     model_prompt_dict = PROMPT_MAPPING[model_code]
 
     # ADD tqdm here to see progress
     logger.info(f"Number of data points processing: {len(ids)}")
-    for uuid, headline, text_frame in zip(ids, headlines, text_frame_names):
+    for uuid, headline, topic in zip(ids, headlines, topics):
 
         # load image from image directory
         image_file_name = os.path.join(img_path, f"{uuid}.jpg")
@@ -156,7 +158,8 @@ def annotate_frames(model_code, dir_name, data_csv_path)-> None:
         img_annotations["image_url"] = f"images/{uuid}.jpg"
         img_annotations["title"] = headline
         img_annotations["uuid"] = uuid
-        img_annotations["text_frame_name"]= text_frame
+        img_annotations["topic_label"] = topic
+        # img_annotations["text_frame_name"]= text_frame
 
         # logging location of current directory
         logger.info(f"context: {Path.cwd()}")

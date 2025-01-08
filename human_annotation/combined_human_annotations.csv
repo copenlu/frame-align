@@ -1,665 +1,301 @@
 example,uuid,all_frames
-./data/images/00456abb-2a66-46d5-8b18-df334a4561ef.jpg,00456abb-2a66-46d5-8b18-df334a4561ef,no-frame
-./data/images/015390f6-3292-471a-a3a5-99c79cb036fe.jpg,015390f6-3292-471a-a3a5-99c79cb036fe,"morality, public opinion"
-./data/images/01631531-1586-4983-99b7-6398e321bbe2.jpg,01631531-1586-4983-99b7-6398e321bbe2,no-frame
-./data/images/01643676-1a40-450d-811c-4aed42721fae.jpg,01643676-1a40-450d-811c-4aed42721fae,economic
-./data/images/01fe574f-2b8d-433f-93db-226861727924.jpg,01fe574f-2b8d-433f-93db-226861727924,"policy prescription and evaluation, fairness and equality, cultural identity"
-./data/images/02c3a00d-3f3a-4f0d-b8b8-3efc3a3ebc29.jpg,02c3a00d-3f3a-4f0d-b8b8-3efc3a3ebc29,"political, legality, constitutionality and jurisprudence"
-./data/images/02fcc6f2-cc99-456c-a38c-755c40e9f31d.jpg,02fcc6f2-cc99-456c-a38c-755c40e9f31d,"political, public opinion, cultural identity"
-./data/images/031178ac-3b7a-49b3-9279-45ece395bc72.jpg,031178ac-3b7a-49b3-9279-45ece395bc72,"no-frame, no-frame, no-frame"
-./data/images/032190f4-92dc-4b0f-868f-b93007c2f889.jpg,032190f4-92dc-4b0f-868f-b93007c2f889,capacity and resources
-./data/images/032e53dc-b546-4637-b5ee-76269e3b5fd8.jpg,032e53dc-b546-4637-b5ee-76269e3b5fd8,"capacity and resources, economic"
-./data/images/034415da-0ac6-4611-991a-3927aadc6c1d.jpg,034415da-0ac6-4611-991a-3927aadc6c1d,no-frame
-./data/images/034cffd8-1dd6-4f84-9051-1b723f824af8.jpg,034cffd8-1dd6-4f84-9051-1b723f824af8,economic
-./data/images/034e4298-acdc-4e36-88bc-a77f801af00a.jpg,034e4298-acdc-4e36-88bc-a77f801af00a,"quality of life, health and safety, morality, crime and punishment"
-./data/images/038fee2a-16af-44d2-a279-cb782e5827b9.jpg,038fee2a-16af-44d2-a279-cb782e5827b9,political
-./data/images/03ea9c99-2132-4927-9b19-1ca1426eb9b3.jpg,03ea9c99-2132-4927-9b19-1ca1426eb9b3,"quality of life, cultural identity"
-./data/images/03eca3a2-d3c4-472e-8d43-4c9649f363b4.jpg,03eca3a2-d3c4-472e-8d43-4c9649f363b4,"capacity and resources, economic"
-../human_annotation/images/0416eb08-005f-44ba-aec8-ca0ee5e3faaa.jpg,0416eb08-005f-44ba-aec8-ca0ee5e3faaa,"no-frame, cultural identity"
-./data/images/063be4b8-c08f-4dfd-8579-49a5d31068fc.jpg,063be4b8-c08f-4dfd-8579-49a5d31068fc,public opinion
-./data/images/064049f1-cd89-497b-86ff-a47ada1edb29.jpg,064049f1-cd89-497b-86ff-a47ada1edb29,cultural identity
-./data/images/064e5f65-d06e-4b69-b41c-24727be771ec.jpg,064e5f65-d06e-4b69-b41c-24727be771ec,"quality of life, capacity and resources, economic"
-./data/images/06fe1031-8941-4957-890c-9f7588bc24cd.jpg,06fe1031-8941-4957-890c-9f7588bc24cd,cultural identity
-./data/images/0713587e-abad-471a-aa9a-e9ccc67dc1e4.jpg,0713587e-abad-471a-aa9a-e9ccc67dc1e4,"quality of life, capacity and resources, fairness and equality"
-./data/images/077dbace-1c37-464c-9aec-fd577cec1ad3.jpg,077dbace-1c37-464c-9aec-fd577cec1ad3,policy prescription and evaluation
-./data/images/078141aa-ed63-4c85-a8a9-417b004e4381.jpg,078141aa-ed63-4c85-a8a9-417b004e4381,"no-frame, no-frame, no-frame"
-./data/images/0793bf38-8a5a-44b4-a703-b82d0b926d9d.jpg,0793bf38-8a5a-44b4-a703-b82d0b926d9d,quality of life
-./data/images/0795cbf2-2b01-4f28-95a4-9574d83e54eb.jpg,0795cbf2-2b01-4f28-95a4-9574d83e54eb,no-frame
-./data/images/07d6e72b-38ac-404b-addb-397118fbcdc4.jpg,07d6e72b-38ac-404b-addb-397118fbcdc4,cultural identity
-./data/images/0852c4a0-03d3-45bd-a08f-dd790ac299a9.jpg,0852c4a0-03d3-45bd-a08f-dd790ac299a9,"economic, cultural identity"
-./data/images/087f86af-8c1a-4b46-a86f-80505e1bbc20.jpg,087f86af-8c1a-4b46-a86f-80505e1bbc20,no-frame
-./data/images/08f4ad84-49a6-40db-948d-5c821dafa9e0.jpg,08f4ad84-49a6-40db-948d-5c821dafa9e0,"capacity and resources, economic"
-./data/images/092d3fd5-9932-4893-a79b-f88a7a3e7d54.jpg,092d3fd5-9932-4893-a79b-f88a7a3e7d54,cultural identity
-./data/images/09d839d3-7c73-42c9-a1e1-abf8895ffdeb.jpg,09d839d3-7c73-42c9-a1e1-abf8895ffdeb,health and safety
-./data/images/0adff73d-a195-4e59-9850-c8f27264eb53.jpg,0adff73d-a195-4e59-9850-c8f27264eb53,"economic, cultural identity"
-./data/images/0b38a117-687d-49b0-a597-c95538021316.jpg,0b38a117-687d-49b0-a597-c95538021316,cultural identity
-./data/images/0b7d3703-2bc5-476a-950e-6aceb184d905.jpg,0b7d3703-2bc5-476a-950e-6aceb184d905,"health and safety, health and safety, crime and punishment"
-./data/images/0c5d5429-3db0-46a7-8d92-7231ac9ced12.jpg,0c5d5429-3db0-46a7-8d92-7231ac9ced12,no-frame
-./data/images/0c68f596-9368-46d3-a264-4ce76a6271d2.jpg,0c68f596-9368-46d3-a264-4ce76a6271d2,no-frame
-./data/images/0d4d106a-551f-4616-98f5-b82d3443031e.jpg,0d4d106a-551f-4616-98f5-b82d3443031e,cultural identity
-./data/images/0d8cc6ae-ef62-4e31-b8f7-75a668c19ba1.jpg,0d8cc6ae-ef62-4e31-b8f7-75a668c19ba1,"policy prescription and evaluation, legality, constitutionality and jurisprudence"
-./data/images/0e32baba-da8d-4ec5-8f76-ef628275857d.jpg,0e32baba-da8d-4ec5-8f76-ef628275857d,"quality of life, political, fairness and equality, economic, public opinion"
-./data/images/0ee7df63-1ef4-47e7-a82e-98463e272999.jpg,0ee7df63-1ef4-47e7-a82e-98463e272999,capacity and resources
-./data/images/0efe90bf-412a-449f-92c0-0093e9fa2f11.jpg,0efe90bf-412a-449f-92c0-0093e9fa2f11,cultural identity
-./data/images/0f029887-34d2-49ba-9772-747d83955217.jpg,0f029887-34d2-49ba-9772-747d83955217,"political, public opinion"
-./data/images/0f127b67-dcde-4a2e-8b83-6ff09bf824f9.jpg,0f127b67-dcde-4a2e-8b83-6ff09bf824f9,crime and punishment
-./data/images/0f5b6047-b5c8-4841-acd0-16edf714bda3.jpg,0f5b6047-b5c8-4841-acd0-16edf714bda3,no-frame
-./data/images/1010cba1-95d6-4900-b5fc-6034507379cb.jpg,1010cba1-95d6-4900-b5fc-6034507379cb,economic
-../human_annotation/images/105a9574-eb3f-4219-a7a3-10aa432959bf.jpg,105a9574-eb3f-4219-a7a3-10aa432959bf,no-frame
-./data/images/10cf890b-615f-456e-850d-a93a3a07590f.jpg,10cf890b-615f-456e-850d-a93a3a07590f,"policy prescription and evaluation, health and safety, morality, economic, public opinion"
-./data/images/10e67ef4-e6bb-4416-8cb2-2deb15eee9bf.jpg,10e67ef4-e6bb-4416-8cb2-2deb15eee9bf,"health and safety, crime and punishment"
-./data/images/10f109b4-d153-4219-84d9-cd1497d01dcb.jpg,10f109b4-d153-4219-84d9-cd1497d01dcb,"quality of life, health and safety"
-./data/images/10f66023-bcb2-4402-9b8a-354a49d0ebad.jpg,10f66023-bcb2-4402-9b8a-354a49d0ebad,cultural identity
-./data/images/1163d127-298a-4ef4-8788-582c1b12f501.jpg,1163d127-298a-4ef4-8788-582c1b12f501,"capacity and resources, health and safety"
-./data/images/12bfa350-48c0-46f3-a8a9-9d4daeb0842f.jpg,12bfa350-48c0-46f3-a8a9-9d4daeb0842f,"political, legality, constitutionality and jurisprudence"
-./data/images/12efbc35-a083-4487-848d-c1d6a75c1203.jpg,12efbc35-a083-4487-848d-c1d6a75c1203,"capacity and resources, political, fairness and equality, health and safety, economic, public opinion, cultural identity"
-./data/images/137b0747-029b-4924-8cef-e05e233da5a9.jpg,137b0747-029b-4924-8cef-e05e233da5a9,"cultural identity, political, political, legality, constitutionality and jurisprudence, morality"
-./data/images/13f5735f-a6bb-4396-95f8-f0d7e0430636.jpg,13f5735f-a6bb-4396-95f8-f0d7e0430636,health and safety
-./data/images/1446d5db-d23b-43d2-9ba9-cb13a07237ac.jpg,1446d5db-d23b-43d2-9ba9-cb13a07237ac,quality of life
-./data/images/145a123a-d480-4bd8-a879-13ab326052ab.jpg,145a123a-d480-4bd8-a879-13ab326052ab,political
-./data/images/145e2232-b6d1-4fe6-99c2-fd127354f2f9.jpg,145e2232-b6d1-4fe6-99c2-fd127354f2f9,"no-frame, no-frame, political"
-./data/images/148d3b8b-5b6b-4218-a706-be4dff55cc64.jpg,148d3b8b-5b6b-4218-a706-be4dff55cc64,economic
-./data/images/1678ebb5-64e5-40ea-8430-8d5abad289c2.jpg,1678ebb5-64e5-40ea-8430-8d5abad289c2,no-frame
-../human_annotation/images/16961a96-5e29-4245-bc49-aaca6c2e172d.jpg,16961a96-5e29-4245-bc49-aaca6c2e172d,"crime and punishment, security and defense"
-./data/images/169f574a-3e78-4624-b003-776036596b08.jpg,169f574a-3e78-4624-b003-776036596b08,quality of life
-./data/images/177c68cd-22e6-47cb-8d60-c8a95a8a8995.jpg,177c68cd-22e6-47cb-8d60-c8a95a8a8995,policy prescription and evaluation
-./data/images/17be6e2e-850d-4c2b-a740-8534cc1eb01f.jpg,17be6e2e-850d-4c2b-a740-8534cc1eb01f,no-frame
-../human_annotation/images/17e639d0-f9c1-4ce8-ad56-c74cd4cd1165.jpg,17e639d0-f9c1-4ce8-ad56-c74cd4cd1165,"quality of life, cultural identity, quality of life"
-./data/images/180bb862-268e-414b-89e1-d677d0a634c2.jpg,180bb862-268e-414b-89e1-d677d0a634c2,"health and safety, crime and punishment"
-./data/images/19038add-4e78-4b10-a5f5-448a466707c8.jpg,19038add-4e78-4b10-a5f5-448a466707c8,no-frame
-./data/images/19168504-1001-40d6-8fcf-d341bb6702b4.jpg,19168504-1001-40d6-8fcf-d341bb6702b4,cultural identity
-./data/images/195c8721-a90f-4ffc-b775-36788be9da8d.jpg,195c8721-a90f-4ffc-b775-36788be9da8d,"quality of life, capacity and resources, economic"
-../human_annotation/images/1980de34-e867-4b9b-9eed-113a831f0266.jpg,1980de34-e867-4b9b-9eed-113a831f0266,"no-frame, political"
-./data/images/19a2b414-7ce7-4d15-bd87-4ea68e6ef14d.jpg,19a2b414-7ce7-4d15-bd87-4ea68e6ef14d,cultural identity
-./data/images/1a693e9e-c50c-407b-977d-533f4f7380cd.jpg,1a693e9e-c50c-407b-977d-533f4f7380cd,no-frame
-./data/images/1a7968ef-0826-419c-903b-5f0285e57380.jpg,1a7968ef-0826-419c-903b-5f0285e57380,cultural identity
-./data/images/1ae6175e-b697-4416-ab4c-8983d811274c.jpg,1ae6175e-b697-4416-ab4c-8983d811274c,cultural identity
-./data/images/1bbf4c69-1ea7-4db7-ae0c-229faba0d8a6.jpg,1bbf4c69-1ea7-4db7-ae0c-229faba0d8a6,no-frame
-./data/images/1bf6d399-a2fc-47e8-a7bd-cc2282eb9c80.jpg,1bf6d399-a2fc-47e8-a7bd-cc2282eb9c80,quality of life
-./data/images/1c2471c3-a37b-4660-9718-a0ab52c96cff.jpg,1c2471c3-a37b-4660-9718-a0ab52c96cff,economic
-../human_annotation/images/1c619a40-a9dc-4936-9f7a-3039d9b229ff.jpg,1c619a40-a9dc-4936-9f7a-3039d9b229ff,"quality of life, quality of life, cultural identity"
-./data/images/1d02552d-8083-461c-9cd8-4ed78cb2a2ff.jpg,1d02552d-8083-461c-9cd8-4ed78cb2a2ff,capacity and resources
-./data/images/1d2afc09-16a5-4d8e-aadb-1e50d7bc475b.jpg,1d2afc09-16a5-4d8e-aadb-1e50d7bc475b,quality of life
-./data/images/1d3cb786-a1e9-4d46-9ef6-4950c89b98e0.jpg,1d3cb786-a1e9-4d46-9ef6-4950c89b98e0,no-frame
-./data/images/1d64c1cf-968c-4b71-95c4-ed37b4f3f93e.jpg,1d64c1cf-968c-4b71-95c4-ed37b4f3f93e,economic
-./data/images/1ddd22cc-7230-42f8-93e1-1f14ddfa26c2.jpg,1ddd22cc-7230-42f8-93e1-1f14ddfa26c2,cultural identity
-./data/images/1e53328e-d169-4908-8bcf-81a6b1e532f4.jpg,1e53328e-d169-4908-8bcf-81a6b1e532f4,"political, legality, constitutionality and jurisprudence"
-./data/images/1e85822c-c49d-4690-81ed-aa705cf8c839.jpg,1e85822c-c49d-4690-81ed-aa705cf8c839,"political, morality, external regulation and reputation, crime and punishment"
-./data/images/1f18a87b-223a-4775-b0f5-2ad9e3dc4e45.jpg,1f18a87b-223a-4775-b0f5-2ad9e3dc4e45,quality of life
-./data/images/1f1a1665-5968-4823-9730-f5bad4109189.jpg,1f1a1665-5968-4823-9730-f5bad4109189,no-frame
-./data/images/2020a2e4-52ac-4ded-a4de-887470a93e4d.jpg,2020a2e4-52ac-4ded-a4de-887470a93e4d,"capacity and resources, economic"
-./data/images/2047bf48-069e-488f-af37-725025def710.jpg,2047bf48-069e-488f-af37-725025def710,no-frame
-./data/images/21df036d-4f8d-456b-b19d-3998d8eddbd2.jpg,21df036d-4f8d-456b-b19d-3998d8eddbd2,no-frame
-./data/images/2304d57e-a01a-453f-b163-6cb39fa60a0e.jpg,2304d57e-a01a-453f-b163-6cb39fa60a0e,"quality of life, capacity and resources"
-./data/images/2329e428-52e9-480b-8725-4994659b0807.jpg,2329e428-52e9-480b-8725-4994659b0807,"political, public opinion"
-./data/images/241a12e7-1259-4d0b-86b5-798c8e19b487.jpg,241a12e7-1259-4d0b-86b5-798c8e19b487,"political, policy prescription and evaluation, political, political"
-./data/images/245a68e2-d7b8-4dfe-811f-9e4fa3095e48.jpg,245a68e2-d7b8-4dfe-811f-9e4fa3095e48,cultural identity
-./data/images/258dbc18-38c0-4cd3-b3b5-97f41d3acc6e.jpg,258dbc18-38c0-4cd3-b3b5-97f41d3acc6e,"morality, cultural identity"
-./data/images/25ab0c5b-1e25-44fc-91f3-7a9885c44ef5.jpg,25ab0c5b-1e25-44fc-91f3-7a9885c44ef5,no-frame
-../human_annotation/images/269b6054-c2fa-40a8-8757-ce38e0b1c5f2.jpg,269b6054-c2fa-40a8-8757-ce38e0b1c5f2,"cultural identity, cultural identity"
-./data/images/27509945-53b0-4e6a-be67-83d5de77e267.jpg,27509945-53b0-4e6a-be67-83d5de77e267,cultural identity
-./data/images/28d1daaa-abd4-450d-ac5e-f79f45ef509e.jpg,28d1daaa-abd4-450d-ac5e-f79f45ef509e,"political, external regulation and reputation"
-../human_annotation/images/2974942b-7f5c-47be-9c99-4c89d5b6129e.jpg,2974942b-7f5c-47be-9c99-4c89d5b6129e,"political, political"
-./data/images/29d20ba8-2770-4220-8d34-a58d3226cae9.jpg,29d20ba8-2770-4220-8d34-a58d3226cae9,no-frame
-./data/images/2a0b7493-5028-4b54-b844-197f931fea9c.jpg,2a0b7493-5028-4b54-b844-197f931fea9c,"fairness and equality, public opinion"
-./data/images/2a0d2df8-c287-42a7-88e6-84e48b14ffb7.jpg,2a0d2df8-c287-42a7-88e6-84e48b14ffb7,capacity and resources
-./data/images/2a35f561-1b13-4839-9ec3-06f406ae708d.jpg,2a35f561-1b13-4839-9ec3-06f406ae708d,"policy prescription and evaluation, external regulation and reputation"
-./data/images/2b01d912-d9b3-45a7-be72-ec0d9f50570d.jpg,2b01d912-d9b3-45a7-be72-ec0d9f50570d,"quality of life, political, public opinion"
-./data/images/2b82b2af-4ab1-4fa8-a8d6-b3fe54b34d32.jpg,2b82b2af-4ab1-4fa8-a8d6-b3fe54b34d32,no-frame
-./data/images/2b95f875-90fc-41e5-aec9-06f9d777d13e.jpg,2b95f875-90fc-41e5-aec9-06f9d777d13e,no-frame
-./data/images/2c1a65ab-6815-462f-ac7c-113880ebd4d2.jpg,2c1a65ab-6815-462f-ac7c-113880ebd4d2,political
-./data/images/2d11931b-3b13-44a0-a4e4-aeeaecfdfaaa.jpg,2d11931b-3b13-44a0-a4e4-aeeaecfdfaaa,quality of life
-./data/images/2d697fb1-9662-4486-addb-716e666e2c8e.jpg,2d697fb1-9662-4486-addb-716e666e2c8e,"morality, cultural identity"
-./data/images/2d88107d-044c-4e2b-af0a-d3288455c546.jpg,2d88107d-044c-4e2b-af0a-d3288455c546,economic
-./data/images/2dadb9b2-4455-4249-b2b9-f582d44c3090.jpg,2dadb9b2-4455-4249-b2b9-f582d44c3090,"capacity and resources, economic"
-../human_annotation/images/2dbed1d4-506a-4cdc-ba2b-cb2570e295e6.jpg,2dbed1d4-506a-4cdc-ba2b-cb2570e295e6,"no-frame, quality of life"
-../human_annotation/images/2e4acf7a-1b71-4e23-9390-f1451aa3437d.jpg,2e4acf7a-1b71-4e23-9390-f1451aa3437d,"no-frame, political"
-./data/images/2edc5ffa-a35b-4250-baca-58b512d78712.jpg,2edc5ffa-a35b-4250-baca-58b512d78712,cultural identity
-./data/images/2f20ed55-bf28-46b7-873b-8cbed555cb0f.jpg,2f20ed55-bf28-46b7-873b-8cbed555cb0f,"no-frame, cultural identity, no-frame"
-./data/images/31a43855-98e9-4805-a6b2-4524fc8e2bf9.jpg,31a43855-98e9-4805-a6b2-4524fc8e2bf9,no-frame
-./data/images/325b270c-b924-4794-a2b3-f0594e728270.jpg,325b270c-b924-4794-a2b3-f0594e728270,capacity and resources
-./data/images/3278d34d-cb9f-4c84-84c6-1b2a933e255c.jpg,3278d34d-cb9f-4c84-84c6-1b2a933e255c,"quality of life, public opinion"
-./data/images/331680c9-30d1-4a9a-928d-b5c7442a17a5.jpg,331680c9-30d1-4a9a-928d-b5c7442a17a5,health and safety
-./data/images/3340ef7c-567c-417a-8c1f-61431eb2b21e.jpg,3340ef7c-567c-417a-8c1f-61431eb2b21e,no-frame
-./data/images/33d70346-714b-4d68-a70e-5b0293ef9894.jpg,33d70346-714b-4d68-a70e-5b0293ef9894,"quality of life, capacity and resources, security and defense, fairness and equality, health and safety, morality, crime and punishment"
-./data/images/34313b5b-991b-4566-9b91-e0064d6aa1c4.jpg,34313b5b-991b-4566-9b91-e0064d6aa1c4,"quality of life, fairness and equality, economic, fairness and equality, fairness and equality, legality, constitutionality and jurisprudence, external regulation and reputation"
-./data/images/3445398d-2ce2-4821-b5c9-d2c8d599f7ad.jpg,3445398d-2ce2-4821-b5c9-d2c8d599f7ad,"political, public opinion"
-./data/images/3474afab-0244-484a-be30-f0015291b41d.jpg,3474afab-0244-484a-be30-f0015291b41d,"political, fairness and equality, health and safety, legality, constitutionality and jurisprudence, external regulation and reputation, crime and punishment"
-./data/images/348301ef-b341-40e5-88e9-7b83a03d2f56.jpg,348301ef-b341-40e5-88e9-7b83a03d2f56,political
-./data/images/35627758-af97-4ff3-96e8-b49e23b24f7e.jpg,35627758-af97-4ff3-96e8-b49e23b24f7e,no-frame
-../human_annotation/images/35d6c0b0-823a-4148-8072-bb58bfc965a4.jpg,35d6c0b0-823a-4148-8072-bb58bfc965a4,"crime and punishment, crime and punishment"
-./data/images/36c8e59c-e3b8-45c9-9fe0-1368e6302ac4.jpg,36c8e59c-e3b8-45c9-9fe0-1368e6302ac4,cultural identity
-./data/images/374bc760-e6fa-4e92-b7e8-0a81e3beb272.jpg,374bc760-e6fa-4e92-b7e8-0a81e3beb272,"cultural identity, crime and punishment"
-./data/images/38a75c74-2c35-42bc-87c1-0ea121e6b62e.jpg,38a75c74-2c35-42bc-87c1-0ea121e6b62e,cultural identity
-./data/images/391746df-3c90-4f29-8739-bd2117b885c9.jpg,391746df-3c90-4f29-8739-bd2117b885c9,cultural identity
-./data/images/3933e8f8-fc69-4b87-9063-86e3d43c7434.jpg,3933e8f8-fc69-4b87-9063-86e3d43c7434,"political, morality, public opinion, cultural identity"
-./data/images/39f309b4-95b4-43a7-a441-696db6778a0e.jpg,39f309b4-95b4-43a7-a441-696db6778a0e,"quality of life, cultural identity"
-./data/images/39f8e0c5-a8e3-426d-82d4-03309dee5d36.jpg,39f8e0c5-a8e3-426d-82d4-03309dee5d36,"quality of life, capacity and resources"
-./data/images/3a03fc6b-838a-477d-b59f-06453af01ca2.jpg,3a03fc6b-838a-477d-b59f-06453af01ca2,"health and safety, crime and punishment"
-./data/images/3adc76c3-b1d7-4a4c-a2ac-b198bab11864.jpg,3adc76c3-b1d7-4a4c-a2ac-b198bab11864,"health and safety, public opinion"
-./data/images/3b538cb6-abf8-4871-b979-d2f89b017c67.jpg,3b538cb6-abf8-4871-b979-d2f89b017c67,cultural identity
-./data/images/3c93eb9b-01d7-4a55-bdd6-5edc4a6e2d46.jpg,3c93eb9b-01d7-4a55-bdd6-5edc4a6e2d46,crime and punishment
-./data/images/3d0df910-4a0f-47d9-b66a-e3bea098cbf0.jpg,3d0df910-4a0f-47d9-b66a-e3bea098cbf0,cultural identity
-./data/images/3d35373e-5afc-4db5-b0b8-1fc4c641bd3f.jpg,3d35373e-5afc-4db5-b0b8-1fc4c641bd3f,cultural identity
-./data/images/3d4387b6-861f-45e9-ba83-963631712b42.jpg,3d4387b6-861f-45e9-ba83-963631712b42,political
-./data/images/3ed669ee-e54a-412e-a569-08215d34fd53.jpg,3ed669ee-e54a-412e-a569-08215d34fd53,"quality of life, capacity and resources, security and defense"
-../human_annotation/images/3f19ca41-6cda-4401-a003-e31681358a1b.jpg,3f19ca41-6cda-4401-a003-e31681358a1b,"no-frame, no-frame"
-./data/images/3f9b4145-0ac7-42e9-9526-06ca89791c06.jpg,3f9b4145-0ac7-42e9-9526-06ca89791c06,"political, morality, public opinion, political, morality, political"
-./data/images/40b3c6fa-b90d-40dc-a6c0-9276cb91a30f.jpg,40b3c6fa-b90d-40dc-a6c0-9276cb91a30f,"political, policy prescription and evaluation, legality, constitutionality and jurisprudence, public opinion"
-./data/images/40dc3037-685e-4980-9cc7-6c9b779ae28b.jpg,40dc3037-685e-4980-9cc7-6c9b779ae28b,"fairness and equality, crime and punishment, no-frame, crime and punishment"
-./data/images/40fa184e-4952-4e41-8afc-4f22bcf1a61c.jpg,40fa184e-4952-4e41-8afc-4f22bcf1a61c,cultural identity
-./data/images/410c6e3f-62ce-4d8b-a333-8fbe9e3ce79f.jpg,410c6e3f-62ce-4d8b-a333-8fbe9e3ce79f,"economic, public opinion"
-../human_annotation/images/413079ef-15b8-43a6-bd37-eb33de583b8e.jpg,413079ef-15b8-43a6-bd37-eb33de583b8e,"no-frame, no-frame"
-./data/images/41ab0117-66b6-4c5f-bd95-a9917a21f722.jpg,41ab0117-66b6-4c5f-bd95-a9917a21f722,political
-./data/images/4254cc3e-ff7e-4810-b3dd-b3cacb4aff56.jpg,4254cc3e-ff7e-4810-b3dd-b3cacb4aff56,"security and defense, crime and punishment"
-./data/images/42cab210-1f2d-41ca-bad5-115cecb17aac.jpg,42cab210-1f2d-41ca-bad5-115cecb17aac,no-frame
-./data/images/43bf4fb8-0f60-4e16-9c6f-aff3af243d69.jpg,43bf4fb8-0f60-4e16-9c6f-aff3af243d69,"no-frame, no-frame, no-frame"
-../human_annotation/images/4410e31f-0e49-4f86-ae5e-8cfeda7e4de0.jpg,4410e31f-0e49-4f86-ae5e-8cfeda7e4de0,"quality of life, quality of life"
-./data/images/448b0399-0b5c-48a2-8583-591c1685fbde.jpg,448b0399-0b5c-48a2-8583-591c1685fbde,"public opinion, cultural identity"
-./data/images/464e9d86-d42b-4f23-b252-7f812312966d.jpg,464e9d86-d42b-4f23-b252-7f812312966d,"political, policy prescription and evaluation, external regulation and reputation"
-./data/images/465e44b2-db1c-4dc1-94b2-1676e2866c00.jpg,465e44b2-db1c-4dc1-94b2-1676e2866c00,cultural identity
-./data/images/46a68a05-c6b8-49e0-9603-8df67ba9e69f.jpg,46a68a05-c6b8-49e0-9603-8df67ba9e69f,cultural identity
-./data/images/46cf7cdb-1902-4376-a32f-f9e19f296cc1.jpg,46cf7cdb-1902-4376-a32f-f9e19f296cc1,"political, public opinion"
-./data/images/47d298f2-2948-47db-8522-eee7f0939f23.jpg,47d298f2-2948-47db-8522-eee7f0939f23,cultural identity
-./data/images/48d61969-7e82-4d16-8068-65e89e1dc880.jpg,48d61969-7e82-4d16-8068-65e89e1dc880,"political, policy prescription and evaluation"
-./data/images/48d6e7d0-927b-4c3c-a4ab-df4fbc953a4a.jpg,48d6e7d0-927b-4c3c-a4ab-df4fbc953a4a,no-frame
-./data/images/498092b0-dd18-463f-b5ce-420e0f8e2805.jpg,498092b0-dd18-463f-b5ce-420e0f8e2805,"public opinion, cultural identity"
-./data/images/4999cff9-faa6-4753-a854-3ced1b6f6a72.jpg,4999cff9-faa6-4753-a854-3ced1b6f6a72,cultural identity
-./data/images/4a233197-395e-4c21-814b-6bf345302694.jpg,4a233197-395e-4c21-814b-6bf345302694,no-frame
-./data/images/4a69662e-7d1b-4a43-adf9-44c022180807.jpg,4a69662e-7d1b-4a43-adf9-44c022180807,security and defense
-./data/images/4aa402d5-420f-4ae6-b41f-8edae06ca13c.jpg,4aa402d5-420f-4ae6-b41f-8edae06ca13c,no-frame
-./data/images/4b08702a-c76e-405c-bf37-b5e6eee4e976.jpg,4b08702a-c76e-405c-bf37-b5e6eee4e976,"security and defense, crime and punishment"
-./data/images/4b1f1d43-3d8b-480a-aa19-3398b9b88b78.jpg,4b1f1d43-3d8b-480a-aa19-3398b9b88b78,no-frame
-./data/images/4b3dff21-f085-4933-b253-556556e61a21.jpg,4b3dff21-f085-4933-b253-556556e61a21,cultural identity
-./data/images/4b99d184-2f90-443a-8053-0866dd44efb3.jpg,4b99d184-2f90-443a-8053-0866dd44efb3,"fairness and equality, cultural identity"
-./data/images/4bd5fe13-ad6a-4bd7-8547-df146aaeb585.jpg,4bd5fe13-ad6a-4bd7-8547-df146aaeb585,cultural identity
-./data/images/4bfe4941-d2ce-4f2b-af42-841f23245772.jpg,4bfe4941-d2ce-4f2b-af42-841f23245772,cultural identity
-./data/images/4d4604cb-7ad9-4eb2-a7f1-f61f8ebebdb2.jpg,4d4604cb-7ad9-4eb2-a7f1-f61f8ebebdb2,"quality of life, political, fairness and equality"
-./data/images/4d926ebc-7894-497d-a595-7bf16de2e563.jpg,4d926ebc-7894-497d-a595-7bf16de2e563,"no-frame, no-frame, cultural identity"
-./data/images/4da03fbf-ca7f-4c76-a148-cb98416dc085.jpg,4da03fbf-ca7f-4c76-a148-cb98416dc085,health and safety
-./data/images/4daf124a-7efb-4766-bbf2-2ac534090ec0.jpg,4daf124a-7efb-4766-bbf2-2ac534090ec0,public opinion
-./data/images/4db649b7-283e-4980-97ba-3a08b172adb0.jpg,4db649b7-283e-4980-97ba-3a08b172adb0,no-frame
-./data/images/4e207cbd-0b83-410a-888e-96b0995b4e48.jpg,4e207cbd-0b83-410a-888e-96b0995b4e48,capacity and resources
-./data/images/4e231e60-2e30-453d-ac78-ce5296ea8ecd.jpg,4e231e60-2e30-453d-ac78-ce5296ea8ecd,no-frame
-./data/images/4e5b48d0-9433-423a-becf-75313176e92b.jpg,4e5b48d0-9433-423a-becf-75313176e92b,no-frame
-./data/images/4e6343c2-2daf-446c-954f-6b4fb9a8e6ca.jpg,4e6343c2-2daf-446c-954f-6b4fb9a8e6ca,"political, policy prescription and evaluation, public opinion"
-./data/images/4f2880c2-6c38-4fd7-9300-4320aaec89b9.jpg,4f2880c2-6c38-4fd7-9300-4320aaec89b9,quality of life
-./data/images/512974dc-04e9-4212-8630-23fcccfdf906.jpg,512974dc-04e9-4212-8630-23fcccfdf906,"quality of life, fairness and equality, cultural identity"
-./data/images/52584d71-ca43-4e2c-881e-e71b5dab04cb.jpg,52584d71-ca43-4e2c-881e-e71b5dab04cb,cultural identity
-./data/images/534912b0-1627-42b2-9120-2e6e86442ef2.jpg,534912b0-1627-42b2-9120-2e6e86442ef2,"public opinion, cultural identity"
-./data/images/53567841-a408-482c-91c9-6011594140d6.jpg,53567841-a408-482c-91c9-6011594140d6,no-frame
-./data/images/53db4454-d845-42fb-9b2f-fd6b880081ca.jpg,53db4454-d845-42fb-9b2f-fd6b880081ca,no-frame
-./data/images/545f552c-bb57-48d2-a8eb-0211ec4434c3.jpg,545f552c-bb57-48d2-a8eb-0211ec4434c3,"quality of life, political, policy prescription and evaluation, fairness and equality, legality, constitutionality and jurisprudence, morality, public opinion, crime and punishment"
-./data/images/55ac8427-1cc7-4147-8e26-7898877991bb.jpg,55ac8427-1cc7-4147-8e26-7898877991bb,"health and safety, morality, crime and punishment"
-./data/images/561f00fd-37a7-4fbc-bbf7-594644d1453b.jpg,561f00fd-37a7-4fbc-bbf7-594644d1453b,"morality, cultural identity"
-./data/images/56234d78-f015-4610-82c7-bb6816a48c03.jpg,56234d78-f015-4610-82c7-bb6816a48c03,no-frame
-./data/images/57d797a0-b6b9-4c52-9ed3-7b2e98fa9ff4.jpg,57d797a0-b6b9-4c52-9ed3-7b2e98fa9ff4,security and defense
-./data/images/5822cce1-70ab-48c7-93f9-ab1ad0e98870.jpg,5822cce1-70ab-48c7-93f9-ab1ad0e98870,"health and safety, quality of life, health and safety, health and safety, crime and punishment"
-./data/images/585b2ba7-f075-4d96-bfe4-5df8053d0a28.jpg,585b2ba7-f075-4d96-bfe4-5df8053d0a28,"political, policy prescription and evaluation, external regulation and reputation"
-../human_annotation/images/587dd7c7-d473-4a74-a5e6-902aed963b21.jpg,587dd7c7-d473-4a74-a5e6-902aed963b21,no-frame
-./data/images/58b71282-3a38-4031-8e28-1b3c3468028b.jpg,58b71282-3a38-4031-8e28-1b3c3468028b,"policy prescription and evaluation, public opinion"
-./data/images/58c19e3b-02fc-4c9b-9f8f-2af26951b7b8.jpg,58c19e3b-02fc-4c9b-9f8f-2af26951b7b8,"morality, public opinion, cultural identity"
-./data/images/58e52d98-483c-44f8-8e5f-0a5329a95662.jpg,58e52d98-483c-44f8-8e5f-0a5329a95662,economic
-./data/images/58f1f798-3c2f-4cb9-9fc4-0285d5e9c18e.jpg,58f1f798-3c2f-4cb9-9fc4-0285d5e9c18e,no-frame
-../human_annotation/images/5938ffba-ec74-47af-8ea3-8d062ff245a1.jpg,5938ffba-ec74-47af-8ea3-8d062ff245a1,"capacity and resources, quality of life"
-./data/images/59460dc0-8bea-4d89-8dfa-a9c62430cc9c.jpg,59460dc0-8bea-4d89-8dfa-a9c62430cc9c,political
-./data/images/598ff564-82bb-4ac8-ac4e-e67e668d5347.jpg,598ff564-82bb-4ac8-ac4e-e67e668d5347,"quality of life, capacity and resources"
-./data/images/5a20a233-763e-442f-ae5a-90e6234d670e.jpg,5a20a233-763e-442f-ae5a-90e6234d670e,"fairness and equality, public opinion"
-./data/images/5a8f6570-1a2e-4de5-9f93-1daf7523bf91.jpg,5a8f6570-1a2e-4de5-9f93-1daf7523bf91,"political, public opinion"
-./data/images/5aaca8c8-5f88-4edc-a121-734de64eab8a.jpg,5aaca8c8-5f88-4edc-a121-734de64eab8a,"political, policy prescription and evaluation, external regulation and reputation"
-./data/images/5bc859a2-d684-48d4-b1e9-0fc28d706bf6.jpg,5bc859a2-d684-48d4-b1e9-0fc28d706bf6,"quality of life, fairness and equality"
-./data/images/5cb14165-b32c-4977-9697-c3dc096a2e55.jpg,5cb14165-b32c-4977-9697-c3dc096a2e55,no-frame
-./data/images/5d21eb87-165d-41a6-abde-46a096797541.jpg,5d21eb87-165d-41a6-abde-46a096797541,cultural identity
-../human_annotation/images/5d7a3e3e-71ed-4c85-91ae-044eb019bd91.jpg,5d7a3e3e-71ed-4c85-91ae-044eb019bd91,"health and safety, health and safety"
-./data/images/5da7a757-8e55-4088-b28e-dc497d2b9ebf.jpg,5da7a757-8e55-4088-b28e-dc497d2b9ebf,"capacity and resources, economic"
-./data/images/5dd3b246-e09f-45d8-93a5-7d7f8b933175.jpg,5dd3b246-e09f-45d8-93a5-7d7f8b933175,"quality of life, capacity and resources"
-./data/images/5f98ab64-9a53-463c-b93f-00a5c5bf3f8d.jpg,5f98ab64-9a53-463c-b93f-00a5c5bf3f8d,cultural identity
-./data/images/60505bbf-57a1-4ae1-b366-718da31d38f1.jpg,60505bbf-57a1-4ae1-b366-718da31d38f1,cultural identity
-./data/images/6087f017-588a-44a9-acec-60b509fabbfb.jpg,6087f017-588a-44a9-acec-60b509fabbfb,cultural identity
-./data/images/6125e24a-2f5a-4c97-a816-0c2f98d32d40.jpg,6125e24a-2f5a-4c97-a816-0c2f98d32d40,"cultural identity, quality of life, cultural identity"
-./data/images/613f2792-b97d-4867-843d-b87b90a39be6.jpg,613f2792-b97d-4867-843d-b87b90a39be6,"health and safety, crime and punishment"
-./data/images/6171dd6d-4562-4ef0-a8a3-121251cd8591.jpg,6171dd6d-4562-4ef0-a8a3-121251cd8591,political
-./data/images/621968c4-159f-480a-be44-45008e91f5bf.jpg,621968c4-159f-480a-be44-45008e91f5bf,quality of life
-./data/images/6246a314-6d31-4504-bc6c-efb174c9eb76.jpg,6246a314-6d31-4504-bc6c-efb174c9eb76,no-frame
-./data/images/6282c9c1-31d7-4c93-9af7-268f22c4a575.jpg,6282c9c1-31d7-4c93-9af7-268f22c4a575,"quality of life, public opinion"
-./data/images/62dafd88-4289-46c9-abd4-7b6880cf6ff3.jpg,62dafd88-4289-46c9-abd4-7b6880cf6ff3,cultural identity
-./data/images/62e7032a-5ca9-4f30-982d-7da8090300d6.jpg,62e7032a-5ca9-4f30-982d-7da8090300d6,"fairness and equality, morality, cultural identity"
-./data/images/634b70dd-7d8f-42a8-957c-a8d923b7488d.jpg,634b70dd-7d8f-42a8-957c-a8d923b7488d,"cultural identity, quality of life, no-frame"
-./data/images/63940399-9d2c-41cc-b678-03e4b961e3df.jpg,63940399-9d2c-41cc-b678-03e4b961e3df,cultural identity
-./data/images/6398b612-b27d-42a7-a6fd-84ab31853520.jpg,6398b612-b27d-42a7-a6fd-84ab31853520,cultural identity
-./data/images/640bb84f-0e65-4453-a2e8-ad82d53a8246.jpg,640bb84f-0e65-4453-a2e8-ad82d53a8246,no-frame
-../human_annotation/images/64440bf6-b2df-4e2d-80ec-54957e9dd59d.jpg,64440bf6-b2df-4e2d-80ec-54957e9dd59d,"capacity and resources, no-frame"
-./data/images/65817275-ebb1-4227-99e8-c4a85ed8759a.jpg,65817275-ebb1-4227-99e8-c4a85ed8759a,political
-./data/images/667a1466-3078-45ed-97bf-7ed586cfde92.jpg,667a1466-3078-45ed-97bf-7ed586cfde92,capacity and resources
-../human_annotation/images/66dea638-66ee-4a8f-80e8-26c529c28e8e.jpg,66dea638-66ee-4a8f-80e8-26c529c28e8e,"capacity and resources, public opinion, health and safety, public opinion"
-./data/images/66f2f546-50df-4d47-a883-05b7be54cda6.jpg,66f2f546-50df-4d47-a883-05b7be54cda6,"security and defense, fairness and equality"
-./data/images/670d0a45-297e-4695-8b4d-121f82d95720.jpg,670d0a45-297e-4695-8b4d-121f82d95720,cultural identity
-./data/images/671ddb8c-4e4a-4b6a-9181-d2a25eaf9c3f.jpg,671ddb8c-4e4a-4b6a-9181-d2a25eaf9c3f,no-frame
-./data/images/675d90b7-24bf-4819-b1b1-1e1d3a5b1166.jpg,675d90b7-24bf-4819-b1b1-1e1d3a5b1166,"quality of life, capacity and resources"
-./data/images/6769752b-c04c-4acc-a117-2881e17af705.jpg,6769752b-c04c-4acc-a117-2881e17af705,no-frame
-./data/images/67884a09-69f8-4bd5-aadf-cd7eb9a603bf.jpg,67884a09-69f8-4bd5-aadf-cd7eb9a603bf,no-frame
-./data/images/688c040c-187b-45c7-8f29-34c94b2e0633.jpg,688c040c-187b-45c7-8f29-34c94b2e0633,"no-frame, morality, cultural identity"
-./data/images/68c7d1be-7f14-4337-9d1d-457eb0d0a2b8.jpg,68c7d1be-7f14-4337-9d1d-457eb0d0a2b8,"public opinion, cultural identity"
-./data/images/69044dd3-952e-4820-95c5-8ee0de8019a6.jpg,69044dd3-952e-4820-95c5-8ee0de8019a6,cultural identity
-./data/images/6986f012-2acd-403e-b4de-ab25c250de05.jpg,6986f012-2acd-403e-b4de-ab25c250de05,no-frame
-./data/images/6aa520d7-6dad-4967-a7fe-edd94629b9ba.jpg,6aa520d7-6dad-4967-a7fe-edd94629b9ba,no-frame
-./data/images/6aeeb310-a0a9-4935-a90a-29f98db45f5e.jpg,6aeeb310-a0a9-4935-a90a-29f98db45f5e,cultural identity
-./data/images/6c60aea1-9c8f-409f-8ec8-697c7865ba8c.jpg,6c60aea1-9c8f-409f-8ec8-697c7865ba8c,capacity and resources
-./data/images/6c7ab6a1-3eba-46d0-97a8-1766ec28ae87.jpg,6c7ab6a1-3eba-46d0-97a8-1766ec28ae87,no-frame
-./data/images/6c86e84b-8513-405e-9d1b-a0a3c41f437b.jpg,6c86e84b-8513-405e-9d1b-a0a3c41f437b,"political, cultural identity"
-./data/images/6ce0569a-64a8-4147-9a2c-caf7a654e02c.jpg,6ce0569a-64a8-4147-9a2c-caf7a654e02c,crime and punishment
-./data/images/6d7887be-0020-42d5-a1bc-61769e7d50a4.jpg,6d7887be-0020-42d5-a1bc-61769e7d50a4,cultural identity
-../human_annotation/images/6daeb461-a6e3-4951-b4a9-300e55d6df2c.jpg,6daeb461-a6e3-4951-b4a9-300e55d6df2c,"quality of life, cultural identity"
-./data/images/6e0207dd-72ba-43a2-9b34-10137ece12c2.jpg,6e0207dd-72ba-43a2-9b34-10137ece12c2,political
-../human_annotation/images/6e0b7be0-cd41-4de1-a56d-1850acbc5c19.jpg,6e0b7be0-cd41-4de1-a56d-1850acbc5c19,"cultural identity, cultural identity"
-./data/images/6f945fb4-8311-43d4-9683-1c9c91578573.jpg,6f945fb4-8311-43d4-9683-1c9c91578573,cultural identity
-./data/images/6ff93009-9046-48a5-ac7a-295b6b0ea2dd.jpg,6ff93009-9046-48a5-ac7a-295b6b0ea2dd,quality of life
-./data/images/704a6595-cddb-427f-9074-77f75756e715.jpg,704a6595-cddb-427f-9074-77f75756e715,economic
-./data/images/7072b1a9-ebe5-4d77-9d0e-72d4b6b8ce58.jpg,7072b1a9-ebe5-4d77-9d0e-72d4b6b8ce58,"quality of life, cultural identity"
-./data/images/70c03ba8-169b-436d-855d-2b553d27d027.jpg,70c03ba8-169b-436d-855d-2b553d27d027,capacity and resources
-./data/images/70f3d111-b6fc-4f6d-9365-76b76594fb8b.jpg,70f3d111-b6fc-4f6d-9365-76b76594fb8b,capacity and resources
-./data/images/716f3bb7-22f7-4c4a-ad83-d54f42bc922b.jpg,716f3bb7-22f7-4c4a-ad83-d54f42bc922b,"quality of life, political, security and defense, fairness and equality, morality, public opinion, cultural identity, crime and punishment"
-./data/images/7176c771-a90f-477e-ac75-b1559143e9ae.jpg,7176c771-a90f-477e-ac75-b1559143e9ae,no-frame
-./data/images/71e7023a-1ca2-44e1-8dae-1c4e2cd3bc7e.jpg,71e7023a-1ca2-44e1-8dae-1c4e2cd3bc7e,economic
-./data/images/7227baa2-2d90-472b-a5ce-9f7031e37ad3.jpg,7227baa2-2d90-472b-a5ce-9f7031e37ad3,"quality of life, capacity and resources, economic"
-./data/images/727803c9-55d9-4f56-b6aa-4db5de3519c5.jpg,727803c9-55d9-4f56-b6aa-4db5de3519c5,cultural identity
-./data/images/72a3ed21-c3d5-465b-a470-16dfe6177738.jpg,72a3ed21-c3d5-465b-a470-16dfe6177738,no-frame
-./data/images/72da35bd-0cf7-422d-8964-45e811f1e40f.jpg,72da35bd-0cf7-422d-8964-45e811f1e40f,cultural identity
-./data/images/72dfc9da-c348-447b-8e81-a5724fc524d1.jpg,72dfc9da-c348-447b-8e81-a5724fc524d1,"security and defense, crime and punishment"
-./data/images/72e6c22e-306e-44aa-8d89-ad867ad0dd37.jpg,72e6c22e-306e-44aa-8d89-ad867ad0dd37,"fairness and equality, cultural identity"
-../human_annotation/images/72e8990b-2611-4558-ad7f-602058384aab.jpg,72e8990b-2611-4558-ad7f-602058384aab,"fairness and equality, morality, quality of life"
-./data/images/739ed179-e6ea-47f8-902a-0f4fa5f7d94c.jpg,739ed179-e6ea-47f8-902a-0f4fa5f7d94c,no-frame
-./data/images/73a5473a-9a47-46a0-bbc3-13f26c555277.jpg,73a5473a-9a47-46a0-bbc3-13f26c555277,no-frame
-../human_annotation/images/74b44a0a-0a1c-433b-b031-9fed5790b4be.jpg,74b44a0a-0a1c-433b-b031-9fed5790b4be,"no-frame, cultural identity"
-./data/images/74b63756-1058-4de5-8d17-9f12c570852a.jpg,74b63756-1058-4de5-8d17-9f12c570852a,cultural identity
-./data/images/75020258-15ea-48d2-93c8-ac2ca8cad414.jpg,75020258-15ea-48d2-93c8-ac2ca8cad414,no-frame
-./data/images/75af76b4-fbc0-405b-be54-85f9855f2188.jpg,75af76b4-fbc0-405b-be54-85f9855f2188,quality of life
-./data/images/75e10dcc-e914-4de3-a34d-21f9a6784c70.jpg,75e10dcc-e914-4de3-a34d-21f9a6784c70,political
-./data/images/760be3bb-8eae-4728-82f9-14e8f6905c5c.jpg,760be3bb-8eae-4728-82f9-14e8f6905c5c,"quality of life, capacity and resources"
-./data/images/763ed8dc-58c1-48bb-be3f-3cffe95c903b.jpg,763ed8dc-58c1-48bb-be3f-3cffe95c903b,cultural identity
-./data/images/769bd741-d1ee-493d-9c9f-49cb24c94929.jpg,769bd741-d1ee-493d-9c9f-49cb24c94929,no-frame
-./data/images/769d2767-39d5-4525-9896-c31814d0af7f.jpg,769d2767-39d5-4525-9896-c31814d0af7f,"political, policy prescription and evaluation, legality, constitutionality and jurisprudence, public opinion, external regulation and reputation"
-./data/images/76cb74e7-83c9-4564-9bc5-36cd1129845d.jpg,76cb74e7-83c9-4564-9bc5-36cd1129845d,"political, policy prescription and evaluation, fairness and equality, morality"
-./data/images/76e63daf-9c5a-4d6e-a785-4fde7304bd5d.jpg,76e63daf-9c5a-4d6e-a785-4fde7304bd5d,"quality of life, political, security and defense, health and safety, morality"
-./data/images/77965698-b9e3-44e1-a099-4018399badb5.jpg,77965698-b9e3-44e1-a099-4018399badb5,political
-./data/images/7873764d-df3b-469e-a7d0-87fc01349597.jpg,7873764d-df3b-469e-a7d0-87fc01349597,no-frame
-./data/images/788c989a-7d07-4951-bf1d-97639029c6d7.jpg,788c989a-7d07-4951-bf1d-97639029c6d7,"capacity and resources, morality, economic"
-./data/images/78c10606-b89d-44e0-9f72-9755ef788ba4.jpg,78c10606-b89d-44e0-9f72-9755ef788ba4,no-frame
-./data/images/7950f5f3-ce6e-4225-ae54-7e20b147e2ba.jpg,7950f5f3-ce6e-4225-ae54-7e20b147e2ba,cultural identity
-./data/images/79a4a744-ef80-4308-998e-bc337aad0c8c.jpg,79a4a744-ef80-4308-998e-bc337aad0c8c,no-frame
-./data/images/79cc2f27-29d1-4c23-bffa-1038a29fbc69.jpg,79cc2f27-29d1-4c23-bffa-1038a29fbc69,"security and defense, crime and punishment"
-./data/images/7ab8cbf5-2a8b-4a17-ad0d-72a119173b93.jpg,7ab8cbf5-2a8b-4a17-ad0d-72a119173b93,no-frame
-./data/images/7b814be5-26c2-4d39-b627-4c96343e0878.jpg,7b814be5-26c2-4d39-b627-4c96343e0878,fairness and equality
-./data/images/7be7f5ed-6d0d-449d-9155-264945f4b553.jpg,7be7f5ed-6d0d-449d-9155-264945f4b553,"public opinion, cultural identity"
-./data/images/7c16188e-728f-479d-8fb6-ae58f89c0141.jpg,7c16188e-728f-479d-8fb6-ae58f89c0141,"fairness and equality, public opinion, cultural identity"
-./data/images/7c2ee968-3a58-4618-84a6-47822183cf6a.jpg,7c2ee968-3a58-4618-84a6-47822183cf6a,no-frame
-./data/images/7c66f56d-258d-49f7-af88-6408995bc0bf.jpg,7c66f56d-258d-49f7-af88-6408995bc0bf,no-frame
-./data/images/7c76f9f7-a132-44d4-a890-e91628b1a024.jpg,7c76f9f7-a132-44d4-a890-e91628b1a024,"quality of life, capacity and resources, health and safety"
-./data/images/7c856501-5d60-449a-a2f0-23be6d841134.jpg,7c856501-5d60-449a-a2f0-23be6d841134,no-frame
-./data/images/7cbb61b7-4e20-42ba-af65-cec82b495116.jpg,7cbb61b7-4e20-42ba-af65-cec82b495116,quality of life
-./data/images/7ccd7395-458a-4715-82dd-3b8af4e45a9e.jpg,7ccd7395-458a-4715-82dd-3b8af4e45a9e,no-frame
-./data/images/7cf15165-34ec-4cb5-a82e-f47457e44119.jpg,7cf15165-34ec-4cb5-a82e-f47457e44119,public opinion
-./data/images/7d28acb8-1561-445f-96f9-38089c8f0418.jpg,7d28acb8-1561-445f-96f9-38089c8f0418,"quality of life, fairness and equality, cultural identity"
-./data/images/7d63aa64-b321-4a38-9924-f65852030006.jpg,7d63aa64-b321-4a38-9924-f65852030006,political
-./data/images/7dc73b3d-af43-454f-b787-1b69e1ef0d05.jpg,7dc73b3d-af43-454f-b787-1b69e1ef0d05,cultural identity
-./data/images/7dd14982-32e0-4738-8118-1ddc1ea0ceed.jpg,7dd14982-32e0-4738-8118-1ddc1ea0ceed,no-frame
-./data/images/7de880bc-aa60-4a39-ba55-9d81e60d6c71.jpg,7de880bc-aa60-4a39-ba55-9d81e60d6c71,political
-./data/images/7ef6cb20-a24d-4200-9ae5-fe2b56d99f4f.jpg,7ef6cb20-a24d-4200-9ae5-fe2b56d99f4f,no-frame
-./data/images/8047e5cc-339e-429d-bff0-4d6db2b702f0.jpg,8047e5cc-339e-429d-bff0-4d6db2b702f0,economic
-./data/images/810cf115-0696-446b-9352-4a21437869e9.jpg,810cf115-0696-446b-9352-4a21437869e9,"quality of life, capacity and resources"
-./data/images/818dd4f3-538d-4a61-abad-26fc94796319.jpg,818dd4f3-538d-4a61-abad-26fc94796319,"political, economic, public opinion"
-./data/images/81919fb8-55e9-4b5a-a490-cb159dca303a.jpg,81919fb8-55e9-4b5a-a490-cb159dca303a,no-frame
-./data/images/81ead66b-0d91-4745-a59d-962a35a397da.jpg,81ead66b-0d91-4745-a59d-962a35a397da,cultural identity
-../human_annotation/images/824fa06f-b863-4826-8312-c8346cc4f375.jpg,824fa06f-b863-4826-8312-c8346cc4f375,"capacity and resources, quality of life"
-./data/images/82513445-078e-43af-a15d-f1a9175fa69f.jpg,82513445-078e-43af-a15d-f1a9175fa69f,cultural identity
-./data/images/82542242-21e5-4bd0-b997-7167293ec15b.jpg,82542242-21e5-4bd0-b997-7167293ec15b,economic
-./data/images/82d23c48-b7f7-4e66-b60a-5be43fc0f2bc.jpg,82d23c48-b7f7-4e66-b60a-5be43fc0f2bc,"political, legality, constitutionality and jurisprudence"
-./data/images/82ef7a1e-d5af-42d8-adef-417a6c0ee75d.jpg,82ef7a1e-d5af-42d8-adef-417a6c0ee75d,cultural identity
-./data/images/831bfcaa-ad61-4ce1-9d94-dc922bb77625.jpg,831bfcaa-ad61-4ce1-9d94-dc922bb77625,health and safety
-./data/images/8323fc48-cd47-446c-b9cd-1741424036e5.jpg,8323fc48-cd47-446c-b9cd-1741424036e5,no-frame
-./data/images/837d0745-c485-4612-8502-2b42208d5c7b.jpg,837d0745-c485-4612-8502-2b42208d5c7b,"quality of life, capacity and resources, political, fairness and equality, health and safety, morality, public opinion"
-./data/images/83e4d33e-7d79-4a20-967a-86fe5d52024e.jpg,83e4d33e-7d79-4a20-967a-86fe5d52024e,"fairness and equality, economic"
-./data/images/841bd12f-d358-4bee-8297-dc772cc4c36d.jpg,841bd12f-d358-4bee-8297-dc772cc4c36d,no-frame
-./data/images/8495fa9c-882e-4f72-9667-46f23e0563da.jpg,8495fa9c-882e-4f72-9667-46f23e0563da,political
-./data/images/84b6f0b9-cfa4-47b7-9c37-737fa01d7ebb.jpg,84b6f0b9-cfa4-47b7-9c37-737fa01d7ebb,no-frame
-./data/images/84fa0f04-f52b-4416-8abd-41a7c9320578.jpg,84fa0f04-f52b-4416-8abd-41a7c9320578,no-frame
-./data/images/856c5958-f5c2-4889-9084-ecdd959f68b3.jpg,856c5958-f5c2-4889-9084-ecdd959f68b3,"cultural identity, political, fairness and equality, political"
-./data/images/858594ed-ab98-4e27-9fa7-2064439a6187.jpg,858594ed-ab98-4e27-9fa7-2064439a6187,"quality of life, political, fairness and equality, public opinion"
-../human_annotation/images/859bd060-5617-4bad-b88a-2569537159d8.jpg,859bd060-5617-4bad-b88a-2569537159d8,"public opinion, crime and punishment, quality of life, fairness and equality, legality, constitutionality and jurisprudence, public opinion"
-./data/images/85b0797d-095c-42a2-97d7-071793a23ef6.jpg,85b0797d-095c-42a2-97d7-071793a23ef6,no-frame
-./data/images/863a5ba9-f66b-4e50-96d7-e14a58f45f48.jpg,863a5ba9-f66b-4e50-96d7-e14a58f45f48,"quality of life, cultural identity"
-./data/images/86433cce-43cf-4569-bbba-9fd63b0b7ab3.jpg,86433cce-43cf-4569-bbba-9fd63b0b7ab3,economic
-./data/images/864c9670-2d19-4509-8c89-75870edd3265.jpg,864c9670-2d19-4509-8c89-75870edd3265,no-frame
-./data/images/8650c539-3765-48cc-87c6-154ef4c34167.jpg,8650c539-3765-48cc-87c6-154ef4c34167,cultural identity
-./data/images/868dee59-d765-40e1-be47-5dda040f0d98.jpg,868dee59-d765-40e1-be47-5dda040f0d98,"quality of life, capacity and resources"
-./data/images/869c3dfa-972d-423b-bc1b-de636d8ef6c8.jpg,869c3dfa-972d-423b-bc1b-de636d8ef6c8,"public opinion, cultural identity"
-./data/images/872e15b9-6140-4078-8d61-695b53f7414a.jpg,872e15b9-6140-4078-8d61-695b53f7414a,"public opinion, cultural identity"
-./data/images/8752ab19-f401-4f12-aa0c-22b1468b0d76.jpg,8752ab19-f401-4f12-aa0c-22b1468b0d76,"quality of life, capacity and resources, economic"
-./data/images/8762c4ed-b98e-43de-8e0e-10fd9a61f305.jpg,8762c4ed-b98e-43de-8e0e-10fd9a61f305,"fairness and equality, cultural identity"
-./data/images/884ffb51-eb9e-4c38-90f9-5a95b0343739.jpg,884ffb51-eb9e-4c38-90f9-5a95b0343739,cultural identity
-./data/images/8876c532-e216-40e9-b448-a10775978130.jpg,8876c532-e216-40e9-b448-a10775978130,cultural identity
-../human_annotation/images/88d3b322-7b00-4aba-a8bc-f5b97e355122.jpg,88d3b322-7b00-4aba-a8bc-f5b97e355122,"morality, morality, cultural identity"
-./data/images/8976fd81-f2e7-4791-a821-d10a54899167.jpg,8976fd81-f2e7-4791-a821-d10a54899167,cultural identity
-./data/images/89aa3bd7-c853-4c14-a460-5a1d24b60038.jpg,89aa3bd7-c853-4c14-a460-5a1d24b60038,"cultural identity, cultural identity, cultural identity"
-../human_annotation/images/89e378c2-efce-4100-8ce0-736f326280e8.jpg,89e378c2-efce-4100-8ce0-736f326280e8,"no-frame, political"
-./data/images/8a44ce21-3096-45d5-80de-d15812c18e01.jpg,8a44ce21-3096-45d5-80de-d15812c18e01,"health and safety, public opinion, crime and punishment"
-./data/images/8a4cfa4d-a56e-496a-a223-dd61cf6d434a.jpg,8a4cfa4d-a56e-496a-a223-dd61cf6d434a,economic
-../human_annotation/images/8a79da34-23f6-4d88-9ff9-6ba9f8d5cc14.jpg,8a79da34-23f6-4d88-9ff9-6ba9f8d5cc14,"health and safety, crime and punishment"
-./data/images/8b049602-29f3-4a92-b97f-678434e7a484.jpg,8b049602-29f3-4a92-b97f-678434e7a484,"security and defense, health and safety"
-./data/images/8b2bfd15-c9a4-4f8f-a3fe-caf1c6e82a48.jpg,8b2bfd15-c9a4-4f8f-a3fe-caf1c6e82a48,"fairness and equality, morality, public opinion"
-./data/images/8be8a725-9c79-4191-a5fa-89169e62f244.jpg,8be8a725-9c79-4191-a5fa-89169e62f244,economic
-./data/images/8bf56811-b6e6-4eb2-b0d3-0ba27eed5070.jpg,8bf56811-b6e6-4eb2-b0d3-0ba27eed5070,"quality of life, health and safety, economic"
-./data/images/8ca5fe65-e5fa-40dd-83ad-824b5c4d8ddf.jpg,8ca5fe65-e5fa-40dd-83ad-824b5c4d8ddf,"security and defense, cultural identity"
-../human_annotation/images/8cf2ed86-d1d6-40ea-b5de-4c83c71bfb34.jpg,8cf2ed86-d1d6-40ea-b5de-4c83c71bfb34,"no-frame, no-frame"
-./data/images/8d25b0a5-79e5-4fad-9418-480a3d83b96c.jpg,8d25b0a5-79e5-4fad-9418-480a3d83b96c,cultural identity
-./data/images/8d79696d-47b3-4309-be62-fa52910fc17e.jpg,8d79696d-47b3-4309-be62-fa52910fc17e,"security and defense, crime and punishment, crime and punishment, crime and punishment"
-./data/images/8d974977-2f50-4051-bcbb-d337d66bb9ff.jpg,8d974977-2f50-4051-bcbb-d337d66bb9ff,quality of life
-./data/images/8dee04e6-f820-44ce-8f51-c630a7647f02.jpg,8dee04e6-f820-44ce-8f51-c630a7647f02,cultural identity
-./data/images/8e29bcf6-0a36-4303-b7d0-e823e96c884e.jpg,8e29bcf6-0a36-4303-b7d0-e823e96c884e,security and defense
-../human_annotation/images/8e2e3c14-35a7-4983-934c-6bb7a22f2584.jpg,8e2e3c14-35a7-4983-934c-6bb7a22f2584,"quality of life, health and safety, no-frame"
-./data/images/8edee02d-a372-4ab1-a990-632db9f041c7.jpg,8edee02d-a372-4ab1-a990-632db9f041c7,health and safety
-./data/images/90aad715-71be-4dc2-95de-fb1597f07757.jpg,90aad715-71be-4dc2-95de-fb1597f07757,health and safety
-./data/images/90bdc236-c157-484a-b35e-3a9299048b56.jpg,90bdc236-c157-484a-b35e-3a9299048b56,"security and defense, crime and punishment"
-./data/images/90cda1ef-468c-41a3-9816-905ca22984e5.jpg,90cda1ef-468c-41a3-9816-905ca22984e5,"morality, public opinion"
-./data/images/90dd0dc1-2581-4a39-a027-4c8ec95ac505.jpg,90dd0dc1-2581-4a39-a027-4c8ec95ac505,"fairness and equality, cultural identity, no-frame"
-./data/images/91452b1d-6f56-47cc-bb5f-91e85850c658.jpg,91452b1d-6f56-47cc-bb5f-91e85850c658,"fairness and equality, public opinion"
-./data/images/914a0210-01a9-4220-8923-e9dbb611f138.jpg,914a0210-01a9-4220-8923-e9dbb611f138,no-frame
-./data/images/915fb7d8-9c67-4be7-96d4-6f556d363c7e.jpg,915fb7d8-9c67-4be7-96d4-6f556d363c7e,political
-./data/images/92262797-a8f2-4e7c-8293-3d0b4e5799ed.jpg,92262797-a8f2-4e7c-8293-3d0b4e5799ed,no-frame
-./data/images/922f1c50-ec68-4258-b297-99eaf6aee772.jpg,922f1c50-ec68-4258-b297-99eaf6aee772,cultural identity
-../human_annotation/images/925a71ef-6702-4b82-8da1-41ced404628d.jpg,925a71ef-6702-4b82-8da1-41ced404628d,"no-frame, no-frame"
-./data/images/9281b239-6fa3-4f63-bc73-2e89bf550533.jpg,9281b239-6fa3-4f63-bc73-2e89bf550533,economic
-./data/images/928588ec-08bc-449a-bcbd-3f7023330d7a.jpg,928588ec-08bc-449a-bcbd-3f7023330d7a,"economic, cultural identity"
-./data/images/92a49fe4-65dc-47d2-9e24-4284e07b40a0.jpg,92a49fe4-65dc-47d2-9e24-4284e07b40a0,"cultural identity, fairness and equality, cultural identity, cultural identity"
-./data/images/930311d3-d82a-4caa-bbd6-4459db7b28e2.jpg,930311d3-d82a-4caa-bbd6-4459db7b28e2,"quality of life, economic, cultural identity"
-./data/images/9318029f-7dce-4532-8fab-a676ec081662.jpg,9318029f-7dce-4532-8fab-a676ec081662,"quality of life, capacity and resources"
-./data/images/9362b3fb-623b-4496-b538-677fc6dd2989.jpg,9362b3fb-623b-4496-b538-677fc6dd2989,cultural identity
-../human_annotation/images/94082f4f-e7fe-40ff-acec-3a1459cd8ee0.jpg,94082f4f-e7fe-40ff-acec-3a1459cd8ee0,"capacity and resources, quality of life"
-./data/images/94ce3e9f-2466-438e-89be-1e098c00c4ba.jpg,94ce3e9f-2466-438e-89be-1e098c00c4ba,"quality of life, capacity and resources"
-./data/images/94e2fce9-2a96-41e3-ba85-d515e532b2da.jpg,94e2fce9-2a96-41e3-ba85-d515e532b2da,"economic, cultural identity"
-./data/images/94ed2263-5a8a-40c4-b7e1-1d24c873e8a4.jpg,94ed2263-5a8a-40c4-b7e1-1d24c873e8a4,"quality of life, capacity and resources"
-./data/images/956e023b-acaf-4d96-b1c6-0a5774d6ade8.jpg,956e023b-acaf-4d96-b1c6-0a5774d6ade8,"quality of life, fairness and equality, economic"
-./data/images/95eb2d81-932d-4a0e-9629-133791ac6d54.jpg,95eb2d81-932d-4a0e-9629-133791ac6d54,no-frame
-../human_annotation/images/96033e64-e6e4-4649-9145-39bde0ddcf59.jpg,96033e64-e6e4-4649-9145-39bde0ddcf59,"quality of life, morality, cultural identity"
-./data/images/962b972e-8c25-4550-9fa9-bb8ae58725f3.jpg,962b972e-8c25-4550-9fa9-bb8ae58725f3,no-frame
-./data/images/969d39b4-d486-4fda-996d-8291fe1877dc.jpg,969d39b4-d486-4fda-996d-8291fe1877dc,"quality of life, health and safety"
-./data/images/96c5ff06-0311-4ed6-80c1-72c5d6480ee0.jpg,96c5ff06-0311-4ed6-80c1-72c5d6480ee0,no-frame
-./data/images/988756a7-f5e0-4c31-a62b-6164ef682ad4.jpg,988756a7-f5e0-4c31-a62b-6164ef682ad4,cultural identity
-./data/images/98c5f8d0-8199-4ea3-b511-df3a6757b8f0.jpg,98c5f8d0-8199-4ea3-b511-df3a6757b8f0,"quality of life, political, morality, public opinion, cultural identity"
-./data/images/98d3e934-e153-41f6-99ba-12d978298005.jpg,98d3e934-e153-41f6-99ba-12d978298005,no-frame
-./data/images/991e4ce9-1851-445c-b868-a9331a19cb38.jpg,991e4ce9-1851-445c-b868-a9331a19cb38,no-frame
-./data/images/992e5c44-2a35-4a16-8d12-7c3fd008d49f.jpg,992e5c44-2a35-4a16-8d12-7c3fd008d49f,cultural identity
-./data/images/995b20be-a9d6-47b5-9f37-c5d5670fab04.jpg,995b20be-a9d6-47b5-9f37-c5d5670fab04,"health and safety, cultural identity"
-./data/images/99f1a39d-2e6e-4e9e-bd86-ab5f09fd0256.jpg,99f1a39d-2e6e-4e9e-bd86-ab5f09fd0256,cultural identity
-./data/images/9a3d7001-0689-42d3-844a-af8d98cb5304.jpg,9a3d7001-0689-42d3-844a-af8d98cb5304,cultural identity
-./data/images/9a730980-4adf-45ec-8532-2015ad98fd21.jpg,9a730980-4adf-45ec-8532-2015ad98fd21,no-frame
-./data/images/9a7bfe93-8bcc-4eab-bc34-319a39712092.jpg,9a7bfe93-8bcc-4eab-bc34-319a39712092,no-frame
-./data/images/9aa649e3-6cba-455f-8c73-2754aad5b8f7.jpg,9aa649e3-6cba-455f-8c73-2754aad5b8f7,"political, security and defense, cultural identity"
-./data/images/9adf296a-6bfa-4995-ba93-ffe122720d18.jpg,9adf296a-6bfa-4995-ba93-ffe122720d18,cultural identity
-./data/images/9aee680b-fae4-4bd7-abd6-a2c7e3335126.jpg,9aee680b-fae4-4bd7-abd6-a2c7e3335126,"security and defense, crime and punishment"
-./data/images/9c44edbd-6a79-4def-a67f-e6c172898b92.jpg,9c44edbd-6a79-4def-a67f-e6c172898b92,"quality of life, public opinion"
-./data/images/9c5f0969-0536-44ce-87ac-c163aa8d6b86.jpg,9c5f0969-0536-44ce-87ac-c163aa8d6b86,political
-./data/images/9c5fb6e5-79d4-4035-9a56-76701ad87f23.jpg,9c5fb6e5-79d4-4035-9a56-76701ad87f23,"quality of life, cultural identity"
-./data/images/9c79fc21-c3b0-461f-8698-56de3e05e84e.jpg,9c79fc21-c3b0-461f-8698-56de3e05e84e,"quality of life, capacity and resources, health and safety"
-./data/images/9cb3a858-5182-450c-8dd5-d185531ffd08.jpg,9cb3a858-5182-450c-8dd5-d185531ffd08,economic
-./data/images/9ce18c94-032a-4fe0-a817-74c02ac3a680.jpg,9ce18c94-032a-4fe0-a817-74c02ac3a680,cultural identity
-./data/images/9d4ad360-2f6a-483d-91b7-5051b15aa56f.jpg,9d4ad360-2f6a-483d-91b7-5051b15aa56f,economic
-../human_annotation/images/9ebdbfbc-cd8f-4c8b-b85f-4cf27e2b1196.jpg,9ebdbfbc-cd8f-4c8b-b85f-4cf27e2b1196,"quality of life, fairness and equality, public opinion"
-../human_annotation/images/9f00a925-3bab-40fa-8eff-9615aa3a2ba1.jpg,9f00a925-3bab-40fa-8eff-9615aa3a2ba1,"quality of life, cultural identity, quality of life, cultural identity"
-./data/images/9f2df497-ae1f-4d5f-b890-8a39008e4f8e.jpg,9f2df497-ae1f-4d5f-b890-8a39008e4f8e,no-frame
-./data/images/9fa061a9-915c-4374-8ba0-d3b6fccba4ed.jpg,9fa061a9-915c-4374-8ba0-d3b6fccba4ed,"security and defense, crime and punishment"
-./data/images/9fd9bd5c-9322-4fc4-81dd-b647b0923dc5.jpg,9fd9bd5c-9322-4fc4-81dd-b647b0923dc5,"capacity and resources, morality, economic"
-./data/images/a06f3f75-721a-4384-8ec2-868866eee4a8.jpg,a06f3f75-721a-4384-8ec2-868866eee4a8,"political, public opinion, health and safety, political, security and defense"
-./data/images/a152a111-e90f-490f-81e1-b7140134e49c.jpg,a152a111-e90f-490f-81e1-b7140134e49c,no-frame
-./data/images/a1555187-ecbb-4f69-b535-bda7b20ba67e.jpg,a1555187-ecbb-4f69-b535-bda7b20ba67e,"quality of life, cultural identity"
-../human_annotation/images/a156076d-d2eb-4ff6-8a61-08264b49f11d.jpg,a156076d-d2eb-4ff6-8a61-08264b49f11d,"crime and punishment, crime and punishment"
-./data/images/a1d0c59f-1a1e-444c-b1b3-d7b32256b690.jpg,a1d0c59f-1a1e-444c-b1b3-d7b32256b690,no-frame
-./data/images/a1d970cb-b7e6-4f81-9701-52fd92ccc43e.jpg,a1d970cb-b7e6-4f81-9701-52fd92ccc43e,"morality, cultural identity"
-./data/images/a379454d-f412-4adf-a2f9-418e11212f9a.jpg,a379454d-f412-4adf-a2f9-418e11212f9a,cultural identity
-./data/images/a3c4e70c-8168-4c89-ae83-0a1646ce4740.jpg,a3c4e70c-8168-4c89-ae83-0a1646ce4740,political
-./data/images/a3ceb4bf-dbd1-4a57-bd99-526e47092e61.jpg,a3ceb4bf-dbd1-4a57-bd99-526e47092e61,no-frame
-../human_annotation/images/a3fc5eab-14ec-4918-8738-b4395f2d22a6.jpg,a3fc5eab-14ec-4918-8738-b4395f2d22a6,"quality of life, quality of life, economic"
-./data/images/a401918d-1367-44ff-b2ea-c0812eb1066f.jpg,a401918d-1367-44ff-b2ea-c0812eb1066f,"economic, capacity and resources, no-frame"
-./data/images/a42abc26-6d5e-44ef-a30c-e7b777641910.jpg,a42abc26-6d5e-44ef-a30c-e7b777641910,no-frame
-./data/images/a4791cd2-07fe-4520-90f9-cb3d91df058e.jpg,a4791cd2-07fe-4520-90f9-cb3d91df058e,"no-frame, morality, no-frame"
-../human_annotation/images/a4ac1a06-64c1-4bb7-81b3-881ddd42f3d4.jpg,a4ac1a06-64c1-4bb7-81b3-881ddd42f3d4,"cultural identity, cultural identity"
-./data/images/a4e90711-d537-4b9d-be6f-95b9fa4cb4df.jpg,a4e90711-d537-4b9d-be6f-95b9fa4cb4df,cultural identity
-./data/images/a4fc6cb4-b8a4-4183-a16d-ffa16b72a8d5.jpg,a4fc6cb4-b8a4-4183-a16d-ffa16b72a8d5,quality of life
-./data/images/a555c4d5-9908-4760-8b5e-768f7004ea63.jpg,a555c4d5-9908-4760-8b5e-768f7004ea63,"fairness and equality, cultural identity"
-./data/images/a55cb8df-7e0b-428e-8d52-4259c1778559.jpg,a55cb8df-7e0b-428e-8d52-4259c1778559,no-frame
-../human_annotation/images/a58d328f-1dfd-4bf0-8637-31ddf3319c5e.jpg,a58d328f-1dfd-4bf0-8637-31ddf3319c5e,"no-frame, political, cultural identity, crime and punishment"
-./data/images/a5a6de46-8954-4d3c-9564-a8058768826d.jpg,a5a6de46-8954-4d3c-9564-a8058768826d,security and defense
-./data/images/a5ff6a40-740d-4ccf-8086-6f36b3ea91b0.jpg,a5ff6a40-740d-4ccf-8086-6f36b3ea91b0,no-frame
-./data/images/a622baef-b026-464e-8dfd-1213511ec554.jpg,a622baef-b026-464e-8dfd-1213511ec554,"no-frame, no-frame, no-frame"
-./data/images/a65f9c17-5939-4358-accb-d2e3b2802eb9.jpg,a65f9c17-5939-4358-accb-d2e3b2802eb9,"political, policy prescription and evaluation, fairness and equality, legality, constitutionality and jurisprudence"
-./data/images/a69984c6-e2a3-4a4e-952f-69e2b55b93ac.jpg,a69984c6-e2a3-4a4e-952f-69e2b55b93ac,"quality of life, capacity and resources, economic"
-./data/images/a6e9ca4f-5af7-4c21-bde6-814b0f75ac2c.jpg,a6e9ca4f-5af7-4c21-bde6-814b0f75ac2c,no-frame
-./data/images/a7427748-71e3-4783-917b-05d062de9e1b.jpg,a7427748-71e3-4783-917b-05d062de9e1b,"quality of life, political, security and defense"
-./data/images/a756c57d-7383-45eb-9fdd-d0d176049681.jpg,a756c57d-7383-45eb-9fdd-d0d176049681,quality of life
-./data/images/a7a1e92a-4c01-4c2f-af40-34b2e1766c2c.jpg,a7a1e92a-4c01-4c2f-af40-34b2e1766c2c,cultural identity
-./data/images/a82fb3de-45b5-4e3f-9ee9-9ae98f77fd54.jpg,a82fb3de-45b5-4e3f-9ee9-9ae98f77fd54,"quality of life, capacity and resources"
-./data/images/a83c1930-b0fb-4cfd-8263-94c1e245c168.jpg,a83c1930-b0fb-4cfd-8263-94c1e245c168,"fairness and equality, public opinion, cultural identity"
-./data/images/a87b75fc-5eda-4d6e-a9f0-b23593261501.jpg,a87b75fc-5eda-4d6e-a9f0-b23593261501,cultural identity
-./data/images/a87ba2b5-d454-4564-a944-dbe2a02e9e6a.jpg,a87ba2b5-d454-4564-a944-dbe2a02e9e6a,political
-./data/images/a87f6a71-3733-49ea-9ea8-5a60242f6487.jpg,a87f6a71-3733-49ea-9ea8-5a60242f6487,no-frame
-./data/images/a8846013-2e3d-49d4-a1db-9e5edb3008e5.jpg,a8846013-2e3d-49d4-a1db-9e5edb3008e5,quality of life
-./data/images/a8fd6e32-52e4-4e98-b815-df42a2f150a8.jpg,a8fd6e32-52e4-4e98-b815-df42a2f150a8,capacity and resources
-./data/images/a99aa28c-071d-44a3-abdb-ae9e9ec0c7f4.jpg,a99aa28c-071d-44a3-abdb-ae9e9ec0c7f4,crime and punishment
-./data/images/a99e14ca-2f19-4fa9-a202-e44c2b67bbba.jpg,a99e14ca-2f19-4fa9-a202-e44c2b67bbba,quality of life
-./data/images/aa286983-034c-4ddc-b2e4-977a10c40550.jpg,aa286983-034c-4ddc-b2e4-977a10c40550,quality of life
-./data/images/aa4790dc-e290-42a0-a14d-d73c984d3805.jpg,aa4790dc-e290-42a0-a14d-d73c984d3805,no-frame
-./data/images/aab9cbd9-7c14-4877-a20c-f986beadd2ab.jpg,aab9cbd9-7c14-4877-a20c-f986beadd2ab,"external regulation and reputation, political, fairness and equality, public opinion, public opinion"
-./data/images/aaeca48e-cc2b-46a1-87bb-030059ee15d3.jpg,aaeca48e-cc2b-46a1-87bb-030059ee15d3,"political, public opinion"
-./data/images/ab08216b-b31f-47b0-8615-67fb519f767f.jpg,ab08216b-b31f-47b0-8615-67fb519f767f,cultural identity
-./data/images/ab3c62bf-f70d-4d17-90c1-9d30fc182b52.jpg,ab3c62bf-f70d-4d17-90c1-9d30fc182b52,health and safety
-./data/images/ab7e4378-3264-480e-b99c-e9c4b29f8959.jpg,ab7e4378-3264-480e-b99c-e9c4b29f8959,no-frame
-./data/images/ac2ead85-b12d-4425-a8b1-ad8564d33c3f.jpg,ac2ead85-b12d-4425-a8b1-ad8564d33c3f,"quality of life, capacity and resources, political, fairness and equality, health and safety, public opinion"
-./data/images/ac6d579d-fc7e-4db0-97cb-ab889e8cbc61.jpg,ac6d579d-fc7e-4db0-97cb-ab889e8cbc61,capacity and resources
-./data/images/ac716fe5-34b9-4899-b911-ebc120e93eb2.jpg,ac716fe5-34b9-4899-b911-ebc120e93eb2,"political, policy prescription and evaluation, public opinion"
-./data/images/acfe48bf-1dc5-48f6-94cf-77934d9478b2.jpg,acfe48bf-1dc5-48f6-94cf-77934d9478b2,"quality of life, health and safety"
-./data/images/ad0c99ac-cf0b-4767-964d-a94648448994.jpg,ad0c99ac-cf0b-4767-964d-a94648448994,"quality of life, health and safety"
-./data/images/ad46438a-e46a-460a-86d2-61011a1418a9.jpg,ad46438a-e46a-460a-86d2-61011a1418a9,cultural identity
-../human_annotation/images/ad58c5d1-debe-454b-8f29-ed10e39a843e.jpg,ad58c5d1-debe-454b-8f29-ed10e39a843e,"no-frame, no-frame"
-./data/images/ad9ee250-0a9e-48da-91af-6fd6cc79af6d.jpg,ad9ee250-0a9e-48da-91af-6fd6cc79af6d,"quality of life, capacity and resources, economic"
-./data/images/adcb6450-d9be-4cac-9c76-5b3c62341f7b.jpg,adcb6450-d9be-4cac-9c76-5b3c62341f7b,cultural identity
-./data/images/ae4cf5ff-0a58-4eba-98d9-456eb01400b7.jpg,ae4cf5ff-0a58-4eba-98d9-456eb01400b7,no-frame
-./data/images/af041f1a-9592-4ad1-9905-05631601cbd8.jpg,af041f1a-9592-4ad1-9905-05631601cbd8,"no-frame, health and safety, quality of life"
-./data/images/af829472-f2ef-447f-81bb-19b76758088b.jpg,af829472-f2ef-447f-81bb-19b76758088b,no-frame
-./data/images/af944047-3371-474b-8c08-2216f36d5de2.jpg,af944047-3371-474b-8c08-2216f36d5de2,cultural identity
-./data/images/afcd2131-8973-47d6-9037-1dd3754f1694.jpg,afcd2131-8973-47d6-9037-1dd3754f1694,"quality of life, fairness and equality"
-./data/images/afeab459-01ce-4f1a-96ba-1641c73fb9d9.jpg,afeab459-01ce-4f1a-96ba-1641c73fb9d9,political
-./data/images/b03e0d62-3068-4fec-bd0b-439dda501973.jpg,b03e0d62-3068-4fec-bd0b-439dda501973,public opinion
-./data/images/b17e6119-f679-4c01-b615-4b18b29e8525.jpg,b17e6119-f679-4c01-b615-4b18b29e8525,"quality of life, cultural identity, quality of life"
-./data/images/b1af9045-7252-4f9d-ba49-a7477568bcc3.jpg,b1af9045-7252-4f9d-ba49-a7477568bcc3,"capacity and resources, economic"
-./data/images/b1c4a750-b15d-4f4d-a245-6e9520024e0b.jpg,b1c4a750-b15d-4f4d-a245-6e9520024e0b,economic
-./data/images/b1fd431c-9bfc-48ef-a6d5-e76f65bb5adc.jpg,b1fd431c-9bfc-48ef-a6d5-e76f65bb5adc,"economic, public opinion"
-./data/images/b239e765-aa30-479d-bc85-bd022a0f0a73.jpg,b239e765-aa30-479d-bc85-bd022a0f0a73,health and safety
-./data/images/b3008597-af33-4905-bb1f-3fe0b649a521.jpg,b3008597-af33-4905-bb1f-3fe0b649a521,cultural identity
-../human_annotation/images/b35356ec-9f13-4b97-abbd-a12eb4abd691.jpg,b35356ec-9f13-4b97-abbd-a12eb4abd691,"capacity and resources, no-frame"
-./data/images/b36af344-ca77-468d-8d1c-2eb6c1c9f880.jpg,b36af344-ca77-468d-8d1c-2eb6c1c9f880,"no-frame, quality of life, cultural identity, no-frame"
-./data/images/b3759468-17c9-4f10-9d4f-ee4ca08ab245.jpg,b3759468-17c9-4f10-9d4f-ee4ca08ab245,capacity and resources
-./data/images/b3b5ab99-0d00-4e22-8d3a-9b1676b2ebca.jpg,b3b5ab99-0d00-4e22-8d3a-9b1676b2ebca,no-frame
-../human_annotation/images/b448fede-40b3-47cb-abfb-eae7c7daae14.jpg,b448fede-40b3-47cb-abfb-eae7c7daae14,"quality of life, quality of life"
-../human_annotation/images/b49f0398-90d3-47e4-a42b-32fb54214bde.jpg,b49f0398-90d3-47e4-a42b-32fb54214bde,"political, political"
-./data/images/b4ddffac-3912-4ea7-997b-c72a49521078.jpg,b4ddffac-3912-4ea7-997b-c72a49521078,cultural identity
-./data/images/b5374465-9417-4436-862c-255b7f356a8b.jpg,b5374465-9417-4436-862c-255b7f356a8b,no-frame
-./data/images/b60b1ed4-d0f6-4688-84d0-f3fec4e794c0.jpg,b60b1ed4-d0f6-4688-84d0-f3fec4e794c0,no-frame
-./data/images/b60c009b-a1fa-4dad-9ea9-279b456258d7.jpg,b60c009b-a1fa-4dad-9ea9-279b456258d7,cultural identity
-./data/images/b680b8de-9739-475c-b099-64d8298aff89.jpg,b680b8de-9739-475c-b099-64d8298aff89,"security and defense, health and safety, crime and punishment"
-../human_annotation/images/b6b72563-0cdc-4bb1-a04c-6f4766dd89e5.jpg,b6b72563-0cdc-4bb1-a04c-6f4766dd89e5,"health and safety, crime and punishment, health and safety, crime and punishment"
-./data/images/b6f67b97-b6c6-4e74-9a9a-0a8d9076fb89.jpg,b6f67b97-b6c6-4e74-9a9a-0a8d9076fb89,political
-./data/images/b6f96d29-30e6-4b91-9d0b-abda9a1fb7eb.jpg,b6f96d29-30e6-4b91-9d0b-abda9a1fb7eb,cultural identity
-./data/images/b7279968-e97b-4561-9b8d-a1488f5d05e9.jpg,b7279968-e97b-4561-9b8d-a1488f5d05e9,cultural identity
-./data/images/b7432fca-801e-41c8-9741-24a39e469d3a.jpg,b7432fca-801e-41c8-9741-24a39e469d3a,"quality of life, cultural identity, quality of life, cultural identity, quality of life"
-../human_annotation/images/b761f39d-fbb0-4749-80d0-7c0e5b3857c3.jpg,b761f39d-fbb0-4749-80d0-7c0e5b3857c3,"no-frame, no-frame"
-./data/images/b767471f-7716-499d-9c30-b8f6c992ccc0.jpg,b767471f-7716-499d-9c30-b8f6c992ccc0,no-frame
-./data/images/b77841fa-9579-4e70-a7e4-011f4f88400a.jpg,b77841fa-9579-4e70-a7e4-011f4f88400a,no-frame
-./data/images/b7817a6e-a1a9-4799-a038-c68644fa3bc3.jpg,b7817a6e-a1a9-4799-a038-c68644fa3bc3,no-frame
-./data/images/b78d5a62-e7d9-408c-b3bd-ebff6bf94952.jpg,b78d5a62-e7d9-408c-b3bd-ebff6bf94952,no-frame
-./data/images/b7f15dc5-41fc-4e0b-b444-7438f7d7c4d6.jpg,b7f15dc5-41fc-4e0b-b444-7438f7d7c4d6,no-frame
-./data/images/b88fd3ad-c893-4501-81fd-32eca41d8dee.jpg,b88fd3ad-c893-4501-81fd-32eca41d8dee,"political, morality, economic"
-./data/images/b90f46a3-dd78-49af-a7cf-e0ef7850b48e.jpg,b90f46a3-dd78-49af-a7cf-e0ef7850b48e,"public opinion, cultural identity"
-./data/images/b91902e9-7594-46a0-bfb1-e7980d37e14e.jpg,b91902e9-7594-46a0-bfb1-e7980d37e14e,"quality of life, capacity and resources"
-./data/images/b94e919b-d277-40a8-9c2d-979d82cc7999.jpg,b94e919b-d277-40a8-9c2d-979d82cc7999,political
-./data/images/baa6ea38-c6f5-4045-9b0d-0266706df7aa.jpg,baa6ea38-c6f5-4045-9b0d-0266706df7aa,no-frame
-./data/images/bad58e49-99aa-497b-8e24-8d31907f9023.jpg,bad58e49-99aa-497b-8e24-8d31907f9023,cultural identity
-./data/images/baf451b9-5031-43f0-80cc-099717ae0988.jpg,baf451b9-5031-43f0-80cc-099717ae0988,quality of life
-./data/images/bb04551b-ea71-4bb5-9e11-ab7b7995908f.jpg,bb04551b-ea71-4bb5-9e11-ab7b7995908f,"morality, cultural identity"
-./data/images/bb1c120c-0ec3-467a-884f-cc81dc8cc0c3.jpg,bb1c120c-0ec3-467a-884f-cc81dc8cc0c3,"security and defense, crime and punishment"
-./data/images/bc813905-e488-404d-8efd-13a88f8c26b7.jpg,bc813905-e488-404d-8efd-13a88f8c26b7,"morality, public opinion, cultural identity"
-./data/images/bcb716a9-b928-435c-8082-4640a888803a.jpg,bcb716a9-b928-435c-8082-4640a888803a,cultural identity
-./data/images/bce9388a-c849-4b65-a3f0-f5ead3ac8504.jpg,bce9388a-c849-4b65-a3f0-f5ead3ac8504,health and safety
-./data/images/bcea11b5-7f0b-40ca-8d22-630bacc8a472.jpg,bcea11b5-7f0b-40ca-8d22-630bacc8a472,cultural identity
-./data/images/bcf3b350-7f65-4457-a20b-8ca59b445d5a.jpg,bcf3b350-7f65-4457-a20b-8ca59b445d5a,quality of life
-./data/images/bd03859e-720a-459d-8cec-b8a2ce412f7c.jpg,bd03859e-720a-459d-8cec-b8a2ce412f7c,no-frame
-./data/images/bd11b592-661c-4549-9d69-f12810d4fc0b.jpg,bd11b592-661c-4549-9d69-f12810d4fc0b,cultural identity
-./data/images/bd23bcb9-a914-4197-a650-fa8968917ab9.jpg,bd23bcb9-a914-4197-a650-fa8968917ab9,"political, public opinion"
-./data/images/bd27460a-8833-462b-89e5-c6c538a79a09.jpg,bd27460a-8833-462b-89e5-c6c538a79a09,"quality of life, morality, public opinion, cultural identity"
-./data/images/bd6834d3-dd31-49a8-9a8c-e42a25af71c8.jpg,bd6834d3-dd31-49a8-9a8c-e42a25af71c8,no-frame
-./data/images/bdb48f06-0662-45dd-b053-1ddd70f3a718.jpg,bdb48f06-0662-45dd-b053-1ddd70f3a718,"political, health and safety, public opinion"
-./data/images/be019a73-c0a8-46ff-b781-3496ba2f1698.jpg,be019a73-c0a8-46ff-b781-3496ba2f1698,"quality of life, capacity and resources, cultural identity"
-../human_annotation/images/be93f05c-bb49-4fda-ac31-58d99c63f025.jpg,be93f05c-bb49-4fda-ac31-58d99c63f025,"capacity and resources, quality of life"
-./data/images/be98675c-3dbe-4770-a17d-c9f2cba13200.jpg,be98675c-3dbe-4770-a17d-c9f2cba13200,no-frame
-./data/images/c018ff66-afcb-4fee-8877-c890c7e6aac4.jpg,c018ff66-afcb-4fee-8877-c890c7e6aac4,cultural identity
-./data/images/c0760c18-1681-438f-bcea-9df94c86d627.jpg,c0760c18-1681-438f-bcea-9df94c86d627,"health and safety, economic"
-./data/images/c0a8c4c0-04c2-4677-ab69-3e05771612df.jpg,c0a8c4c0-04c2-4677-ab69-3e05771612df,"security and defense, legality, constitutionality and jurisprudence, crime and punishment"
-./data/images/c0c12f82-de46-441b-813b-4e69224945ee.jpg,c0c12f82-de46-441b-813b-4e69224945ee,cultural identity
-./data/images/c164e1aa-cab9-4583-aacc-d0d3e7d211c9.jpg,c164e1aa-cab9-4583-aacc-d0d3e7d211c9,"fairness and equality, public opinion, cultural identity"
-./data/images/c204cdeb-3276-4971-915b-972fcd6814fb.jpg,c204cdeb-3276-4971-915b-972fcd6814fb,capacity and resources
-./data/images/c2551487-7663-4852-bf1c-83af80ff63ae.jpg,c2551487-7663-4852-bf1c-83af80ff63ae,"public opinion, cultural identity"
-./data/images/c365b691-163e-417f-a688-07f0ba7f7ca9.jpg,c365b691-163e-417f-a688-07f0ba7f7ca9,no-frame
-./data/images/c408dc42-ac14-4df9-a640-1f8dcb4eaa06.jpg,c408dc42-ac14-4df9-a640-1f8dcb4eaa06,"public opinion, cultural identity"
-../human_annotation/images/c4c6f344-563b-4432-92bd-54d1bb72e748.jpg,c4c6f344-563b-4432-92bd-54d1bb72e748,"cultural identity, cultural identity"
-./data/images/c5e1debd-0c8d-4c3e-a751-570571c810a4.jpg,c5e1debd-0c8d-4c3e-a751-570571c810a4,no-frame
-../human_annotation/images/c5e429ea-49aa-481d-8172-0430f57ae926.jpg,c5e429ea-49aa-481d-8172-0430f57ae926,"public opinion, cultural identity, political, public opinion, cultural identity"
-./data/images/c626ff71-b77b-46cf-8bf3-9484f6e45f32.jpg,c626ff71-b77b-46cf-8bf3-9484f6e45f32,"quality of life, cultural identity"
-../human_annotation/images/c69cfe52-e928-4dc3-b36b-cf2c9e081e0f.jpg,c69cfe52-e928-4dc3-b36b-cf2c9e081e0f,"quality of life, cultural identity, quality of life"
-./data/images/c6f2b482-dc0c-4a06-b21a-e460517c5715.jpg,c6f2b482-dc0c-4a06-b21a-e460517c5715,quality of life
-./data/images/c844c3f2-5f35-4694-a11e-0cabf4f819e7.jpg,c844c3f2-5f35-4694-a11e-0cabf4f819e7,cultural identity
-./data/images/c8d5ccb2-e681-4343-ad81-756a86558cb9.jpg,c8d5ccb2-e681-4343-ad81-756a86558cb9,"policy prescription and evaluation, external regulation and reputation"
-./data/images/c8e3f33b-302a-4ff7-945f-78a913d3f10c.jpg,c8e3f33b-302a-4ff7-945f-78a913d3f10c,security and defense
-./data/images/c9138aad-0426-419e-83c9-617a4eaca387.jpg,c9138aad-0426-419e-83c9-617a4eaca387,security and defense
-./data/images/c9a1b78c-ebf3-412a-950a-7c7df1ec8f63.jpg,c9a1b78c-ebf3-412a-950a-7c7df1ec8f63,"quality of life, political, public opinion"
-./data/images/c9cb24ed-96f7-444c-8f9b-69857487cf85.jpg,c9cb24ed-96f7-444c-8f9b-69857487cf85,"morality, public opinion"
-./data/images/ca20656b-fe52-465a-b218-29b9118443dd.jpg,ca20656b-fe52-465a-b218-29b9118443dd,no-frame
-./data/images/caa008b1-fead-4720-8a41-3f77c89c3e6f.jpg,caa008b1-fead-4720-8a41-3f77c89c3e6f,no-frame
-./data/images/cab095be-87c6-4750-99f6-d1772789e62b.jpg,cab095be-87c6-4750-99f6-d1772789e62b,cultural identity
-./data/images/cb3ecdf8-1dd5-48f3-9acc-bbe1eeadb108.jpg,cb3ecdf8-1dd5-48f3-9acc-bbe1eeadb108,"morality, cultural identity"
-../human_annotation/images/cb5f118c-0231-4383-9832-aa9ffedced8d.jpg,cb5f118c-0231-4383-9832-aa9ffedced8d,"quality of life, cultural identity, cultural identity"
-./data/images/cbdfa962-d6ae-4918-87ce-157a13ac3831.jpg,cbdfa962-d6ae-4918-87ce-157a13ac3831,cultural identity
-../human_annotation/images/cc645eda-6bae-43c4-9dc6-68943386a472.jpg,cc645eda-6bae-43c4-9dc6-68943386a472,"quality of life, quality of life"
-./data/images/cd1f38ac-bf78-4d70-b2ef-57b966a0a1bc.jpg,cd1f38ac-bf78-4d70-b2ef-57b966a0a1bc,"cultural identity, morality, quality of life"
-./data/images/cda5f0f2-bafa-4dd4-bca2-de7e8e86dd44.jpg,cda5f0f2-bafa-4dd4-bca2-de7e8e86dd44,no-frame
-./data/images/cdc09317-a5f2-4af7-9fc3-a4f3cae0c1d0.jpg,cdc09317-a5f2-4af7-9fc3-a4f3cae0c1d0,"no-frame, legality, constitutionality and jurisprudence, political, security and defense, policy prescription and evaluation"
-./data/images/ce063311-628c-4588-b39d-753ac89825b3.jpg,ce063311-628c-4588-b39d-753ac89825b3,political
-./data/images/ce0adca4-0cf2-4ddb-90f3-247684048b79.jpg,ce0adca4-0cf2-4ddb-90f3-247684048b79,no-frame
-./data/images/cf2891c2-8181-49d7-86b5-80f4cef0b87a.jpg,cf2891c2-8181-49d7-86b5-80f4cef0b87a,"no-frame, capacity and resources, crime and punishment"
-./data/images/cf474ef5-65bb-43e0-af43-dc9fafe352ed.jpg,cf474ef5-65bb-43e0-af43-dc9fafe352ed,"no-frame, no-frame, quality of life"
-./data/images/cf7e739e-4d62-4047-960c-b846b3dadbd9.jpg,cf7e739e-4d62-4047-960c-b846b3dadbd9,"public opinion, no-frame, no-frame"
-./data/images/cf8232fa-b742-42f4-b26d-77f100b41137.jpg,cf8232fa-b742-42f4-b26d-77f100b41137,"security and defense, health and safety, crime and punishment"
-./data/images/d0a077fd-f0fd-4b33-90d8-20c0d94faf7e.jpg,d0a077fd-f0fd-4b33-90d8-20c0d94faf7e,"capacity and resources, economic"
-./data/images/d0b6a78d-70bb-405f-b00e-f3c9aa810288.jpg,d0b6a78d-70bb-405f-b00e-f3c9aa810288,political
-./data/images/d0e81ede-58f4-4d5d-aab0-74edcbc9da56.jpg,d0e81ede-58f4-4d5d-aab0-74edcbc9da56,cultural identity
-./data/images/d0ee4b7c-2082-4275-8709-26464024a7c7.jpg,d0ee4b7c-2082-4275-8709-26464024a7c7,economic
-./data/images/d0f0afe0-ccd2-474a-afd9-5d8925b55b89.jpg,d0f0afe0-ccd2-474a-afd9-5d8925b55b89,cultural identity
-./data/images/d2699e62-cb54-4012-a335-6fe38a73c261.jpg,d2699e62-cb54-4012-a335-6fe38a73c261,health and safety
-./data/images/d278ac53-2379-4a9d-9a47-b69f1df9bd68.jpg,d278ac53-2379-4a9d-9a47-b69f1df9bd68,public opinion
-./data/images/d28d4f2d-fe4a-4acc-add1-8d3b71fa254e.jpg,d28d4f2d-fe4a-4acc-add1-8d3b71fa254e,"quality of life, capacity and resources, health and safety, economic"
-./data/images/d341a5a0-d5ca-4fbc-9368-a0234d18912e.jpg,d341a5a0-d5ca-4fbc-9368-a0234d18912e,no-frame
-./data/images/d37bd8ee-b567-4557-8228-53aa3ae4d374.jpg,d37bd8ee-b567-4557-8228-53aa3ae4d374,"no-frame, political, political"
-./data/images/d3c09c04-bea6-4b2b-ab8c-4283757ee4e4.jpg,d3c09c04-bea6-4b2b-ab8c-4283757ee4e4,cultural identity
-./data/images/d3f6cc98-fbd7-41b0-9e04-2691732650d1.jpg,d3f6cc98-fbd7-41b0-9e04-2691732650d1,no-frame
-./data/images/d47eebd1-90a7-403f-b635-81203a10e427.jpg,d47eebd1-90a7-403f-b635-81203a10e427,no-frame
-./data/images/d49cef05-5da8-4360-bcd5-c6ae4830416f.jpg,d49cef05-5da8-4360-bcd5-c6ae4830416f,no-frame
-./data/images/d4cafb97-21be-4f82-b89d-753a84030243.jpg,d4cafb97-21be-4f82-b89d-753a84030243,"public opinion, cultural identity"
-./data/images/d5034d44-4ff6-4198-a25c-d8fe0dbcf08f.jpg,d5034d44-4ff6-4198-a25c-d8fe0dbcf08f,public opinion
-../human_annotation/images/d567764a-f43e-4278-b754-1b1b7a80ec47.jpg,d567764a-f43e-4278-b754-1b1b7a80ec47,"health and safety, no-frame"
-./data/images/d5e42ef6-7571-43cd-8e74-2acb94027845.jpg,d5e42ef6-7571-43cd-8e74-2acb94027845,no-frame
-./data/images/d63a98d0-7553-46a1-9049-b34b5ebacdc0.jpg,d63a98d0-7553-46a1-9049-b34b5ebacdc0,"quality of life, cultural identity"
-../human_annotation/images/d6933bb2-3105-412d-89b6-d362af23178b.jpg,d6933bb2-3105-412d-89b6-d362af23178b,"public opinion, crime and punishment"
-./data/images/d6c2a618-243f-4487-8246-471b71ce2079.jpg,d6c2a618-243f-4487-8246-471b71ce2079,"health and safety, crime and punishment"
-./data/images/d6e96ce6-b50a-4e6b-9e9a-51b9499a7ec2.jpg,d6e96ce6-b50a-4e6b-9e9a-51b9499a7ec2,quality of life
-./data/images/d78614a0-282b-43c8-8ffc-2281d155891d.jpg,d78614a0-282b-43c8-8ffc-2281d155891d,cultural identity
-./data/images/d8056165-5c61-4cc7-8eba-07e7fd6d5c1e.jpg,d8056165-5c61-4cc7-8eba-07e7fd6d5c1e,capacity and resources
-../human_annotation/images/d84ef2dc-e93b-4074-b38b-316991ac7bd1.jpg,d84ef2dc-e93b-4074-b38b-316991ac7bd1,"crime and punishment, crime and punishment"
-./data/images/d892b9d5-9f0d-4bb9-9334-47350d38cc58.jpg,d892b9d5-9f0d-4bb9-9334-47350d38cc58,cultural identity
-./data/images/d8942881-6edb-403a-a438-a3144dc05c3b.jpg,d8942881-6edb-403a-a438-a3144dc05c3b,no-frame
-./data/images/d8a12d15-7c71-475a-822d-8bee51fda24d.jpg,d8a12d15-7c71-475a-822d-8bee51fda24d,no-frame
-../human_annotation/images/d8e0358e-1ad6-480e-a155-6e97f5ad0549.jpg,d8e0358e-1ad6-480e-a155-6e97f5ad0549,"no-frame, no-frame"
-./data/images/d98f18fb-78a5-458f-b025-5b100d46d992.jpg,d98f18fb-78a5-458f-b025-5b100d46d992,no-frame
-./data/images/dacce4c7-3392-4a4e-84eb-2b7b6cdc6847.jpg,dacce4c7-3392-4a4e-84eb-2b7b6cdc6847,"quality of life, capacity and resources, health and safety"
-./data/images/daf17368-4e23-4558-82c4-ac0e1877123a.jpg,daf17368-4e23-4558-82c4-ac0e1877123a,"quality of life, capacity and resources, capacity and resources, health and safety, quality of life"
-./data/images/dd1bc5ee-2787-4b9e-8aeb-a312bd0cd7ca.jpg,dd1bc5ee-2787-4b9e-8aeb-a312bd0cd7ca,morality
-./data/images/dd77cf66-a6b1-44a7-9846-d3c114ec8539.jpg,dd77cf66-a6b1-44a7-9846-d3c114ec8539,cultural identity
-./data/images/dd83771a-7a4a-4508-8c78-7c5daae465aa.jpg,dd83771a-7a4a-4508-8c78-7c5daae465aa,no-frame
-./data/images/dd8b72de-eeb4-4736-ab57-7563b760c1b0.jpg,dd8b72de-eeb4-4736-ab57-7563b760c1b0,"quality of life, health and safety"
-./data/images/de58e183-6555-4f5d-91bf-a3561dc0711b.jpg,de58e183-6555-4f5d-91bf-a3561dc0711b,cultural identity
-./data/images/dea8ba1c-b61e-44a0-9d70-669bd849020b.jpg,dea8ba1c-b61e-44a0-9d70-669bd849020b,economic
-./data/images/ded0407c-a193-4f83-9a55-f741777ee032.jpg,ded0407c-a193-4f83-9a55-f741777ee032,political
-./data/images/ded98b5b-d9de-412d-8563-2df6e98ef217.jpg,ded98b5b-d9de-412d-8563-2df6e98ef217,no-frame
-../human_annotation/images/e01123d0-6437-459a-8a19-e5e06077668b.jpg,e01123d0-6437-459a-8a19-e5e06077668b,"cultural identity, cultural identity"
-./data/images/e0b9ccc8-61b3-42a9-9d4a-05111139eea3.jpg,e0b9ccc8-61b3-42a9-9d4a-05111139eea3,"fairness and equality, public opinion, cultural identity"
-./data/images/e0cf2635-8896-4963-a056-1a967ffb24e7.jpg,e0cf2635-8896-4963-a056-1a967ffb24e7,cultural identity
-./data/images/e1934917-31de-4183-9b4a-70c27c70c4c7.jpg,e1934917-31de-4183-9b4a-70c27c70c4c7,"cultural identity, crime and punishment"
-../human_annotation/images/e1f7304e-b177-4d66-8e57-1c82c98124b5.jpg,e1f7304e-b177-4d66-8e57-1c82c98124b5,"morality, cultural identity"
-./data/images/e20d19b1-8b9b-495a-a017-db4faaaa9398.jpg,e20d19b1-8b9b-495a-a017-db4faaaa9398,cultural identity
-./data/images/e25e3c99-44fe-4dbe-aba9-8ef018fe1ffb.jpg,e25e3c99-44fe-4dbe-aba9-8ef018fe1ffb,no-frame
-./data/images/e443321c-b6e6-4fac-80bc-8d9d8a6f8b05.jpg,e443321c-b6e6-4fac-80bc-8d9d8a6f8b05,"policy prescription and evaluation, legality, constitutionality and jurisprudence, crime and punishment"
-../human_annotation/images/e4600973-9682-45ff-a2e2-f761456f163b.jpg,e4600973-9682-45ff-a2e2-f761456f163b,"no-frame, no-frame"
-./data/images/e4de58d6-9f84-4b16-8b62-10ccc74b02ad.jpg,e4de58d6-9f84-4b16-8b62-10ccc74b02ad,"health and safety, cultural identity, cultural identity, cultural identity"
-./data/images/e559e0c6-e3ec-4a34-80a5-f817eb777eeb.jpg,e559e0c6-e3ec-4a34-80a5-f817eb777eeb,"fairness and equality, health and safety, morality, crime and punishment"
-../human_annotation/images/e5ca8747-e755-4bd6-a56e-faa452d62026.jpg,e5ca8747-e755-4bd6-a56e-faa452d62026,"capacity and resources, health and safety, crime and punishment"
-./data/images/e660896f-6842-4c5e-aa5d-611ad7cc62f5.jpg,e660896f-6842-4c5e-aa5d-611ad7cc62f5,"political, public opinion"
-./data/images/e6b89a7d-0871-4f0c-bfcb-365e3afef5ad.jpg,e6b89a7d-0871-4f0c-bfcb-365e3afef5ad,"morality, public opinion, cultural identity"
-./data/images/e6f72938-4434-45f8-890c-46fa190cbd76.jpg,e6f72938-4434-45f8-890c-46fa190cbd76,no-frame
-./data/images/e7d9bc07-3298-4152-bd8a-6bb792203533.jpg,e7d9bc07-3298-4152-bd8a-6bb792203533,"quality of life, health and safety"
-./data/images/e81c9092-30d4-49b9-bbcf-8e4867afc1e4.jpg,e81c9092-30d4-49b9-bbcf-8e4867afc1e4,cultural identity
-./data/images/e82795d6-1324-4a84-90ee-c83d1a315975.jpg,e82795d6-1324-4a84-90ee-c83d1a315975,no-frame
-./data/images/e846a896-aa1b-4614-a643-a7a23d22cad7.jpg,e846a896-aa1b-4614-a643-a7a23d22cad7,cultural identity
-./data/images/e89509d4-2f3a-414e-bea9-454c2f8de353.jpg,e89509d4-2f3a-414e-bea9-454c2f8de353,cultural identity
-./data/images/e8e0f353-e89a-41f4-9ba7-1c2843c5a37b.jpg,e8e0f353-e89a-41f4-9ba7-1c2843c5a37b,political
-./data/images/e925cc4d-a14e-4186-ab24-0efe2c781975.jpg,e925cc4d-a14e-4186-ab24-0efe2c781975,cultural identity
-./data/images/e967e9ce-8adc-44a2-b2b1-52c7b7eca931.jpg,e967e9ce-8adc-44a2-b2b1-52c7b7eca931,capacity and resources
-./data/images/e977c749-da10-4b31-ad50-9182a46cf4f9.jpg,e977c749-da10-4b31-ad50-9182a46cf4f9,"quality of life, cultural identity"
-./data/images/e9a84560-1055-47de-921d-d18c3e34cc32.jpg,e9a84560-1055-47de-921d-d18c3e34cc32,crime and punishment
-./data/images/ea16e806-d15f-41ba-9146-064f2c8f7ece.jpg,ea16e806-d15f-41ba-9146-064f2c8f7ece,"cultural identity, quality of life, quality of life"
-./data/images/eb08359f-3ae9-4e0b-954b-83b6fb74280e.jpg,eb08359f-3ae9-4e0b-954b-83b6fb74280e,"capacity and resources, political, security and defense, policy prescription and evaluation, health and safety, legality, constitutionality and jurisprudence, public opinion, external regulation and reputation, crime and punishment"
-./data/images/eb18c91f-0e23-4dca-bb1c-5b7ccebf32bd.jpg,eb18c91f-0e23-4dca-bb1c-5b7ccebf32bd,cultural identity
-./data/images/eb85ecdc-3890-4a59-85ba-5c156883f048.jpg,eb85ecdc-3890-4a59-85ba-5c156883f048,"quality of life, public opinion"
-./data/images/ec2fd0a0-6e43-4275-99dc-c56bb7033df0.jpg,ec2fd0a0-6e43-4275-99dc-c56bb7033df0,cultural identity
-./data/images/ec3042a9-7081-4964-9cff-5f7c03e2dd24.jpg,ec3042a9-7081-4964-9cff-5f7c03e2dd24,economic
-./data/images/ec8d8a93-69f9-4110-88c0-64fc33d93ec0.jpg,ec8d8a93-69f9-4110-88c0-64fc33d93ec0,"political, no-frame, political"
-./data/images/ef151a1a-f7fe-4c1b-b0ea-cf4a63f3ea7d.jpg,ef151a1a-f7fe-4c1b-b0ea-cf4a63f3ea7d,"quality of life, capacity and resources"
-./data/images/ef3d1ab0-290c-42a3-832f-4c0d41439411.jpg,ef3d1ab0-290c-42a3-832f-4c0d41439411,"security and defense, crime and punishment"
-./data/images/ef6f02a9-0533-4b67-b6ca-6a37206ff043.jpg,ef6f02a9-0533-4b67-b6ca-6a37206ff043,cultural identity
-./data/images/ef9227f0-5d9d-451e-ba71-908a4eacf1c1.jpg,ef9227f0-5d9d-451e-ba71-908a4eacf1c1,capacity and resources
-../human_annotation/images/efae6a73-071f-4055-bc66-757a959bf3e2.jpg,efae6a73-071f-4055-bc66-757a959bf3e2,"public opinion, cultural identity, political, public opinion, cultural identity"
-./data/images/f07ca463-df0c-4265-8585-6cc3393aa7ea.jpg,f07ca463-df0c-4265-8585-6cc3393aa7ea,"quality of life, capacity and resources, health and safety"
-../human_annotation/images/f13e1e63-d9b4-4127-b04d-6bdc034a1aee.jpg,f13e1e63-d9b4-4127-b04d-6bdc034a1aee,"security and defense, political, security and defense, cultural identity"
-./data/images/f1a65006-c62e-4e3e-835e-6cd92b87dc4b.jpg,f1a65006-c62e-4e3e-835e-6cd92b87dc4b,"quality of life, economic"
-./data/images/f1c0adf4-34e8-443b-8d00-3a6fd3d9a1af.jpg,f1c0adf4-34e8-443b-8d00-3a6fd3d9a1af,economic
-./data/images/f1f0d938-ee4b-47c5-9e20-56749637d413.jpg,f1f0d938-ee4b-47c5-9e20-56749637d413,no-frame
-./data/images/f2a07e80-9322-46a8-baf7-d84bc4d89483.jpg,f2a07e80-9322-46a8-baf7-d84bc4d89483,no-frame
-./data/images/f2e4e3e7-2154-4136-bfaa-2add33d38e5b.jpg,f2e4e3e7-2154-4136-bfaa-2add33d38e5b,no-frame
-../human_annotation/images/f3a20b3e-1de0-4612-b989-37fd85f7b818.jpg,f3a20b3e-1de0-4612-b989-37fd85f7b818,"cultural identity, quality of life"
-./data/images/f49c34f6-3eae-49e8-b0a8-637e26300df8.jpg,f49c34f6-3eae-49e8-b0a8-637e26300df8,"political, security and defense, external regulation and reputation"
-./data/images/f4e2b79f-61f6-4eb4-b513-f64b6775eb09.jpg,f4e2b79f-61f6-4eb4-b513-f64b6775eb09,cultural identity
-../human_annotation/images/f55eea4a-8826-4c81-a927-3335b7bdfd64.jpg,f55eea4a-8826-4c81-a927-3335b7bdfd64,capacity and resources
-../human_annotation/images/f6957070-3516-4142-b7ad-d4977343c6e4.jpg,f6957070-3516-4142-b7ad-d4977343c6e4,"cultural identity, cultural identity"
-./data/images/f6f16b2c-4381-440f-9cbb-dd21941b30ac.jpg,f6f16b2c-4381-440f-9cbb-dd21941b30ac,no-frame
-./data/images/f7569073-fa4b-4588-a26b-3ec5c9f27d86.jpg,f7569073-fa4b-4588-a26b-3ec5c9f27d86,"quality of life, political, security and defense, health and safety, public opinion, cultural identity"
-./data/images/f97b31e5-0300-4ff8-b7c2-0e8267682815.jpg,f97b31e5-0300-4ff8-b7c2-0e8267682815,"policy prescription and evaluation, legality, constitutionality and jurisprudence, public opinion, external regulation and reputation"
-./data/images/f9895bc6-5af7-4e22-80b5-f33b839ebd41.jpg,f9895bc6-5af7-4e22-80b5-f33b839ebd41,economic
-./data/images/f9b21001-0f65-4685-8c07-1f8d5dbd728e.jpg,f9b21001-0f65-4685-8c07-1f8d5dbd728e,security and defense
-./data/images/faa6df4b-6a2d-4d4d-aa39-0d4654b878b7.jpg,faa6df4b-6a2d-4d4d-aa39-0d4654b878b7,cultural identity
-./data/images/fab5836c-fac3-44fc-b5ba-480d3dfca87f.jpg,fab5836c-fac3-44fc-b5ba-480d3dfca87f,cultural identity
-./data/images/fad43a4b-3d15-4e5c-9329-4508b0c14f2c.jpg,fad43a4b-3d15-4e5c-9329-4508b0c14f2c,"cultural identity, cultural identity, cultural identity"
-./data/images/faeaaaf3-fe0e-4bf4-a7d4-7eee9a321c6c.jpg,faeaaaf3-fe0e-4bf4-a7d4-7eee9a321c6c,political
-./data/images/fc08147c-a634-48c2-ac53-cb32d49a34d7.jpg,fc08147c-a634-48c2-ac53-cb32d49a34d7,"quality of life, capacity and resources"
-./data/images/fc22116b-946c-49b2-af76-06a395bddeb8.jpg,fc22116b-946c-49b2-af76-06a395bddeb8,"capacity and resources, economic"
-./data/images/fcabfae3-87be-4bac-9b97-c383b6fe4da7.jpg,fcabfae3-87be-4bac-9b97-c383b6fe4da7,no-frame
-./data/images/fcc04fa0-8bc9-4c72-a722-9a19924db408.jpg,fcc04fa0-8bc9-4c72-a722-9a19924db408,no-frame
-./data/images/fce38b9f-d3c7-49f3-91f2-b0c619ce4cca.jpg,fce38b9f-d3c7-49f3-91f2-b0c619ce4cca,no-frame
-./data/images/fd04bc84-3684-4fec-81bc-8d732b99b279.jpg,fd04bc84-3684-4fec-81bc-8d732b99b279,no-frame
-./data/images/fdaa76fe-0643-413b-b989-b9f1614a839a.jpg,fdaa76fe-0643-413b-b989-b9f1614a839a,"political, security and defense, health and safety"
-./data/images/fe89bceb-8943-4c23-9a9a-a644afc68244.jpg,fe89bceb-8943-4c23-9a9a-a644afc68244,"economic, cultural identity"
+./data/images/012a28c8-7c34-4ea1-85b9-42df2166f7b7.jpg,012a28c8-7c34-4ea1-85b9-42df2166f7b7,"capacity and resources, health and safety, none"
+./data/images/031a70fb-6456-4dd2-b966-196411352b7d.jpg,031a70fb-6456-4dd2-b966-196411352b7d,"security and defense, crime and punishment, none"
+./data/images/04420fb0-8479-4b4d-b014-27408a4b0bd2.jpg,04420fb0-8479-4b4d-b014-27408a4b0bd2,"health and safety, none"
+./data/images/04ad1d76-8550-4634-9d10-e710ac4a2ca6.jpg,04ad1d76-8550-4634-9d10-e710ac4a2ca6,"political, public opinion, none"
+./data/images/080411d9-41cd-40e2-b0ca-d530e55173ac.jpg,080411d9-41cd-40e2-b0ca-d530e55173ac,"crime and punishment, none"
+./data/images/0a6a65fe-1529-46b2-a301-354dfa34f315.jpg,0a6a65fe-1529-46b2-a301-354dfa34f315,"health and safety, health and safety"
+./data/images/0b3aa94d-f3c7-4dab-9790-73761573d46f.jpg,0b3aa94d-f3c7-4dab-9790-73761573d46f,"none, none"
+./data/images/0be9b862-0e8b-4098-975d-382d2dd8dfa0.jpg,0be9b862-0e8b-4098-975d-382d2dd8dfa0,"security and defense, crime and punishment, security and defense"
+./data/images/0ca56725-d093-480e-9d9e-cc3cb227a0f9.jpg,0ca56725-d093-480e-9d9e-cc3cb227a0f9,"none, none"
+./data/images/0e5f3b4e-1080-483b-8a78-7a2c4559b293.jpg,0e5f3b4e-1080-483b-8a78-7a2c4559b293,"capacity and resources, health and safety, quality of life, economic"
+./data/images/11058a8a-af11-41db-8086-94fa0f11114c.jpg,11058a8a-af11-41db-8086-94fa0f11114c,"cultural identity, cultural identity"
+./data/images/11bc8b70-3aee-49e6-8341-c9b3274763e2.jpg,11bc8b70-3aee-49e6-8341-c9b3274763e2,"health and safety, none"
+./data/images/132275f5-9a13-45c2-af3c-2dc954f10c1b.jpg,132275f5-9a13-45c2-af3c-2dc954f10c1b,"cultural identity, cultural identity"
+./data/images/13b599f3-89bb-4b45-af51-28c0c202e905.jpg,13b599f3-89bb-4b45-af51-28c0c202e905,"none, quality of life"
+./data/images/1403304e-bd52-430b-b68c-24e491b64264.jpg,1403304e-bd52-430b-b68c-24e491b64264,"quality of life, quality of life, economic"
+./data/images/1470c8c3-978b-460a-897f-26f9301559de.jpg,1470c8c3-978b-460a-897f-26f9301559de,"capacity and resources, cultural identity"
+./data/images/14a36f44-2e64-4041-9a3c-68fd0238489d.jpg,14a36f44-2e64-4041-9a3c-68fd0238489d,"none, none"
+./data/images/14e25239-c0e5-4c3e-b65b-35017e456c20.jpg,14e25239-c0e5-4c3e-b65b-35017e456c20,"political, political"
+./data/images/14f8231d-54ac-4a81-a336-001d7d14b733.jpg,14f8231d-54ac-4a81-a336-001d7d14b733,"political, security and defense, legality, constitutionality and jurisprudence, public opinion, crime and punishment, security and defense"
+./data/images/15625a74-65a8-4073-ab64-eee86671e14f.jpg,15625a74-65a8-4073-ab64-eee86671e14f,"political, public opinion, political"
+./data/images/156506c2-5e1c-4dc6-bcd5-be76061aef6a.jpg,156506c2-5e1c-4dc6-bcd5-be76061aef6a,"quality of life, capacity and resources, health and safety, quality of life"
+./data/images/15b7c1b6-b38c-46ec-aa9b-86a13c47917b.jpg,15b7c1b6-b38c-46ec-aa9b-86a13c47917b,"economic, economic"
+./data/images/16a91e31-9344-45db-9d4c-21d5fce043b4.jpg,16a91e31-9344-45db-9d4c-21d5fce043b4,"security and defense, crime and punishment, none"
+./data/images/177c7db1-9950-41d0-8a9c-336605fc4418.jpg,177c7db1-9950-41d0-8a9c-336605fc4418,"cultural identity, external regulation and reputation, political, public opinion"
+./data/images/18c19e01-7aef-42ef-b2ad-30b4a634a0a6.jpg,18c19e01-7aef-42ef-b2ad-30b4a634a0a6,"health and safety, none"
+./data/images/19f55748-715b-4422-8d1b-de6c94747acd.jpg,19f55748-715b-4422-8d1b-de6c94747acd,"none, none"
+./data/images/1a1a5fb8-a108-4e43-8f7f-481e366a2490.jpg,1a1a5fb8-a108-4e43-8f7f-481e366a2490,"health and safety, crime and punishment, health and safety"
+./data/images/1a780e46-ff21-40e5-83e3-6c9216898e78.jpg,1a780e46-ff21-40e5-83e3-6c9216898e78,"cultural identity, quality of life, cultural identity"
+./data/images/1abb96e0-f965-49ae-b694-829de0c7a959.jpg,1abb96e0-f965-49ae-b694-829de0c7a959,"public opinion, none"
+./data/images/1bbf1867-d074-4cde-a551-3f2d9358d990.jpg,1bbf1867-d074-4cde-a551-3f2d9358d990,"security and defense, crime and punishment, security and defense"
+./data/images/1c42b050-c4ae-44a6-8fe6-ae07f78d8f95.jpg,1c42b050-c4ae-44a6-8fe6-ae07f78d8f95,"security and defense, health and safety, crime and punishment, security and defense, crime and punishment"
+./data/images/1cc49635-883f-408d-86b0-17ed6c9325f3.jpg,1cc49635-883f-408d-86b0-17ed6c9325f3,"public opinion, cultural identity, none"
+./data/images/1ec54065-eb7d-45d9-b9ec-2abc4134df5b.jpg,1ec54065-eb7d-45d9-b9ec-2abc4134df5b,"none, none"
+./data/images/1efc80ca-058b-4756-8285-25c9732282df.jpg,1efc80ca-058b-4756-8285-25c9732282df,"cultural identity, cultural identity"
+./data/images/201e88e2-77e3-4999-99db-a7681e56ad6f.jpg,201e88e2-77e3-4999-99db-a7681e56ad6f,"security and defense, security and defense"
+./data/images/211fcb2b-dc83-45c1-8bcd-e9e34ea8ec46.jpg,211fcb2b-dc83-45c1-8bcd-e9e34ea8ec46,"quality of life, health and safety, quality of life"
+./data/images/2259de42-57b8-4ef8-a5a1-a9f5422aa789.jpg,2259de42-57b8-4ef8-a5a1-a9f5422aa789,"health and safety, morality, morality, cultural identity"
+./data/images/247b2870-a773-4a7d-bf42-7c824580a5aa.jpg,247b2870-a773-4a7d-bf42-7c824580a5aa,"quality of life, capacity and resources, health and safety, none"
+./data/images/247e332d-2aaf-4a48-9e57-8482a9874f9a.jpg,247e332d-2aaf-4a48-9e57-8482a9874f9a,"health and safety, health and safety"
+./data/images/269ca2c9-fb52-4710-bc1f-ccacd70c40bb.jpg,269ca2c9-fb52-4710-bc1f-ccacd70c40bb,"none, cultural identity"
+./data/images/2b6c0ba0-9883-4bae-a700-5d2a201e5de9.jpg,2b6c0ba0-9883-4bae-a700-5d2a201e5de9,"quality of life, cultural identity, none"
+./data/images/2c53e957-02de-4ef3-bf10-ae4768b77009.jpg,2c53e957-02de-4ef3-bf10-ae4768b77009,"fairness and equality, public opinion, crime and punishment, political, public opinion"
+./data/images/2c68dda3-ab53-469a-bcd4-21f032127301.jpg,2c68dda3-ab53-469a-bcd4-21f032127301,"external regulation and reputation, political, cultural identity, external regulation and reputation"
+./data/images/2d1c4aab-0a4d-4bad-b00f-1dcbb88d1e35.jpg,2d1c4aab-0a4d-4bad-b00f-1dcbb88d1e35,"none, none"
+./data/images/2d26ab26-4bf7-42fd-b067-12316da20ade.jpg,2d26ab26-4bf7-42fd-b067-12316da20ade,"none, none"
+./data/images/2dbb392f-fce4-489b-aa95-c9b00030b7d8.jpg,2dbb392f-fce4-489b-aa95-c9b00030b7d8,"none, none"
+./data/images/2dc3ce67-3549-41f5-a4d1-6fc67baa8f68.jpg,2dc3ce67-3549-41f5-a4d1-6fc67baa8f68,"quality of life, none"
+./data/images/2e54fabe-5901-4294-a3d4-8c1b462cfa36.jpg,2e54fabe-5901-4294-a3d4-8c1b462cfa36,"none, policy prescription and evaluation"
+./data/images/2eef5d28-1c66-4deb-859b-288703a5280c.jpg,2eef5d28-1c66-4deb-859b-288703a5280c,"quality of life, health and safety, public opinion, political, security and defense, morality"
+./data/images/2f86d516-e78e-49fa-89e4-fc1bdf7076b2.jpg,2f86d516-e78e-49fa-89e4-fc1bdf7076b2,"political, cultural identity, political"
+./data/images/3012df5e-1f31-4cb7-b16e-3d627aa770e8.jpg,3012df5e-1f31-4cb7-b16e-3d627aa770e8,"none, quality of life"
+./data/images/30b34e40-e295-4f41-8dfa-9db98d94112b.jpg,30b34e40-e295-4f41-8dfa-9db98d94112b,"quality of life, cultural identity, none"
+./data/images/3172e72c-04ff-47b1-9666-e0fa84b8d8b6.jpg,3172e72c-04ff-47b1-9666-e0fa84b8d8b6,"political, public opinion, none"
+./data/images/3265bda5-e829-4012-8783-abb64e8e63a2.jpg,3265bda5-e829-4012-8783-abb64e8e63a2,"cultural identity, quality of life, cultural identity"
+./data/images/34398346-0f86-4d9e-bcd9-edda8efa34cb.jpg,34398346-0f86-4d9e-bcd9-edda8efa34cb,"cultural identity, cultural identity"
+./data/images/3610905c-439f-4d13-b234-6eea3345bf5c.jpg,3610905c-439f-4d13-b234-6eea3345bf5c,"public opinion, public opinion"
+./data/images/3787451f-7fe2-4991-b7e6-e164fa785bd6.jpg,3787451f-7fe2-4991-b7e6-e164fa785bd6,"none, political"
+./data/images/3b9d6948-7b1e-4008-97b9-5d331edae91a.jpg,3b9d6948-7b1e-4008-97b9-5d331edae91a,"health and safety, legality, constitutionality and jurisprudence, morality, fairness and equality, public opinion"
+./data/images/3c0d0c20-fa8a-4555-bffb-86f6c6b47a61.jpg,3c0d0c20-fa8a-4555-bffb-86f6c6b47a61,"political, none"
+./data/images/3d63c347-dfa5-4bed-8a2b-6e8412e9662e.jpg,3d63c347-dfa5-4bed-8a2b-6e8412e9662e,"none, none"
+./data/images/3ee50edd-0e03-4222-a525-3b7b3a05b426.jpg,3ee50edd-0e03-4222-a525-3b7b3a05b426,"political, public opinion, political"
+./data/images/3f425548-afb8-49f7-9c58-9b2542afb840.jpg,3f425548-afb8-49f7-9c58-9b2542afb840,"political, none"
+./data/images/45a4e5b0-12bc-43ec-a74e-f4d957f10bbe.jpg,45a4e5b0-12bc-43ec-a74e-f4d957f10bbe,"capacity and resources, health and safety, none"
+./data/images/474c63af-93a2-4779-aae3-15b59dabb3ad.jpg,474c63af-93a2-4779-aae3-15b59dabb3ad,"security and defense, crime and punishment, security and defense, crime and punishment"
+./data/images/483f822f-d464-49d0-a0ec-20dfcb6b3d10.jpg,483f822f-d464-49d0-a0ec-20dfcb6b3d10,"none, none"
+./data/images/485c63fb-df66-4de5-b6f8-6128407d17c7.jpg,485c63fb-df66-4de5-b6f8-6128407d17c7,"political, political, external regulation and reputation"
+./data/images/49f2aa62-a79e-4d89-99f0-2f05e6b23d25.jpg,49f2aa62-a79e-4d89-99f0-2f05e6b23d25,"cultural identity, quality of life"
+./data/images/4a87b049-0127-46c4-bceb-15a1fd24cef7.jpg,4a87b049-0127-46c4-bceb-15a1fd24cef7,"political, public opinion, political"
+./data/images/4ac0ecb7-025c-4491-b292-0b3d8f7c7193.jpg,4ac0ecb7-025c-4491-b292-0b3d8f7c7193,"public opinion, political, public opinion"
+./data/images/4b69c8f5-86b6-4a86-8443-ea7718e83626.jpg,4b69c8f5-86b6-4a86-8443-ea7718e83626,"capacity and resources, none"
+./data/images/4b9ec936-ba33-49ae-a944-6503ea34b313.jpg,4b9ec936-ba33-49ae-a944-6503ea34b313,"political, fairness and equality, cultural identity, political, security and defense, fairness and equality, public opinion"
+./data/images/4bfeb0bb-aa75-4a7a-bcae-d1a4a4350c46.jpg,4bfeb0bb-aa75-4a7a-bcae-d1a4a4350c46,"none, none"
+./data/images/4c1ed2e6-cf5c-4bbd-a996-24e948d9b272.jpg,4c1ed2e6-cf5c-4bbd-a996-24e948d9b272,"policy prescription and evaluation, legality, constitutionality and jurisprudence, policy prescription and evaluation, public opinion"
+./data/images/4c7c759d-514d-483c-ba5f-3c004368bc0f.jpg,4c7c759d-514d-483c-ba5f-3c004368bc0f,"health and safety, crime and punishment, security and defense"
+./data/images/4c890f0d-6385-449e-a518-0b7bf03ff3f6.jpg,4c890f0d-6385-449e-a518-0b7bf03ff3f6,"public opinion, none"
+./data/images/4d354a22-b2c7-4015-ad08-7f10e458cd87.jpg,4d354a22-b2c7-4015-ad08-7f10e458cd87,"security and defense, crime and punishment, security and defense, crime and punishment"
+./data/images/4e5b14c4-abfa-47ee-a52c-7037ff799a4d.jpg,4e5b14c4-abfa-47ee-a52c-7037ff799a4d,"quality of life, cultural identity, cultural identity"
+./data/images/4eb0d38f-3944-46e7-8b5d-b6076acdefdd.jpg,4eb0d38f-3944-46e7-8b5d-b6076acdefdd,"cultural identity, cultural identity"
+./data/images/50d183f3-81ee-493c-8206-0ba8f46d047c.jpg,50d183f3-81ee-493c-8206-0ba8f46d047c,"quality of life, cultural identity, none"
+./data/images/50edf513-e959-418f-b151-2997fb2f4f75.jpg,50edf513-e959-418f-b151-2997fb2f4f75,"external regulation and reputation, external regulation and reputation"
+./data/images/5141d64c-1566-4529-84c2-210ce3f7d6e4.jpg,5141d64c-1566-4529-84c2-210ce3f7d6e4,"quality of life, cultural identity, cultural identity"
+./data/images/5147718c-60ee-4676-a09e-ad25b95bd344.jpg,5147718c-60ee-4676-a09e-ad25b95bd344,"capacity and resources, economic, economic"
+./data/images/51eed6aa-9446-41c3-9e21-30eaa2406b9b.jpg,51eed6aa-9446-41c3-9e21-30eaa2406b9b,"cultural identity, none"
+./data/images/54100bb0-bb43-4ea2-87bf-1c2467de53d3.jpg,54100bb0-bb43-4ea2-87bf-1c2467de53d3,"quality of life, none"
+./data/images/54f2d5cb-b1f7-4a28-a3c9-52b69a1686ef.jpg,54f2d5cb-b1f7-4a28-a3c9-52b69a1686ef,"health and safety, health and safety"
+./data/images/5511bb17-a02a-4900-8d6a-bbeda4e25d17.jpg,5511bb17-a02a-4900-8d6a-bbeda4e25d17,"morality, public opinion, morality, cultural identity"
+./data/images/56459e3a-3b51-4d00-8217-6e4ce2709ccd.jpg,56459e3a-3b51-4d00-8217-6e4ce2709ccd,"security and defense, crime and punishment, security and defense"
+./data/images/5654a027-9be3-404b-88f6-cc80ff56bc6f.jpg,5654a027-9be3-404b-88f6-cc80ff56bc6f,"external regulation and reputation, cultural identity"
+./data/images/58478711-415f-40f6-ab4c-d6af35cd9a36.jpg,58478711-415f-40f6-ab4c-d6af35cd9a36,"political, political"
+./data/images/58c2d191-bbfc-4b05-a54f-75ccc26c08a8.jpg,58c2d191-bbfc-4b05-a54f-75ccc26c08a8,"legality, constitutionality and jurisprudence, legality, constitutionality and jurisprudence"
+./data/images/59374504-6ad9-4ca9-87a9-2822a2a399c4.jpg,59374504-6ad9-4ca9-87a9-2822a2a399c4,"quality of life, security and defense, policy prescription and evaluation, fairness and equality, quality of life, security and defense, policy prescription and evaluation"
+./data/images/5af50732-522f-4e97-a339-b1a99ff54001.jpg,5af50732-522f-4e97-a339-b1a99ff54001,"quality of life, cultural identity, none"
+./data/images/5b532428-3f77-42c2-a51d-584a220bc343.jpg,5b532428-3f77-42c2-a51d-584a220bc343,"quality of life, none"
+./data/images/5be30564-4e33-4911-82c9-74774999a8cc.jpg,5be30564-4e33-4911-82c9-74774999a8cc,"none, none"
+./data/images/5cabf216-14a1-4d38-bcf9-9e65b6d96afc.jpg,5cabf216-14a1-4d38-bcf9-9e65b6d96afc,"public opinion, none"
+./data/images/5d0388af-7ae5-4d62-88d1-787a60632f83.jpg,5d0388af-7ae5-4d62-88d1-787a60632f83,"political, public opinion, none"
+./data/images/5dbc5541-9918-49f8-8817-0c2a0bd4a093.jpg,5dbc5541-9918-49f8-8817-0c2a0bd4a093,"none, quality of life, economic"
+./data/images/5e711a29-4f6e-458a-8287-3365f062e991.jpg,5e711a29-4f6e-458a-8287-3365f062e991,"political, public opinion, political, public opinion"
+./data/images/5f92ac54-2b80-4b84-9690-5347d15fd248.jpg,5f92ac54-2b80-4b84-9690-5347d15fd248,"capacity and resources, none"
+./data/images/60029099-7bc4-4ef4-aa25-563228f7cdb3.jpg,60029099-7bc4-4ef4-aa25-563228f7cdb3,"fairness and equality, legality, constitutionality and jurisprudence, fairness and equality, public opinion"
+./data/images/60d3d270-af8f-41b6-b6f0-3e4333e4b327.jpg,60d3d270-af8f-41b6-b6f0-3e4333e4b327,"health and safety, none"
+./data/images/626e381b-d00e-44a6-ae58-d03b63ec31cf.jpg,626e381b-d00e-44a6-ae58-d03b63ec31cf,"economic, economic"
+./data/images/636ee5ce-b262-4424-8ec2-769eb084ef0a.jpg,636ee5ce-b262-4424-8ec2-769eb084ef0a,"legality, constitutionality and jurisprudence, legality, constitutionality and jurisprudence"
+./data/images/647971c1-e166-4b1f-98ad-36d73f1ade2d.jpg,647971c1-e166-4b1f-98ad-36d73f1ade2d,"none, none"
+./data/images/64886017-b960-4be8-a926-a82060ffcd6b.jpg,64886017-b960-4be8-a926-a82060ffcd6b,"none, none"
+./data/images/656407fd-23d1-4f43-b534-4aa29d423864.jpg,656407fd-23d1-4f43-b534-4aa29d423864,"none, cultural identity"
+./data/images/6608ceb8-6668-41b0-8a19-f84bc5a4b7f6.jpg,6608ceb8-6668-41b0-8a19-f84bc5a4b7f6,"capacity and resources, health and safety, health and safety"
+./data/images/66359f5d-68fd-4a8d-ba40-c6dfc5eebd8f.jpg,66359f5d-68fd-4a8d-ba40-c6dfc5eebd8f,"external regulation and reputation, political"
+./data/images/66649e8b-bf98-4576-ab28-9724f73d50c1.jpg,66649e8b-bf98-4576-ab28-9724f73d50c1,"cultural identity, cultural identity"
+./data/images/66c13b5b-4979-4933-8fa9-d2690024d679.jpg,66c13b5b-4979-4933-8fa9-d2690024d679,"cultural identity, crime and punishment, cultural identity"
+./data/images/67430155-2751-47e5-92af-4172bbee72ea.jpg,67430155-2751-47e5-92af-4172bbee72ea,"capacity and resources, quality of life, capacity and resources"
+./data/images/6987dbf7-7621-4780-a283-757caf40a1dc.jpg,6987dbf7-7621-4780-a283-757caf40a1dc,"cultural identity, cultural identity"
+./data/images/69d4e1b0-5740-4c14-8be4-df7c9dd8121f.jpg,69d4e1b0-5740-4c14-8be4-df7c9dd8121f,"quality of life, cultural identity, cultural identity"
+./data/images/6af157c3-23fc-4abd-8ba6-e8b1fc26b2b9.jpg,6af157c3-23fc-4abd-8ba6-e8b1fc26b2b9,"public opinion, none"
+./data/images/6c648a70-0b6a-445f-81ad-fa94f74b0e61.jpg,6c648a70-0b6a-445f-81ad-fa94f74b0e61,"political, public opinion, public opinion"
+./data/images/6d27ce1f-fbef-45be-9caa-2d09891e4548.jpg,6d27ce1f-fbef-45be-9caa-2d09891e4548,"political, policy prescription and evaluation, legality, constitutionality and jurisprudence, morality, policy prescription and evaluation, fairness and equality, morality"
+./data/images/6e3ccef6-9b08-4184-974e-18e30bfae52a.jpg,6e3ccef6-9b08-4184-974e-18e30bfae52a,"health and safety, health and safety"
+./data/images/6f50df1c-1fd8-4673-83a6-185ad3cb601e.jpg,6f50df1c-1fd8-4673-83a6-185ad3cb601e,"health and safety, health and safety"
+./data/images/71466c1a-cc64-430f-8035-a0e0bf1261e4.jpg,71466c1a-cc64-430f-8035-a0e0bf1261e4,"quality of life, cultural identity, none"
+./data/images/7146a81a-30ac-411f-9980-ddbf1ea80cab.jpg,7146a81a-30ac-411f-9980-ddbf1ea80cab,"public opinion, public opinion"
+./data/images/72dae0c4-d80c-45ba-a76a-ea043e7f210c.jpg,72dae0c4-d80c-45ba-a76a-ea043e7f210c,"capacity and resources, cultural identity, health and safety"
+./data/images/73ca0e5b-e07f-4e85-8aed-2ad4a18fbe61.jpg,73ca0e5b-e07f-4e85-8aed-2ad4a18fbe61,"cultural identity, cultural identity"
+./data/images/751c11a1-4937-4082-8d67-2751e32e6009.jpg,751c11a1-4937-4082-8d67-2751e32e6009,"economic, economic"
+./data/images/75f23cae-469f-4ad5-b6bc-b86c41032bdf.jpg,75f23cae-469f-4ad5-b6bc-b86c41032bdf,"cultural identity, none"
+./data/images/76246247-c3e7-43bb-9d98-1ac0b4347857.jpg,76246247-c3e7-43bb-9d98-1ac0b4347857,"morality, none"
+./data/images/774a1c41-6df9-4067-b279-40a17bd303d1.jpg,774a1c41-6df9-4067-b279-40a17bd303d1,"quality of life, health and safety, quality of life"
+./data/images/7852ed2e-6da0-4fbd-b993-43abc782d4eb.jpg,7852ed2e-6da0-4fbd-b993-43abc782d4eb,"political, morality, policy prescription and evaluation, legality, constitutionality and jurisprudence"
+./data/images/78951db5-792e-4734-b4f6-8b9b8f33706b.jpg,78951db5-792e-4734-b4f6-8b9b8f33706b,"none, quality of life"
+./data/images/78a27510-bd67-4944-b881-392e98d1c50c.jpg,78a27510-bd67-4944-b881-392e98d1c50c,"quality of life, capacity and resources, capacity and resources"
+./data/images/78a3dc65-eae9-40d2-baed-32e390fa6885.jpg,78a3dc65-eae9-40d2-baed-32e390fa6885,"cultural identity, none"
+./data/images/78ba9ce9-fbf1-4873-838b-23a468976032.jpg,78ba9ce9-fbf1-4873-838b-23a468976032,"political, external regulation and reputation, political"
+./data/images/7972ad67-78ea-40e4-9d5c-d9cffcdbf296.jpg,7972ad67-78ea-40e4-9d5c-d9cffcdbf296,"security and defense, crime and punishment, none"
+./data/images/7a03f1f3-1516-4467-8030-ff8d8f3d0f79.jpg,7a03f1f3-1516-4467-8030-ff8d8f3d0f79,"quality of life, none"
+./data/images/7b05a2c5-c4ef-44c9-b437-b2ca7240dc35.jpg,7b05a2c5-c4ef-44c9-b437-b2ca7240dc35,"political, public opinion, political"
+./data/images/7b0ca74d-31f9-46a7-b557-137c955f8290.jpg,7b0ca74d-31f9-46a7-b557-137c955f8290,"political, security and defense, health and safety, political, security and defense"
+./data/images/7c211790-f4a0-453e-a738-d5f87acc83a5.jpg,7c211790-f4a0-453e-a738-d5f87acc83a5,"none, none"
+./data/images/7cceb62e-3484-464b-b1e7-6f8c92a203d4.jpg,7cceb62e-3484-464b-b1e7-6f8c92a203d4,"political, public opinion, crime and punishment, crime and punishment"
+./data/images/7d3f69c9-c394-49c3-844f-36c93221a1b8.jpg,7d3f69c9-c394-49c3-844f-36c93221a1b8,"quality of life, cultural identity, cultural identity"
+./data/images/7e67bf96-336a-4dfd-8282-40ad3e65f394.jpg,7e67bf96-336a-4dfd-8282-40ad3e65f394,"security and defense, crime and punishment, crime and punishment"
+./data/images/7fa397b8-2d76-48cc-b01d-5d49b3d6321a.jpg,7fa397b8-2d76-48cc-b01d-5d49b3d6321a,"political, cultural identity, political"
+./data/images/7fefe077-6f25-4468-8628-a9935332d64f.jpg,7fefe077-6f25-4468-8628-a9935332d64f,"cultural identity, none"
+./data/images/81ad31ea-4560-4d6d-8046-6012a2e3f764.jpg,81ad31ea-4560-4d6d-8046-6012a2e3f764,"security and defense, none"
+./data/images/81bb3213-06ad-4b29-b686-f3f91e56e1fd.jpg,81bb3213-06ad-4b29-b686-f3f91e56e1fd,"quality of life, cultural identity, cultural identity"
+./data/images/81f0427b-5216-4d72-84ce-5db86f02ae28.jpg,81f0427b-5216-4d72-84ce-5db86f02ae28,"none, none"
+./data/images/8230cc1e-62ee-4ccc-a765-067db4eb1888.jpg,8230cc1e-62ee-4ccc-a765-067db4eb1888,"political, political, policy prescription and evaluation, external regulation and reputation"
+./data/images/823a12dc-b45a-42d1-92d3-9676a9591aa3.jpg,823a12dc-b45a-42d1-92d3-9676a9591aa3,"cultural identity, cultural identity"
+./data/images/82488002-d4fc-4500-9f95-a4915680138c.jpg,82488002-d4fc-4500-9f95-a4915680138c,"political, security and defense, political, security and defense"
+./data/images/83094c92-4350-45e0-b371-03192f914e92.jpg,83094c92-4350-45e0-b371-03192f914e92,"capacity and resources, security and defense, public opinion, security and defense, cultural identity"
+./data/images/837a108e-1347-4e1a-bd6e-a8799817ca34.jpg,837a108e-1347-4e1a-bd6e-a8799817ca34,"public opinion, cultural identity, cultural identity"
+./data/images/83cbe3cb-48b8-4f7d-83df-1e9681d93fc9.jpg,83cbe3cb-48b8-4f7d-83df-1e9681d93fc9,"public opinion, crime and punishment, fairness and equality, public opinion"
+./data/images/841b0f2b-eb75-41e4-a483-98340d27db13.jpg,841b0f2b-eb75-41e4-a483-98340d27db13,"health and safety, none"
+./data/images/86ed2d0a-d48a-407b-b1f1-8c0a31d89c8d.jpg,86ed2d0a-d48a-407b-b1f1-8c0a31d89c8d,"cultural identity, quality of life, public opinion"
+./data/images/87412eb7-fde9-4836-b39d-4210e142b48f.jpg,87412eb7-fde9-4836-b39d-4210e142b48f,"cultural identity, none"
+./data/images/892a29d0-0f7b-47d1-acc7-00d1181e12e6.jpg,892a29d0-0f7b-47d1-acc7-00d1181e12e6,"cultural identity, cultural identity"
+./data/images/8946c6c5-020f-48af-baa4-5bd29aa15d1f.jpg,8946c6c5-020f-48af-baa4-5bd29aa15d1f,"none, none"
+./data/images/8a5be95e-0f5f-482d-8311-5b2bb56ddbea.jpg,8a5be95e-0f5f-482d-8311-5b2bb56ddbea,"health and safety, crime and punishment, health and safety"
+./data/images/8aaf9309-b194-4e07-9a4b-be4516807674.jpg,8aaf9309-b194-4e07-9a4b-be4516807674,"quality of life, none"
+./data/images/8aec485c-7387-4e83-88dc-efb5fb856298.jpg,8aec485c-7387-4e83-88dc-efb5fb856298,"security and defense, legality, constitutionality and jurisprudence, economic, security and defense, legality, constitutionality and jurisprudence"
+./data/images/8b6ef429-e84d-4bd0-8cc3-ca3fc5f91032.jpg,8b6ef429-e84d-4bd0-8cc3-ca3fc5f91032,"fairness and equality, public opinion, none"
+./data/images/8b71a01b-6c5a-4a0c-a369-8c6aa33eeeca.jpg,8b71a01b-6c5a-4a0c-a369-8c6aa33eeeca,"capacity and resources, none"
+./data/images/8c551a14-30b3-40cf-a4f9-f5262280779a.jpg,8c551a14-30b3-40cf-a4f9-f5262280779a,"none, none"
+./data/images/8c6c04b0-f1f3-464d-951c-cb5bf666ad73.jpg,8c6c04b0-f1f3-464d-951c-cb5bf666ad73,"health and safety, none"
+./data/images/8cb69274-0dcc-4c28-95a0-60bee1ccdeff.jpg,8cb69274-0dcc-4c28-95a0-60bee1ccdeff,"public opinion, public opinion"
+./data/images/8d805300-3e96-4b2a-91a6-a84a1647abca.jpg,8d805300-3e96-4b2a-91a6-a84a1647abca,"political, political"
+./data/images/8f49241e-a197-4465-bc17-d0e6583a09c8.jpg,8f49241e-a197-4465-bc17-d0e6583a09c8,"none, none"
+./data/images/8ff32ecd-71dd-404b-87cc-2905748864c5.jpg,8ff32ecd-71dd-404b-87cc-2905748864c5,"political, political"
+./data/images/91c7f389-c67d-4bb0-9a19-afccbea78477.jpg,91c7f389-c67d-4bb0-9a19-afccbea78477,"political, morality, cultural identity, morality, cultural identity"
+./data/images/9233818f-0e05-40bd-b56b-da7cce60fb35.jpg,9233818f-0e05-40bd-b56b-da7cce60fb35,"public opinion, public opinion"
+./data/images/931fe0c6-2b05-47e4-a65f-f89f2fc3e673.jpg,931fe0c6-2b05-47e4-a65f-f89f2fc3e673,"quality of life, quality of life"
+./data/images/9325dd45-6c5d-4118-9b30-45e346870095.jpg,9325dd45-6c5d-4118-9b30-45e346870095,"political, political"
+./data/images/9372900b-b33c-4f34-aec0-9c3a7e473f3e.jpg,9372900b-b33c-4f34-aec0-9c3a7e473f3e,"none, none"
+./data/images/94777ded-df33-4f3e-9350-3553caf1660b.jpg,94777ded-df33-4f3e-9350-3553caf1660b,"political, none"
+./data/images/947e6162-c503-45e7-86cf-c51d1456648f.jpg,947e6162-c503-45e7-86cf-c51d1456648f,"political, political"
+./data/images/947e9be7-4e2e-408a-8ae8-36a345d6683c.jpg,947e9be7-4e2e-408a-8ae8-36a345d6683c,"quality of life, capacity and resources, cultural identity, none"
+./data/images/9887a8a0-ca40-4215-808a-4dbd7dc1bb8c.jpg,9887a8a0-ca40-4215-808a-4dbd7dc1bb8c,"health and safety, crime and punishment, none"
+./data/images/99b80069-0c16-490a-aeaf-cf5852b1e3ac.jpg,99b80069-0c16-490a-aeaf-cf5852b1e3ac,"political, fairness and equality, public opinion, public opinion"
+./data/images/9a735c8d-283e-4346-8bb0-f5f474a47d50.jpg,9a735c8d-283e-4346-8bb0-f5f474a47d50,"none, none"
+./data/images/9a8cf2d8-2fbc-4c34-ace3-70cf864667f6.jpg,9a8cf2d8-2fbc-4c34-ace3-70cf864667f6,"quality of life, health and safety, crime and punishment"
+./data/images/9a9d6679-4dfc-4c48-b437-603f3631c202.jpg,9a9d6679-4dfc-4c48-b437-603f3631c202,"none, quality of life"
+./data/images/9b3287e6-caf4-450a-acba-2699bbf1f59f.jpg,9b3287e6-caf4-450a-acba-2699bbf1f59f,"security and defense, health and safety, none"
+./data/images/9b86f45a-71d1-4775-ac99-e9c65b3607ab.jpg,9b86f45a-71d1-4775-ac99-e9c65b3607ab,"capacity and resources, none"
+./data/images/9bfe5785-207d-4ee5-927a-6ed900ae5d50.jpg,9bfe5785-207d-4ee5-927a-6ed900ae5d50,"quality of life, none"
+./data/images/9de8c80f-f891-4f98-a2a8-e6e93ab92d7a.jpg,9de8c80f-f891-4f98-a2a8-e6e93ab92d7a,"none, none"
+./data/images/9ebcfe80-a40c-44b2-9e4f-726b37f24e5d.jpg,9ebcfe80-a40c-44b2-9e4f-726b37f24e5d,"capacity and resources, none"
+./data/images/9edaa4ee-9af8-4d27-b680-056eb9c456c9.jpg,9edaa4ee-9af8-4d27-b680-056eb9c456c9,"political, political"
+./data/images/a156108e-bb1a-4a47-b9e5-5bb3526b6ed8.jpg,a156108e-bb1a-4a47-b9e5-5bb3526b6ed8,"political, public opinion, none"
+./data/images/a21588f9-279c-4f9c-ae39-f832198a5990.jpg,a21588f9-279c-4f9c-ae39-f832198a5990,"health and safety, security and defense, crime and punishment"
+./data/images/a32e9854-4710-483f-8dfb-e0077567e08a.jpg,a32e9854-4710-483f-8dfb-e0077567e08a,"none, none"
+./data/images/a34661d2-9215-4e02-8c25-1ec95c73cb62.jpg,a34661d2-9215-4e02-8c25-1ec95c73cb62,"political, political"
+./data/images/a3838535-c3ba-4350-b8d6-26fa0f5ff4d5.jpg,a3838535-c3ba-4350-b8d6-26fa0f5ff4d5,"political, security and defense, external regulation and reputation"
+./data/images/a3df7f93-24c8-4f53-a443-07c02a51bb6f.jpg,a3df7f93-24c8-4f53-a443-07c02a51bb6f,"quality of life, cultural identity, quality of life"
+./data/images/a40070df-03fc-475e-8610-1f9695af166e.jpg,a40070df-03fc-475e-8610-1f9695af166e,"none, none"
+./data/images/a4aeeb0d-6118-42dd-8296-99bcc2311541.jpg,a4aeeb0d-6118-42dd-8296-99bcc2311541,"quality of life, none"
+./data/images/a52faf9b-33b0-4901-8301-e298e4037195.jpg,a52faf9b-33b0-4901-8301-e298e4037195,"none, none"
+./data/images/a6160e25-c2b5-48aa-859a-2cb11f8584fd.jpg,a6160e25-c2b5-48aa-859a-2cb11f8584fd,"none, none"
+./data/images/a68febe4-0fc8-4a2a-a285-26698963c0fc.jpg,a68febe4-0fc8-4a2a-a285-26698963c0fc,"quality of life, quality of life"
+./data/images/a71df71d-947c-43d8-b283-be74c0d6ac83.jpg,a71df71d-947c-43d8-b283-be74c0d6ac83,"security and defense, crime and punishment, security and defense"
+./data/images/aa7c9d3b-9662-4203-bfec-fd5599df2f45.jpg,aa7c9d3b-9662-4203-bfec-fd5599df2f45,"quality of life, none"
+./data/images/ab36e8c8-6312-4bfc-a197-ebf263762132.jpg,ab36e8c8-6312-4bfc-a197-ebf263762132,"quality of life, quality of life"
+./data/images/ab77419f-4ba2-487f-adf1-259b9a2e6956.jpg,ab77419f-4ba2-487f-adf1-259b9a2e6956,"fairness and equality, morality, cultural identity, fairness and equality"
+./data/images/abe8f88d-a282-4f5e-aaa8-4d46f49a02e9.jpg,abe8f88d-a282-4f5e-aaa8-4d46f49a02e9,"political, policy prescription and evaluation, fairness and equality, public opinion, policy prescription and evaluation, fairness and equality"
+./data/images/aeb34cd8-fb25-4c0a-b6c8-26df77ed5efc.jpg,aeb34cd8-fb25-4c0a-b6c8-26df77ed5efc,"none, quality of life, political"
+./data/images/b05d63c4-792a-47dd-9021-2f2914586a4c.jpg,b05d63c4-792a-47dd-9021-2f2914586a4c,"cultural identity, quality of life, cultural identity"
+./data/images/b48cb611-1642-4482-860c-df96c702539d.jpg,b48cb611-1642-4482-860c-df96c702539d,"quality of life, none"
+./data/images/b50153dc-8874-40e3-a9b9-4e4ad0e31aad.jpg,b50153dc-8874-40e3-a9b9-4e4ad0e31aad,"political, public opinion, political"
+./data/images/b63ec89f-3b2b-477b-ae6c-beaff1f22e0f.jpg,b63ec89f-3b2b-477b-ae6c-beaff1f22e0f,"health and safety, health and safety"
+./data/images/b68eb6b3-2283-4517-9ed5-f7cd2eb92d80.jpg,b68eb6b3-2283-4517-9ed5-f7cd2eb92d80,"political, political"
+./data/images/b729d19b-ac87-4538-b81a-fed03e286c8a.jpg,b729d19b-ac87-4538-b81a-fed03e286c8a,"capacity and resources, none"
+./data/images/b8ed547b-755a-43d8-99eb-318a784dc36b.jpg,b8ed547b-755a-43d8-99eb-318a784dc36b,"public opinion, none"
+./data/images/ba32d62d-acbc-49d2-8293-6565f307ede8.jpg,ba32d62d-acbc-49d2-8293-6565f307ede8,"crime and punishment, crime and punishment"
+./data/images/bb25cc63-1eb1-49ed-8c9f-08d489befd3c.jpg,bb25cc63-1eb1-49ed-8c9f-08d489befd3c,"security and defense, crime and punishment, none"
+./data/images/bb79d573-4490-46bb-a511-69d24961709f.jpg,bb79d573-4490-46bb-a511-69d24961709f,"public opinion, public opinion"
+./data/images/c0ba7141-6d5e-4f6a-8572-0f87a512b03e.jpg,c0ba7141-6d5e-4f6a-8572-0f87a512b03e,"political, public opinion, public opinion"
+./data/images/c2c74f16-f034-4e96-bbcc-0781e1f1ce93.jpg,c2c74f16-f034-4e96-bbcc-0781e1f1ce93,"political, security and defense, external regulation and reputation, crime and punishment, political, external regulation and reputation"
+./data/images/c35e6fb7-3988-4308-802d-7d669036e6e7.jpg,c35e6fb7-3988-4308-802d-7d669036e6e7,"none, none"
+./data/images/c378f599-9e25-443c-8c92-7d1bd4234d15.jpg,c378f599-9e25-443c-8c92-7d1bd4234d15,"cultural identity, cultural identity"
+./data/images/c542c133-e3a1-456a-b2bf-1a437880000a.jpg,c542c133-e3a1-456a-b2bf-1a437880000a,"health and safety, quality of life, health and safety"
+./data/images/c73748fb-0088-42b8-ad3b-42e4b7fb872c.jpg,c73748fb-0088-42b8-ad3b-42e4b7fb872c,"policy prescription and evaluation, health and safety, legality, constitutionality and jurisprudence, morality, health and safety"
+./data/images/c7adc302-6357-4641-96d0-2ab3b0710bc7.jpg,c7adc302-6357-4641-96d0-2ab3b0710bc7,"political, fairness and equality, health and safety, fairness and equality, public opinion, cultural identity"
+./data/images/c89e2e93-f697-4302-ac04-117f9bc8afa8.jpg,c89e2e93-f697-4302-ac04-117f9bc8afa8,"quality of life, cultural identity, cultural identity"
+./data/images/c8c269f4-8c19-4e25-9ca1-917a0201ac7a.jpg,c8c269f4-8c19-4e25-9ca1-917a0201ac7a,"political, political"
+./data/images/c97a840e-a6cf-40bc-abb0-8a222f380e42.jpg,c97a840e-a6cf-40bc-abb0-8a222f380e42,"health and safety, health and safety"
+./data/images/ca7f2125-0925-4822-ba41-0aa4717d58eb.jpg,ca7f2125-0925-4822-ba41-0aa4717d58eb,"health and safety, health and safety"
+./data/images/cc035b4c-f224-43b8-b895-5444a310b817.jpg,cc035b4c-f224-43b8-b895-5444a310b817,"political, public opinion, political"
+./data/images/cc077d15-75fd-4a82-a3f7-c1d729940a2a.jpg,cc077d15-75fd-4a82-a3f7-c1d729940a2a,"none, capacity and resources, economic"
+./data/images/ccd446b7-6fbc-4310-b34c-6158a9fb18ce.jpg,ccd446b7-6fbc-4310-b34c-6158a9fb18ce,"cultural identity, none"
+./data/images/cd3346b7-c97f-4eb4-9a76-5d1032d90369.jpg,cd3346b7-c97f-4eb4-9a76-5d1032d90369,"capacity and resources, none"
+./data/images/cd6e12ac-aba8-407f-a93e-9e1d747401fd.jpg,cd6e12ac-aba8-407f-a93e-9e1d747401fd,"capacity and resources, political, health and safety, political"
+./data/images/cdd1cd4f-eefa-4ca5-9a6b-1c369a4c1828.jpg,cdd1cd4f-eefa-4ca5-9a6b-1c369a4c1828,"quality of life, quality of life"
+./data/images/cea6d7db-c08d-4bf6-b7ef-9519991758c0.jpg,cea6d7db-c08d-4bf6-b7ef-9519991758c0,"quality of life, cultural identity, quality of life"
+./data/images/ced16478-e9b7-49fc-b652-780a1909265b.jpg,ced16478-e9b7-49fc-b652-780a1909265b,"fairness and equality, policy prescription and evaluation, economic"
+./data/images/d0c2db81-09b5-4666-9882-795de50955a0.jpg,d0c2db81-09b5-4666-9882-795de50955a0,"security and defense, security and defense"
+./data/images/d0cc656f-64c1-4b6a-b602-f53482a09ba6.jpg,d0cc656f-64c1-4b6a-b602-f53482a09ba6,"quality of life, none"
+./data/images/d180e64f-200f-40b3-8413-83b5414a1ecd.jpg,d180e64f-200f-40b3-8413-83b5414a1ecd,"political, fairness and equality, public opinion, cultural identity, cultural identity"
+./data/images/d20b85d7-c600-43bc-b95b-7021cc5fd09b.jpg,d20b85d7-c600-43bc-b95b-7021cc5fd09b,"none, quality of life"
+./data/images/d571291f-7e8a-414c-8a2d-e296e2020ab8.jpg,d571291f-7e8a-414c-8a2d-e296e2020ab8,"political, political"
+./data/images/d68214ca-e8ec-46c8-b8d7-1300f49a2ddf.jpg,d68214ca-e8ec-46c8-b8d7-1300f49a2ddf,"none, none"
+./data/images/d6af6244-5db1-4783-aa40-89a422a1891e.jpg,d6af6244-5db1-4783-aa40-89a422a1891e,"quality of life, cultural identity, none"
+./data/images/d71100c8-85dd-45e4-ae3d-128c1e8ef31e.jpg,d71100c8-85dd-45e4-ae3d-128c1e8ef31e,"quality of life, capacity and resources, none"
+./data/images/d7886f9d-f5cf-4ceb-a042-4162632be676.jpg,d7886f9d-f5cf-4ceb-a042-4162632be676,"health and safety, cultural identity, cultural identity"
+./data/images/d86542bf-3d3a-4998-a41a-14508a931337.jpg,d86542bf-3d3a-4998-a41a-14508a931337,"quality of life, capacity and resources, cultural identity, quality of life"
+./data/images/d8e0af3d-a5ab-437b-a969-291778b75c51.jpg,d8e0af3d-a5ab-437b-a969-291778b75c51,"none, cultural identity"
+./data/images/da80b73a-d742-4825-9b50-2b2ef9d47629.jpg,da80b73a-d742-4825-9b50-2b2ef9d47629,"cultural identity, none"
+./data/images/daac5ed4-803b-46b9-8f27-76d3bc7e7df1.jpg,daac5ed4-803b-46b9-8f27-76d3bc7e7df1,"capacity and resources, none"
+./data/images/dac58227-3f38-4267-9c7a-a5768f0e5c81.jpg,dac58227-3f38-4267-9c7a-a5768f0e5c81,"none, none"
+./data/images/dafe4e6a-f8d8-4c00-a3fd-b66135cfbef5.jpg,dafe4e6a-f8d8-4c00-a3fd-b66135cfbef5,"quality of life, cultural identity, none"
+./data/images/dba81e7b-995c-45fb-af91-05b1ce1cb98a.jpg,dba81e7b-995c-45fb-af91-05b1ce1cb98a,"political, political"
+./data/images/dc69abbe-e108-4066-a0ed-fecd64e5d44c.jpg,dc69abbe-e108-4066-a0ed-fecd64e5d44c,"security and defense, health and safety, crime and punishment, crime and punishment"
+./data/images/dc6f5beb-7a11-4ccb-8374-d4a6be49f813.jpg,dc6f5beb-7a11-4ccb-8374-d4a6be49f813,"health and safety, crime and punishment, security and defense"
+./data/images/dc776061-bf4c-4f26-98d3-51cf7482d67c.jpg,dc776061-bf4c-4f26-98d3-51cf7482d67c,"security and defense, crime and punishment, security and defense"
+./data/images/dcbdc670-a740-422a-979d-fe4e0afe7f76.jpg,dcbdc670-a740-422a-979d-fe4e0afe7f76,"quality of life, health and safety, quality of life"
+./data/images/dddd05cd-1c17-4c41-809c-70231e1cb119.jpg,dddd05cd-1c17-4c41-809c-70231e1cb119,"none, none"
+./data/images/de147e53-677d-41d5-9d73-5b1bad75e0e6.jpg,de147e53-677d-41d5-9d73-5b1bad75e0e6,"political, public opinion, political, public opinion"
+./data/images/de4b3b89-3002-41b0-88cd-c76f5fb357e3.jpg,de4b3b89-3002-41b0-88cd-c76f5fb357e3,"quality of life, cultural identity, cultural identity"
+./data/images/dea2b056-111a-4a74-ac3b-d4e57d7a0356.jpg,dea2b056-111a-4a74-ac3b-d4e57d7a0356,"none, political"
+./data/images/dfc1ef9e-0eb6-4727-97d8-7cd2cae7252a.jpg,dfc1ef9e-0eb6-4727-97d8-7cd2cae7252a,"public opinion, none"
+./data/images/e1e611ea-91a6-421f-8d87-33f4f9a26910.jpg,e1e611ea-91a6-421f-8d87-33f4f9a26910,"none, none"
+./data/images/e2b337bf-0cd9-470e-bd8d-d976bc9df5ce.jpg,e2b337bf-0cd9-470e-bd8d-d976bc9df5ce,"economic, economic"
+./data/images/e2f7e54e-90a4-46db-b7de-b370859b094e.jpg,e2f7e54e-90a4-46db-b7de-b370859b094e,"quality of life, capacity and resources, public opinion"
+./data/images/e3014396-4322-42d8-af04-7426bddb831d.jpg,e3014396-4322-42d8-af04-7426bddb831d,"cultural identity, cultural identity"
+./data/images/e3504ec5-8898-4206-b5f0-6a16a00cce91.jpg,e3504ec5-8898-4206-b5f0-6a16a00cce91,"capacity and resources, none"
+./data/images/e3caa6ac-242e-4f35-ac7a-1c92b8a8185b.jpg,e3caa6ac-242e-4f35-ac7a-1c92b8a8185b,"quality of life, capacity and resources, cultural identity, quality of life"
+./data/images/e43bd71b-7d26-4202-b7b4-f32d264dc362.jpg,e43bd71b-7d26-4202-b7b4-f32d264dc362,"none, none"
+./data/images/e4f31705-8bd3-44e3-857d-37c0dba03c75.jpg,e4f31705-8bd3-44e3-857d-37c0dba03c75,"security and defense, cultural identity, security and defense"
+./data/images/e537d8da-9a2c-4d5a-a440-dd14c36e032e.jpg,e537d8da-9a2c-4d5a-a440-dd14c36e032e,"capacity and resources, capacity and resources"
+./data/images/e53e687e-dc12-4150-b069-6139eba52393.jpg,e53e687e-dc12-4150-b069-6139eba52393,"cultural identity, cultural identity"
+./data/images/e5ecf593-c3a6-4b2d-a534-debcaf832f36.jpg,e5ecf593-c3a6-4b2d-a534-debcaf832f36,"political, public opinion, none"
+./data/images/e64ddafd-43ee-428b-b258-ac07b99bd511.jpg,e64ddafd-43ee-428b-b258-ac07b99bd511,"political, public opinion, political"
+./data/images/e72aa796-0af8-4e30-b4e2-8ede039a62f7.jpg,e72aa796-0af8-4e30-b4e2-8ede039a62f7,"capacity and resources, none"
+./data/images/e76a129c-a5cb-4b14-9119-6031eff22840.jpg,e76a129c-a5cb-4b14-9119-6031eff22840,"fairness and equality, public opinion, political, public opinion"
+./data/images/e82648d2-7e8f-4b6e-a52b-a6ac23e0cc6c.jpg,e82648d2-7e8f-4b6e-a52b-a6ac23e0cc6c,"legality, constitutionality and jurisprudence, public opinion, none"
+./data/images/ea47ee9f-6d38-4f2e-94f3-1e4c102bfd61.jpg,ea47ee9f-6d38-4f2e-94f3-1e4c102bfd61,"political, political, public opinion"
+./data/images/ebbf8bf8-755d-41fb-8287-9d36479b8659.jpg,ebbf8bf8-755d-41fb-8287-9d36479b8659,"political, fairness and equality, public opinion, external regulation and reputation, political, public opinion, cultural identity"
+./data/images/ec1dcfa2-eabb-4b9e-bdb2-774043352cc6.jpg,ec1dcfa2-eabb-4b9e-bdb2-774043352cc6,"political, none"
+./data/images/ec488d6e-bd11-4729-80f3-a01e820a50b7.jpg,ec488d6e-bd11-4729-80f3-a01e820a50b7,"health and safety, cultural identity, health and safety, cultural identity"
+./data/images/ecb919d5-ce54-45d3-b45b-c3cf252955b7.jpg,ecb919d5-ce54-45d3-b45b-c3cf252955b7,"quality of life, none"
+./data/images/edff477d-9f33-4c9a-9944-f6317175a35b.jpg,edff477d-9f33-4c9a-9944-f6317175a35b,"security and defense, crime and punishment, security and defense"
+./data/images/eef8a72a-eadc-42d1-b21f-a17d1233aadc.jpg,eef8a72a-eadc-42d1-b21f-a17d1233aadc,"cultural identity, none"
+./data/images/ef0ab82e-bd64-42a8-82bf-8bc6822b6af5.jpg,ef0ab82e-bd64-42a8-82bf-8bc6822b6af5,"capacity and resources, cultural identity, capacity and resources, security and defense, cultural identity"
+./data/images/ef25a665-419f-440d-944e-0da86e008623.jpg,ef25a665-419f-440d-944e-0da86e008623,"none, none"
+./data/images/efbcaf63-a88d-4212-bc3d-571afa1fecce.jpg,efbcaf63-a88d-4212-bc3d-571afa1fecce,"none, none"
+./data/images/f02f1b16-fc20-4f5a-a390-b8df64243240.jpg,f02f1b16-fc20-4f5a-a390-b8df64243240,"fairness and equality, morality, public opinion, fairness and equality, morality, public opinion"
+./data/images/f1ce6d8e-c3c3-4c1f-bebf-437f48063413.jpg,f1ce6d8e-c3c3-4c1f-bebf-437f48063413,"none, none"
+./data/images/f204ef8e-3388-4cdb-b1dc-61e1ff4875cf.jpg,f204ef8e-3388-4cdb-b1dc-61e1ff4875cf,"none, policy prescription and evaluation"
+./data/images/f2f313ec-665c-435f-8a75-79c83039cd4e.jpg,f2f313ec-665c-435f-8a75-79c83039cd4e,"security and defense, crime and punishment, none"
+./data/images/f2ff920b-a9a2-49e1-a36d-7d3ead84a9b4.jpg,f2ff920b-a9a2-49e1-a36d-7d3ead84a9b4,"political, political"
+./data/images/f3fc6354-2d74-4cbb-aeef-2b0f20613456.jpg,f3fc6354-2d74-4cbb-aeef-2b0f20613456,"none, none"
+./data/images/f5213cdf-f47f-4fd4-add4-4f2b53a4072b.jpg,f5213cdf-f47f-4fd4-add4-4f2b53a4072b,"health and safety, none"
+./data/images/f61dcdcc-6407-40fd-8d0c-a96e39890e93.jpg,f61dcdcc-6407-40fd-8d0c-a96e39890e93,"quality of life, none"
+./data/images/f61fa0b0-97de-4d54-b0e3-d5de43e3b613.jpg,f61fa0b0-97de-4d54-b0e3-d5de43e3b613,"political, political"
+./data/images/f67b5f0c-5ae1-42c4-a2f8-796b875a872a.jpg,f67b5f0c-5ae1-42c4-a2f8-796b875a872a,"political, political, policy prescription and evaluation, external regulation and reputation"
+./data/images/f6c5bbb4-d7a8-4d01-948c-8620ef98379f.jpg,f6c5bbb4-d7a8-4d01-948c-8620ef98379f,"public opinion, none"
+./data/images/f7a9148a-5900-4a26-babc-b02fa400783f.jpg,f7a9148a-5900-4a26-babc-b02fa400783f,"cultural identity, cultural identity"
+./data/images/f7af44f0-1442-4859-b238-499c36b748f6.jpg,f7af44f0-1442-4859-b238-499c36b748f6,"cultural identity, none"
+./data/images/fa171457-9ad5-48f1-b730-cb8e4448ab7f.jpg,fa171457-9ad5-48f1-b730-cb8e4448ab7f,"cultural identity, none"
+./data/images/fa8c8fd5-18bc-469f-a071-2162412dbca1.jpg,fa8c8fd5-18bc-469f-a071-2162412dbca1,"none, none"
+./data/images/faeb26b2-996a-4511-94e5-441c6494097d.jpg,faeb26b2-996a-4511-94e5-441c6494097d,"political, political"
+./data/images/fd51647a-1382-4f1f-9772-ff47a743b56a.jpg,fd51647a-1382-4f1f-9772-ff47a743b56a,"political, cultural identity, political, external regulation and reputation"
+./data/images/fe86d7c0-7f71-4721-9fc2-68453c68df7a.jpg,fe86d7c0-7f71-4721-9fc2-68453c68df7a,"external regulation and reputation, policy prescription and evaluation, external regulation and reputation"
+./data/images/ffd17f95-9c47-4518-b87c-3ea40fcc345d.jpg,ffd17f95-9c47-4518-b87c-3ea40fcc345d,"political, legality, constitutionality and jurisprudence, political"

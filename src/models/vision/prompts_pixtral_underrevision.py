@@ -100,7 +100,10 @@ SYS_PROMPT = f"""You are an intelligent and logical journalism scholar conductin
 FRAMING_PROMPT = f"""A set of generic news frames with an id, name and description are: {FRAMES}."""
 
 POST_PROMPT_FIX = """
-If the image has some minor elements like a photo album or painting in the background or the clothing of the subject, this should be ignored as it does not capture the larger communicative intent. For every case where an image does not clearly fit into one of the frames, you should select "None". Images related to sports which have specific information of countries should be classified as 'cultural identity' otherwise 'None'. A competitive sports with no country detail or an image of a referee is not crime and punishment frame because regulated sports are not criminal activities; it will be 'None' frame. Similarly, if the image is simply of a handshake with no other information, it will be 'None'. An image of a person in formal attire with no other information about the person or the event is always classified as 'None'. Do not make symbolic or metaphorical interpretations which are not clearly visible in the image. E.g. a grassy field or empty pathway should not be used metaphorically. It can be 'capacity and resources' if it is a farm/agricultural field or 'None' if it is just an empty field/pathway with no other information."""
+If the image has some minor elements like a photo album or painting in the background or the clothing of the subject, this should be ignored as it does not capture the larger communicative intent. For every case where an image does not clearly fit into one of the frames, you should select "None". Images related to sports which have specific information of countries should be classified as 'cultural identity' otherwise 'None'. A competitive sports with no country detail or an image of a referee is not crime and punishment frame because regulated sports are not criminal activities; it will be 'None' frame. Do not make symbolic or metaphorical interpretations which are not clearly visible in the image. If justification includes sentences like - it appears to..., it seems to be..., it can be thought of as..., it should be classified as "None"."""
+
+
+# """Similarly, if the image is simply of a handshake with no other information, it will be 'None'. An image of a person in formal attire with no other information about the person or the event is always classified as 'None'. Do not make symbolic or metaphorical interpretations which are not clearly visible in the image. E.g. a grassy field or empty pathway should not be used metaphorically. It can be 'capacity and resources' if it is a farm/agricultural field or 'None' if it is just an empty field/pathway with no other information. If justification includes it appears to... or it seems to be... it should be classified as 'None'."""
 
 
 PROMPT_TASK = f"""
@@ -108,7 +111,7 @@ Your task is to see the image and based on the understanding of the image, choos
 
 <image>
 
-And now for the image you see, look at frames list provided first and then choose the correct frame from the list of provided frames. Identify the frame name associated with the larger theme that can evoke a latent message for readers of the article where this image is present. Using this information, identify the frame present in the image. Use only what is literally seen in the image to classify it. If there is text in image, extract it and use the information fo framing if it contributes to a frame. Your output should be in a json format with the fields "frame-id", "frame-name" and "frame-jusitification". {POST_PROMPT_FIX} Only identify the frame that is most relevant to the image. The frame has to be one provided in the list. If there is no frame from the list that is clearly communicated, choose "None".
+And now for the image you see, look at frames list provided first and then choose the correct frame from the list of provided frames. Identify the frame name associated with the larger theme that can evoke a latent message for readers of the article where this image is present. Using this information, identify the frame present in the image. Use only what is literally seen in the image to classify it. If there is text in image, extract it and use the information fo framing if it contributes to a frame. Your output should be in a json format with the fields "frame-justification" and "frame-name" . {POST_PROMPT_FIX} Only identify the frame that is most relevant to the image. The frame has to be one provided in the list. If there is no frame from the list that is clearly communicated, choose "None".
 
 ASSISTANT:"""
 
@@ -129,10 +132,9 @@ prompt_generic =  SYS_PROMPT + FRAMING_PROMPT + PROMPT_TASK
 
 # PROMPT_LIST_LLAVA = [prefix_instruction + prompt for prompt in PROMPT_LLAVA]
 
-# PROMPT_DICT_PIXTRAL = {'caption': prompt_caption, 'actor': prompt_actor, 'symbolic': prompt_symbolic, 'generic-frame': prompt_generic, 
-# 'open-ended-frame': prompt_open_ended}
+PROMPT_DICT_PIXTRAL = {'caption': prompt_caption, 'actor': prompt_actor, 'symbolic': prompt_symbolic, 'generic-frame': prompt_generic}
 
-PROMPT_DICT_PIXTRAL = {'generic-frame': prompt_generic}
+# PROMPT_DICT_PIXTRAL = {'generic-frame': prompt_generic}
 
 PROMPT_DICT_PIXTRAL_REVISION = {k: prefix_instruction + v for k, v in PROMPT_DICT_PIXTRAL.items()}
 
