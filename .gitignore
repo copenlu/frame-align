@@ -94,3 +94,10 @@ slurm*
 #env
 frame-env/
 scratch/
+
+# images
+*.png
+*.jpg
+
+# zip files
+*.zip
