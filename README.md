@@ -104,3 +104,20 @@ Project Organization
 --------
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+
+
+# make a table with 3 columns and 6 rows
+| Set     | Srishti | Arnav | Weronika | ZhoChong | Silpa | Peter | Nico | Maria |
+|---------|---------|-------|----------|----------|-------|-------|------|-------|
+| Set 1   | x       |       |          |          |       |       |      | x     |
+| Set 2   |         | x     | x        | x        |       |       |      |       |
+| Set 3   | x       |       |          |          | x     | x     |      |       |
+| Set 4   | x       |       |          |          |       |       | x    |       |
+
+
+
+
+
+
+
+
