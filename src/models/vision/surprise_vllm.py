@@ -10,11 +10,7 @@ from PIL import Image
 from pathlib import Path
 from pdb import set_trace
 from vllm import LLM, SamplingParams
-from prompts_llava import PROMPT_DICT_LLAVA
-from prompts_pixtral import PROMPT_DICT_PIXTRAL
-from prompts_pixtral_small_prompts import PROMPT_DICT_PIXTRAL_SMALL
-from prompts_pixtral_medium_prompts import PROMPT_DICT_PIXTRAL_MEDIUM
-from prompts_pixtral_underrevision import PROMPT_DICT_PIXTRAL_REVISION
+from prompts_surprise import PROMPTS_DICT
 
 import base64
 
@@ -28,18 +24,9 @@ logger = logging.getLogger(__name__)
 script_dir = Path(__file__).resolve().parent    
 logger.info(f"Script directory: {script_dir}")
 
-img_path = f"data_pixtral_llava/images"
-# data_csv_path = f"data_pixtral_llava/sampled_annotated_articles_600.csv"
-
+img_path = f"data/human/images/"
         
 logger.info(f"Image path: {img_path}")
-
-file_suffix = "revision"
-PROMPT_MAPPING = {
-        "llava-hf/llava-hf/llava-1.5-13b-hf": PROMPT_DICT_LLAVA,
-        "mistralai/Pixtral-12B-2409": PROMPT_DICT_PIXTRAL_REVISION,
-        }
-
 
 def file_to_data_url(file_path: str):
     """
@@ -47,63 +34,51 @@ def file_to_data_url(file_path: str):
     """    
     with open(file_path, "rb") as image_file:
         encoded_string = base64.b64encode(image_file.read()).decode('utf-8')
-    
     _, extension = os.path.splitext(file_path)
     mime_type = f"image/{extension[1:].lower()}"
     
     return f"data:{mime_type};base64,{encoded_string}"
 
-def annotate_frames(model_code, dir_name, data_csv_path)-> None:
+def annotate_frames(model_code, output_dir, input_file_path)-> None:
 
-    model_name_short = model_code.split('/')[1].split('-')[0]
-
-    logging.info(f"Directory name: {dir_name}")
-    logging.info(f"Type of dir name: {type(dir_name)}")
-
+    model_name_short = model_code.lower().split('/')[1].split('-')[0]
     unfound_images = []
 
-    data_csv_df = pd.read_csv(data_csv_path)
+    data_df = pd.read_csv(input_file_path)
+    input_file_path = Path(input_file_path)
+    output_dir = Path(output_dir)
+    output_file = output_dir/f"{input_file_path.stem}_{model_name_short}_anno.jsonl"
+    output_fail_file = output_dir/f"{model_name_short}_anno_fail.tsv"
     # data_csv_df = data_csv_df.sample(n=100, random_state=42)
-    downloaded_uuids = data_csv_df["id"].tolist()
+    uuids = data_df["id"].tolist()
 
-    logger.info(f"Processing UUIDs: {len(downloaded_uuids)}")
-    logger.info(f"Loading CSV from path: {data_csv_path}")
+    logger.info(f"Processing UUIDs: {len(uuids)}")
+    logger.info(f"Loading CSV from path: {input_file_path}")
+    logger.info(f"Output dir: {output_dir}")
+    logger.info(f"Output file: {output_file}")
 
-
-    logger.info(f"Will rundata for downloaded images, DF shape: {data_csv_df.shape}")
-
-    output_file = f"data_pixtral_llava/{model_name_short}_annotations_{file_suffix}.jsonl"
-    if os.path.exists(output_file):
+    if output_file.exists():
         logging.info(f"Existed! Deleting existing file: {output_file}")
         os.remove(output_file)
-        
-    output_fail_file = f"data_pixtral_llava/{model_name_short}_fail_annotations_{file_suffix}.txt"
-    if os.path.exists(output_fail_file):
+    if output_fail_file.exists():
         logging.info(f"Existed! Deleting existing file: {output_fail_file}")
         os.remove(output_fail_file)
-
     
     if model_code == "mistralai/Pixtral-12B-2409":
-        # sampling_params = SamplingParams(max_tokens=8192)
-        sampling_params = SamplingParams(max_tokens=1024)
-        vlm = LLM(model=model_code, tokenizer_mode="mistral", dtype="half", max_model_len =7000)
+        sampling_params = SamplingParams(temperature=0.2, max_tokens=1024)
+        vlm = LLM(model=model_code, tokenizer_mode="mistral", dtype="half", max_model_len=7000)
     else:
         vlm = LLM(model=model_code)
         sampling_params = SamplingParams(temperature=0.2, max_tokens=2000)
 
     # Issues: https://github.com/vllm-project/vllm/issues/8863
     
-    
-    # ids, headlines, text_frame_names = data_csv_df["text_id"].tolist(), data_csv_df["title"].tolist(), data_csv_df["text_frame_name"].tolist()
-    ids, headlines, topics = data_csv_df["id"].tolist(), data_csv_df["title"].tolist(), data_csv_df["topic_label"].tolist()
+    model_prompt_dict = PROMPTS_DICT
 
-    logging.info(f"Number of images to process: {len(ids)}")
-
-    model_prompt_dict = PROMPT_MAPPING[model_code]
-
-    # ADD tqdm here to see progress
-    logger.info(f"Number of data points processing: {len(ids)}")
-    for uuid, headline, topic in zip(ids, headlines, topics):
+    for i, row in data_df.iterrows():
+        uuid = row["id"]
+        article = row["maintext"]
+        title = row["title"]
 
         # load image from image directory
         image_file_name = os.path.join(img_path, f"{uuid}.jpg")
@@ -117,19 +92,18 @@ def annotate_frames(model_code, dir_name, data_csv_path)-> None:
             continue
 
         img_annotations = {}
-
         logger.info(f"Processing uuid: {uuid}")
-        logger.info(f"Image file: {image_file_name}")
 
-        for task, prompt in model_prompt_dict.items(): 
+        for prompt_setting, prompt in model_prompt_dict.items(): 
             # Inference with image embeddings as input
+            task_prompt = prompt.replace("<text>", article)
             if model_code == "mistralai/Pixtral-12B-2409":
                 
                 image_source = file_to_data_url(image_file_name)
                 messages = [
                             {
                                 "role": "user",
-                                "content": [{"type": "text", "text": prompt}, {"type": "image_url", "image_url": {"url": image_source}}]
+                                "content": [{"type": "text", "text": task_prompt}, {"type": "image_url", "image_url": {"url": image_source}}]
                             },
                         ]
                 outputs = vlm.chat(messages, sampling_params=sampling_params)
@@ -145,51 +119,37 @@ def annotate_frames(model_code, dir_name, data_csv_path)-> None:
             output_text = outputs[0].outputs[0].text
             try:
                 output_json = json.loads(output_text)
+                output_json = {f"{prompt_setting}_{k}":v for k,v in output_json.items()}
                 img_annotations.update(output_json)
             except Exception as e:
                 try:
                     output_json = json.loads(output_text[output_text.index('{'):output_text.rindex('}')+1])
+                    output_json = {f"{prompt_setting}_{k}":v for k,v in output_json.items()}
                     img_annotations.update(output_json)
                 except Exception as e:
-                    print(f"Skipped-uuid-{uuid}-{task}: {e}")
+                    print(f"Skipped-uuid-{uuid}-{prompt_setting}: {e}")
                     with open(output_fail_file, "a") as f:
-                        f.write(f"{uuid}\t{task}\t{output_text}\n")
+                        f.write(f"{uuid}\t{prompt_setting}\t{output_text}\n")
                     continue
-        img_annotations["image_url"] = f"images/{uuid}.jpg"
-        img_annotations["title"] = headline
+        img_annotations["image_url"] = f"{img_path}{uuid}.jpg"
         img_annotations["uuid"] = uuid
-        img_annotations["topic_label"] = topic
-        # img_annotations["text_frame_name"]= text_frame
-
-        # logging location of current directory
-        logger.info(f"context: {Path.cwd()}")
-        
-  
-        # create the directory if it does not exist else write to the file
-        Path(output_file).parent.mkdir(parents=True, exist_ok=True)
+        img_annotations["title"] = title
+        img_annotations["article"] = article
+          
         with open(output_file, "a") as f:
             json.dump(img_annotations, f)
             f.write("\n")
-
-    # count number of lines in the jsonl file
-    with open(output_file, "r") as f:
-        lines = f.readlines()
-        logger.info(f"Number of lines in the jsonl file: {len(lines)}")
-
-    logger.info(f"Unfound images: {unfound_images}")
-
-
+    logger.info(f"No. of unfound images: {len(unfound_images)}")
 
 def main():
     parser = argparse.ArgumentParser(description='Annotate image frames using a VLLM model')
     parser.add_argument('--model_name', type=str, help='Model name', default='mistralai/Pixtral-12B-2409')
     parser.add_argument('--data_file', type=str, help='Data file with image urls', default="/projects/frame_align/data/raw/2023-24/default/datawithtopiclabels.csv")
-    parser.add_argument('--dir_name', type=str, help='Directory name for saving annotated frames', default="default")
+    parser.add_argument('--output_dir', type=str, help='Directory name for saving annotated frames', default="default")
     args = parser.parse_args()
 
-    dir_name = args.dir_name.split("/")[-1]
     # annotate_frames(args.model_name, args.data_file, args.dir_name)
-    annotate_frames(args.model_name, dir_name, args.data_file)
+    annotate_frames(args.model_name, args.output_dir, args.data_file)
 
 if __name__ == "__main__":
     main()
