@@ -1,4 +1,4 @@
-PROMPT_Q_SBIN_CCAT = """
+PROMPT_QSUR_DCAT_CCAT = """
 Read the following news article and look at the following image. Is it surprising to see this image associated with this news article?
 Please output:
 (1) Whether or not the image is surprising given the article text using the following categories: "very-surprising", "surprising", "not-surprising".
@@ -7,7 +7,7 @@ Please output:
 
 Example:
 {
-    "surprisal": "very-surprising",
+    "surprise": "very-surprising",
     "confidence": "high-confidence",
     "reasoning-and-evidence": "The article is about a football team but the image is a photo of President Joe Biden, a politician who is not mentioned in the article.
 }
@@ -19,145 +19,13 @@ Provide your response in the JSON format as shown in the example.
 Output:
 """
 
-PROMPT_TASK_SBIN_CSCORE = """
+PROMPT_TASKSUR_DBIN_CSCORE = """
 You are given a news article with an article and an image associated with it. 
-Your task is to read the article and see the image to assess if the image communicates something different compared to the text.
+Your task is to read the article and see the image to assess if the image is surprising in relation to the text.
 
 You have to output:
 1. A binary decision on whether the image communicates something surprising compared to the text.
-2. An explanation for why it is different or surprising.
-3. A confidence score (on a scale from 0 to 10) reflecting the certainty of your assessment, where 0 indicates no confidence and 10 indicates complete confidence.
-
-Format your output as a JSON object as shown below:
-<format>
-{
-    "surprised": "<True/False>",
-    "explanation": "<Your explanation>",
-    "confidence-score": "<Your confidence score>"
-}
-</format>
-
-Input:
-    Image: <image>
-    Article: <text>
-For the given image and text, output the decision, explanation, and confidence score.
-Output:
-"""
-
-PROMPT_TASK_EG_SBIN_CSCORE = """
-You are given a news article and an image associated with it. 
-Your task is to read the article and see the image to assess if the image communicates something different compared to the text.
-For instance, the article may be discussing a government policy, but the image might communicate something different by focusing on a specific aspect, such as a facial expression of a politician, a protest scene, or a seemingly unrelated subject. 
-The difference can arise if the image portrays a different aspect of the same issue or a different issue entirely.
-
-You have to output:
-1. A binary decision on whether the image communicates something surprising compared to the text.
-2. An explanation for why it is different or surprising.
-3. A confidence score (on a scale from 0 to 10) reflecting the certainty of your assessment, where 0 indicates no confidence and 10 indicates complete confidence.
-
-Format your output as a JSON object as shown below:
-<format>
-{
-    "surprised": "<True/False>",
-    "explanation": "<Your explanation>",
-    "confidence-score": "<Your confidence score>"
-}
-</format>
-
-Input:
-    Image: <image>
-    Article: <text>
-For the given image and text, output the decision, explanation, and confidence score.
-Output:
-"""
-
-PROMPT_VERBOSE_TASK_SBIN_CSCORE = """
-You are given a news article and the image from that article. 
-In news, the image and the text can sometimes communicate different aspects of the same issue.
-There may be aspects of an issue that are not communicated in the text but are subtly communicated through the image.
-Your task is to read the article and see the image and assess if the image communicates something additional or different compared to the text.
-The difference can arise if the image portrays a different aspect of the same issue or a different issue entirely.
-The image may be surprising, complementary, or unrelated to the text.
-
-You have to output:
-1. A binary decision on whether the image communicates something different or additional compared to the text.
-2. An explanation for why it is different or surprising.
-3. A confidence score (on a scale from 0 to 10) reflecting the certainty of your assessment, where 0 indicates no confidence and 10 indicates complete confidence.
-
-Format your output as a JSON object as shown below:
-<format>
-{
-    "surprised": "<True/False>",
-    "explanation": "<Your explanation>",
-    "confidence-score": "<Your confidence score>"
-}
-</format>
-
-Input:
-    Image: <image>
-    Article: <text>
-For the given image and text, output the decision, explanation, and confidence score.
-Output:
-"""
-
-PROMPT_VERBOSE_TASK_EG_SBIN_CSCORE = """
-You are given a news article and the image from that article. 
-In news, the image and the text can sometimes communicate different aspects of the same issue.
-There may be aspects of an issue that are not communicated in the text but are subtly communicated through the image.
-Your task is to read the article and see the image and assess if the image communicates something additional or different compared to the text.
-For instance, the article may be discussing a government policy, but the image may be focusing on a specific aspect, such as a angry facial expression of a politician, communicating that the politician is not happy about this. 
-Another example would be a protest scene, where the image may show a violent protest scene, biasing the reader in a subtle way, while the text only talks about the issue.
-The difference can arise if the image portrays a different aspect of the same issue or a different issue entirely.
-The image may be surprising, complementary, or unrelated to the text.
-
-You have to output:
-1. A binary decision on whether the image communicates something different or additional compared to the text.
-2. An explanation for why it is different or surprising.
-3. A confidence score (on a scale from 0 to 10) reflecting the certainty of your assessment, where 0 indicates no confidence and 10 indicates complete confidence.
-
-Format your output as a JSON object as shown below:
-<format>
-{
-    "surprised": "<True/False>",
-    "explanation": "<Your explanation>",
-    "confidence-score": "<Your confidence score>"
-}
-</format>
-
-Input:
-    Image: <image>
-    Article: <text>
-For the given image and text, output the decision, explanation, and confidence score.
-Output:
-"""
-
-PROMPT_VERBOSE_TASK_EG_FRAMES_SBIN_CSCORE = """
-You are given a news article and the image from that article. 
-In news, the image and the text can sometimes communicate different aspects of the same issue. 
-There may be aspects of an issue that are not communicated in the text but are subtly communicated through the image.
-Your task is to read the article and see the image and assess if the image communicates something additional or different compared to the text.
-For instance, the article may be discussing a government policy, but the image may be focusing on a specific aspect, such as a angry facial expression of a politician, communicating that the politician is not happy about this. 
-Another example would be a protest scene, where the image may show a violent protest scene, biasing the reader in a subtle way, while the text only talks about the issue.
-Some of the frames that you can consider are: 
-    Economic
-    Capacity and resources
-    Morality
-    Fairness and equality
-    Legality, constitutionality and jurisprudence
-    Policy prescription and evaluation
-    Crime and punishment
-    Security and defense
-    Health and safety
-    Quality of life
-    Cultural identity
-    Public opinion
-    Political
-    External regulation and reputation
-The difference in the image and text framing can arise if the image portrays a different aspect of the same issue or a different issue entirely.
-
-You have to output:
-1. A binary decision on whether the image communicates something different or additional compared to the text.
-2. An explanation for why it is different or surprising and what are the different things being communicated. If the image is conveying something related, explain why it aligns with or complements the text.
+2. An explanation for why it is surprising.
 3. A confidence score (on a scale from 0 to 10) reflecting the certainty of your assessment, where 0 indicates no confidence and 10 indicates complete confidence.
 
 Format your output as a JSON object as shown below:
@@ -176,7 +44,190 @@ For the given image and text, output the decision, explanation, and confidence s
 Output:
 """
 
-PROMPT_VERBOSE_FRAMES_SBIN_CSCORE = """
+PROMPT_TASKSUR_DCAT_CCAT = """
+You are given a news article with an article and an image associated with it. 
+Your task is to read the article and see the image to assess if the image is surprising in relation to the text.
+
+You have to output:
+1. Whether or not the image is surprising given the article text using the following categories: "very-surprising", "surprising", "not-surprising".
+2. Your confidence in this assessment using the following categories: "high-confidence", "medium-confidence", "low-confidence".
+3. Your reasoning and evidence. If the image is not surprising, explain why it aligns with or complements the text.
+
+Format your output as a JSON object as shown below:
+<format>
+{
+    "decision": "<very-surprising/surprising/not-surprising>",
+    "explanation": "<Your explanation>",
+    "confidence": "<high-confidence/medium-confidence/low-confidence>"
+}
+</format>
+
+Input:
+    Image: <image>
+    Article: <text>
+For the given image and text, output the decision, explanation, and your confidence.
+Output:
+"""
+
+PROMPT_TASKDIFF_DCAT_CCAT = """
+You are given a news article with an article and an image associated with it. 
+Your task is to read the article and see the image to assess if the image communicates something different compared to the text.
+
+You have to output:
+1. Whether or not the image communicating something different given the article text using the following categories: "very-different", "different", "not-different".
+2. An explanation for why it is communicating something different. If the image is not different, explain why it aligns with or complements the text.
+3. Your confidence in this assessment using the following categories: "high-confidence", "medium-confidence", "low-confidence".
+
+Format your output as a JSON object as shown below:
+<format>
+{
+    "decision": "<very-different/different/not-different>",
+    "explanation": "<Your explanation>",
+    "confidence": "<high-confidence/medium-confidence/low-confidence>"
+}
+</format>
+
+Input:
+    Image: <image>
+    Article: <text>
+For the given image and text, output the decision, explanation, and confidence score.
+Output:
+"""
+
+PROMPT_TASKDIFFEG_DBIN_CSCORE = """
+You are given a news article and an image associated with it. 
+Your task is to read the article and see the image to assess if the image communicates something different compared to the text.
+For instance, the article may be discussing a government policy, but the image might communicate something different by focusing on a specific aspect, such as a facial expression of a politician, a protest scene, or a seemingly unrelated subject. 
+The difference can arise if the image portrays a different aspect of the same issue or a different issue entirely.
+
+You have to output:
+1. A binary decision on whether the image communicates something surprising compared to the text.
+2. An explanation for why it is different or surprising. If the image is not different, explain why it aligns with or complements the text.
+3. A confidence score (on a scale from 0 to 10) reflecting the certainty of your assessment, where 0 indicates no confidence and 10 indicates complete confidence.
+
+Format your output as a JSON object as shown below:
+<format>
+{
+    "decision": "<True/False>",
+    "explanation": "<Your explanation>",
+    "confidence-score": "<Your confidence score>"
+}
+</format>
+
+Input:
+    Image: <image>
+    Article: <text>
+For the given image and text, output the decision, explanation, and confidence score.
+Output:
+"""
+
+PROMPT_VERBOSE_TASKDIFF_DBIN_CSCORE = """
+You are given a news article and the image from that article. 
+In news, the image and the text can sometimes communicate different aspects of the same issue.
+There may be aspects of an issue that are not communicated in the text but are subtly communicated through the image.
+Your task is to read the article and see the image and assess if the image communicates something additional or different compared to the text.
+The difference can arise if the image portrays a different aspect of the same issue or a different issue entirely.
+The image may be surprising, complementary, or unrelated to the text.
+
+You have to output:
+1. A binary decision on whether the image communicates something different or additional compared to the text.
+2. An explanation for why it is different or surprising. If the image is not different, explain why it aligns with or complements the text.
+3. A confidence score (on a scale from 0 to 10) reflecting the certainty of your assessment, where 0 indicates no confidence and 10 indicates complete confidence.
+
+Format your output as a JSON object as shown below:
+<format>
+{
+    "decision": "<True/False>",
+    "explanation": "<Your explanation>",
+    "confidence-score": "<Your confidence score>"
+}
+</format>
+
+Input:
+    Image: <image>
+    Article: <text>
+For the given image and text, output the decision, explanation, and confidence score.
+Output:
+"""
+
+PROMPT_VERBOSE_TASKDIFFEG_DCAT_CCAT = """
+You are given a news article and the image from that article. 
+In news, the image and the text can sometimes communicate different aspects of the same issue.
+There may be aspects of an issue that are not communicated in the text but are subtly communicated through the image.
+Your task is to read the article and see the image and assess if the image communicates something additional or different compared to the text.
+For instance, the article may be discussing a government policy, but the image may be focusing on a specific aspect, such as a angry facial expression of a politician, communicating that the politician is not happy about this. 
+Another example would be a protest scene, where the image may show a violent protest scene, biasing the reader in a subtle way, while the text only talks about the issue.
+The difference can arise if the image portrays a different aspect of the same issue or a different issue entirely.
+The image may be surprising, complementary, or unrelated to the text.
+
+You have to output:
+1. Whether or not the image communicating something different given the article text using the following categories: "very-different", "different", "not-different".
+2. An explanation for why it is communicating something different. If the image is not different, explain why it aligns with or complements the text.
+3. Your confidence in this assessment using the following categories: "high-confidence", "medium-confidence", "low-confidence".
+
+Format your output as a JSON object as shown below:
+<format>
+{
+    "decision": "<very-different/different/not-different>",
+    "explanation": "<Your explanation>",
+    "confidence": "<high-confidence/medium-confidence/low-confidence>"
+}
+</format>
+
+Input:
+    Image: <image>
+    Article: <text>
+For the given image and text, output the decision, explanation, and confidence score.
+Output:
+"""
+
+PROMPT_VERBOSE_TASKDIFFEG_FRAMES_DBIN_CSCORE = """
+You are given a news article and the image from that article. 
+In news, the image and the text can sometimes communicate different aspects of the same issue. 
+There may be aspects of an issue that are not communicated in the text but are subtly communicated through the image.
+Your task is to read the article and see the image and assess if the image communicates something additional or different compared to the text.
+For instance, the article may be discussing a government policy, but the image may be focusing on a specific aspect, such as a angry facial expression of a politician, communicating that the politician is not happy about this. 
+Another example would be a protest scene, where the image may show a violent protest scene, biasing the reader in a subtle way, while the text only talks about the issue.
+Some of the axis of difference that you can consider are: 
+    1. Economic
+    2. Capacity and resources
+    3. Morality
+    4. Fairness and equality
+    5. Legality, constitutionality and jurisprudence
+    6. Policy prescription and evaluation
+    7. Crime and punishment
+    8. Security and defense
+    9. Health and safety
+    10. Quality of life
+    11. Cultural identity
+    12. Public opinion
+    13. Political
+    14. External regulation and reputation
+    15. Other
+The difference in the image and text framing can arise if the image portrays a different aspect of the same issue or a different issue entirely.
+
+You have to output:
+1. A binary decision on whether the image communicates something different or additional compared to the text.
+2. An explanation for why it is different across the mentioned axis and what are the different things being communicated. If the image is not different, explain why it aligns with or complements the text.
+3. A confidence score (on a scale from 0 to 10) reflecting the certainty of your assessment, where 0 indicates no confidence and 10 indicates complete confidence.
+
+Format your output as a JSON object as shown below:
+<format>
+{
+    "decision": "<True/False>",
+    "explanation": "<Your explanation>",
+    "confidence-score": "<Your confidence score>"
+}
+</format>
+
+Input:
+    Image: <image>
+    Article: <text>
+For the given image and text, output the decision, explanation, and confidence score.
+Output:
+"""
+
+PROMPT_VERBOSE_TASKDIFFEG_VFRAMES_DBIN_CSCORE = """
 You are given a news article and the image from that article. 
 In news, the image and the text can sometimes communicate different aspects of the same issue. 
 There may be aspects of an issue that are not communicated in the text but are subtly communicated through the image.
@@ -202,7 +253,7 @@ The difference in the image and text framing can arise if the image portrays som
 
 You have to output:
 1. A binary decision on whether the image communicates something different or additional compared to the text.
-2. An explanation for why it is different or surprising and what are the different things being communicated. If the image is conveying something related, explain why it aligns with or complements the text.
+2. An explanation for why it is different and what are the different things being communicated. If the image is not different, explain why it aligns with or complements the text.
 3. A confidence score (on a scale from 0 to 10) reflecting the certainty of your assessment, where 0 indicates no confidence and 10 indicates complete confidence.
 
 Format your output as a JSON object as shown below:
@@ -221,5 +272,13 @@ For the given image and text, output the decision, explanation, and confidence s
 Output:
 """
 
-PROMPTS_DICT = {"verbose-task-eg-frames-sbin-csore": PROMPT_VERBOSE_TASK_EG_FRAMES_SBIN_CSCORE, "verbose-frames-sbin-cscore": PROMPT_VERBOSE_FRAMES_SBIN_CSCORE}
-# PROMPTS_DICT = {"q-sbin-ccat":PROMPT_Q_SBIN_CCAT, "task-sbin-cscore": PROMPT_TASK_SBIN_CSCORE, "task-eg-sbin-cscore": PROMPT_TASK_EG_SBIN_CSCORE, "verbose-task-sbin-cscore": PROMPT_VERBOSE_TASK_SBIN_CSCORE, "verbose-task-eg-sbin-cscore": PROMPT_VERBOSE_TASK_EG_SBIN_CSCORE}
+PROMPTS_DICT = {"qsur_dcat_ccat":PROMPT_QSUR_DCAT_CCAT, 
+                "tasksur_dbin_cscore":PROMPT_TASKSUR_DBIN_CSCORE,
+                "tasksur_dcat_ccat":PROMPT_TASKSUR_DCAT_CCAT,
+                "taskdiff_dcat_ccat":PROMPT_TASKDIFF_DCAT_CCAT,
+                "taskdiffeg_dbin_cscore":PROMPT_TASKDIFFEG_DBIN_CSCORE,
+                "verbose_taskdiff_dbin_cscore":PROMPT_VERBOSE_TASKDIFF_DBIN_CSCORE,
+                "verbose_taskdiffeg_dcat_ccat":PROMPT_VERBOSE_TASKDIFFEG_DCAT_CCAT,
+                "verbose_task_eg_frames_dbin_cscore":PROMPT_VERBOSE_TASKDIFFEG_FRAMES_DBIN_CSCORE,
+                # "verbose_frames_sbin_cscore":PROMPT_VERBOSE_FRAMES_SBIN_CSCORE
+            }

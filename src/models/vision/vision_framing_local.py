@@ -10,7 +10,7 @@ from PIL import Image
 from pathlib import Path
 from pdb import set_trace
 from vllm import LLM, SamplingParams
-from prompts_surprise import PROMPTS_DICT
+from prompts_pixtral_underrevision import PROMPT_DICT_PIXTRAL
 
 import base64
 
@@ -39,7 +39,7 @@ def file_to_data_url(file_path: str):
     
     return f"data:{mime_type};base64,{encoded_string}"
 
-def annotate_surprise(model_code, output_dir, input_file_path)-> None:
+def annotate_frames(model_code, output_dir, input_file_path)-> None:
 
     model_name_short = model_code.lower().split('/')[1].split('-')[0]
     unfound_images = []
@@ -47,10 +47,10 @@ def annotate_surprise(model_code, output_dir, input_file_path)-> None:
     data_df = pd.read_csv(input_file_path)
     input_file_path = Path(input_file_path)
     output_dir = Path(output_dir)
-    output_file = output_dir/f"misalign_{input_file_path.stem}_{model_name_short}_anno.jsonl"
+    output_file = output_dir/f"multipleframes_{input_file_path.stem}_{model_name_short}_anno.jsonl"
     output_fail_file = output_dir/f"{model_name_short}_anno_fail.tsv"
     # data_csv_df = data_csv_df.sample(n=100, random_state=42)
-    uuids = data_df["id"].tolist()
+    uuids = data_df["uuid"].tolist()
 
     logger.info(f"Processing UUIDs: {len(uuids)}")
     logger.info(f"Loading CSV from path: {input_file_path}")
@@ -73,12 +73,9 @@ def annotate_surprise(model_code, output_dir, input_file_path)-> None:
 
     # Issues: https://github.com/vllm-project/vllm/issues/8863
     
-    model_prompt_dict = PROMPTS_DICT
+    model_prompt_dict = PROMPT_DICT_PIXTRAL
 
-    for i, row in data_df.iterrows():
-        uuid = row["id"]
-        article = row["maintext"]
-        title = row["title"]
+    for uuid in uuids:
 
         # load image from image directory
         image_file_name = os.path.join(img_path, f"{uuid}.jpg")
@@ -92,18 +89,18 @@ def annotate_surprise(model_code, output_dir, input_file_path)-> None:
             continue
 
         img_annotations = {}
+
         logger.info(f"Processing uuid: {uuid}")
 
         for prompt_setting, prompt in model_prompt_dict.items(): 
             # Inference with image embeddings as input
-            task_prompt = prompt.replace("<text>", article)
             if model_code == "mistralai/Pixtral-12B-2409":
                 
                 image_source = file_to_data_url(image_file_name)
                 messages = [
                             {
                                 "role": "user",
-                                "content": [{"type": "text", "text": task_prompt}, {"type": "image_url", "image_url": {"url": image_source}}]
+                                "content": [{"type": "text", "text": prompt}, {"type": "image_url", "image_url": {"url": image_source}}]
                             },
                         ]
                 outputs = vlm.chat(messages, sampling_params=sampling_params)
@@ -133,13 +130,23 @@ def annotate_surprise(model_code, output_dir, input_file_path)-> None:
                     continue
         img_annotations["image_url"] = f"{img_path}{uuid}.jpg"
         img_annotations["uuid"] = uuid
-        img_annotations["title"] = title
-        img_annotations["article"] = article
           
         with open(output_file, "a") as f:
             json.dump(img_annotations, f)
             f.write("\n")
     logger.info(f"No. of unfound images: {len(unfound_images)}")
+
+    # count accuracy
+    # output_df = pd.read_json(output_file, lines=True)
+    # merged_df = output_df[['uuid','frame-name']].merge(data_df[['uuid','merged_labels']], on='uuid', how='inner')
+    # merged_df['frame-name'] = merged_df['frame-name'].str.lower()
+    # for i, row in merged_df.iterrows():
+    #     if row['frame-name'] in row['merged_labels']:
+    #         merged_df.loc[i, 'correct'] = 1
+    #     else:
+    #         merged_df.loc[i, 'correct'] = 0
+    # accuracy = merged_df['correct'].sum()/merged_df['correct'].count()
+    # logger.info(f"Accuracy: {accuracy} for {len(merged_df)} samples")
 
 def main():
     parser = argparse.ArgumentParser(description='Annotate image frames using a VLLM model')
@@ -148,7 +155,8 @@ def main():
     parser.add_argument('--output_dir', type=str, help='Directory name for saving annotated frames', default="default")
     args = parser.parse_args()
 
-    annotate_surprise(args.model_name, args.output_dir, args.data_file)
+    # annotate_frames(args.model_name, args.data_file, args.dir_name)
+    annotate_frames(args.model_name, args.output_dir, args.data_file)
 
 if __name__ == "__main__":
     main()
