@@ -130,7 +130,7 @@ Given the list of frames, and the image.
 <image>
 Your task is to carefully analyse the image and choose the appropriate frames from the above list.
 Output your answer in a json format with the format:
-{"frames-list": "[<All frame names that apply from list provided above>], "reason": "<reasoning for the frames chosen>"}
+{"frames-list": "[<All frame names that apply from list provided above>], "reason": "<reasoning for the frames chosen>", "confidence": "<low-confidence/medium-confidence/high-confidence>"}
 Output only the json and no other text.
 """
 
@@ -145,10 +145,10 @@ Using this information, identify the frames are present in the image.
 Use only what is literally seen in the image to classify it.
 If there is text in the image, extract it and use the information fo framing if it contributes to a frame.
 Your output should be in a json format with the fields "frame-justification" and "frame-name-list" as shown below:
-{"frames-list": "[<All frame names that apply from list provided above>], "reason": "<reasoning for the frames chosen>"}
+{"frames-list": "[<All frame names that apply from list provided above>], "reason": "<reasoning for the frames chosen>", "confidence": "<low-confidence/medoium-confidence/high-confidence>"}
 Only output the frames that are most relevant to the image.
 The frame names have to be ones provided in the list.
-If there are no frames from the list that are clearly communicated, choose "None".
+If there are no frames from the list that are clearly communicated, choose "None". If you choose "None", you do not choose any other frame.
 """
 
 OPEN_ENDED_PROMPT_TASK = f"""
