@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 script_dir = Path(__file__).resolve().parent    
 logger.info(f"Script directory: {script_dir}")
 
-img_path = f"data/human/images/"
+img_path = f"data_pixtral_llava/images/"
         
 logger.info(f"Image path: {img_path}")
 
