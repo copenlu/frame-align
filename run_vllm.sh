@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=sy_framing           # Job name
-#SBATCH --array=0-2                    # Array range (29 PKLs total)
+#SBATCH --array=0-28%10                   # Array range (29 PKLs total)
 #SBATCH --gres=gpu:a40:1 
 #SBATCH --cpus-per-task=4              # 4 CPUs per task
 #SBATCH --mem=30GB                     # 30GB of memory

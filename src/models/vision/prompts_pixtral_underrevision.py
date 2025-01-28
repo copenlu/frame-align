@@ -97,7 +97,7 @@ If there are no frames from the list that are clearly communicated, choose "None
 
 
 PROMPT_DICT_PIXTRAL = {
-    'mini_multiple_frames': SYS_PROMPT + FRAMING_PROMPT + FRAMES_no_num + MINI_MULTIPLE_FRAMES_TASK_PROMPT,
-    'prompt_entity': SYS_PROMPT + prompt_entity
+    'vision_frames': SYS_PROMPT + FRAMING_PROMPT + FRAMES_no_num + MINI_MULTIPLE_FRAMES_TASK_PROMPT,
+    'entity': SYS_PROMPT + prompt_entity
     # 'normal_multiple_frames': SYS_PROMPT + FRAMING_PROMPT + FRAMES_no_num + MULTIPLE_FRAMES_TASK_PROMPT
 }
