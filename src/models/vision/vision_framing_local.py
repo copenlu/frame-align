@@ -140,7 +140,7 @@ def annotate_frames(model_code, output_dir, input_pkl_path, csvfiles_base_dirpat
                     with open(output_fail_file, "a") as f:
                         f.write(f"{uuid}\t{prompt_setting}\t{output_text}\n")
                     continue
-        img_annotations["image_url"] = f"{img_path}{uuid}.jpg"
+        img_annotations["image_url"] = os.path.join(img_path, f"{uuid}.jpg")
         img_annotations["uuid"] = uuid
           
         with open(output_file, "a") as f:

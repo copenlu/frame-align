@@ -36,6 +36,7 @@ test_dir="${base_dir}/test_uuid_splits"
 
 # Ensure the test directory exists (only needed if run_test=True)
 if [[ "${run_test}" == "True" ]]; then
+    echo "Removing and creating test directory: ${test_dir}"
     rm -rf "${test_dir}"
     mkdir -p "${test_dir}"
 fi
@@ -50,6 +51,8 @@ current_pkl_file="${uuid_pkl_list[$SLURM_ARRAY_TASK_ID]}"
 if [[ ! -f "${original_dir}/${current_pkl_file}" ]]; then
     echo "ERROR: File not found -> ${original_dir}/${current_pkl_file}"
     exit 1
+else
+    echo "Processing PKL: ${current_pkl_file}"
 fi
 
 echo "run_test is set to: ${run_test}"
