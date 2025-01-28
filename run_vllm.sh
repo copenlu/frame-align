@@ -91,6 +91,7 @@ with open(truncated_file, "wb") as f:
 print(f"Truncated PKL saved to {truncated_file}")
 EOF
 
+    echo "Running test mode (with truncation)"
     # Use the truncated PKL file to run the main script
     python src/models/vision/vision_framing_local.py \
         --model_name "mistralai/Pixtral-12B-2409" \
@@ -100,6 +101,8 @@ EOF
         --imgfiles_base_dir "${base_dir}/filtered/vision"
 
 else
+
+    echo "Running full mode (no truncation)"
     # -----------------------------------------------------------------------------
     # 4) FULL MODE: USE ORIGINAL PKL
     # -----------------------------------------------------------------------------
