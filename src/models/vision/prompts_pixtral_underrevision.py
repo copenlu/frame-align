@@ -1,15 +1,16 @@
 prefix_instruction = "USER: You are an intelligent and logical assistant. Your job is to see the image and then read the question. You need to answer the question based on the image. If the answer could not be answered using just the image, you should put it as \"None\""
 
 prompt_entity = """
-<image>\n 
-Identify the main subject or entity in the image that is central to the image. Additionally, identify the gender of the subject if applicable.
-Entities are people or organizations that play a central role in the image.
-Provide the name of the entity, the gender of the entity (if applicable), sentiment towards the entity, and reasoning for their identification.
-If there are multiple entities, choose the one that is central to the image. if there are no central entities, choose "None". If there no identifiable entities, choose "None".
+Your task is to identify the main subject or entity in the image that is central to the image. Entities are people or organizations that play a central role in the image. If there are multiple entities, choose the one that is central to the image. if there are no central or clearly identifiable entities, choose "None".
+Additionally, analyse the image and output the sentiment with which the subject is portrayed in the image. The sentiment can be "positive", "negative" or "neutral". In case of no entity, output "None.
+If the subject is a person, also identify the perceivable gender of the subject. The possible values are "male", "female", or "non-binary". In case the subject is not a person or the gender cannot be identified, output "None". Output only the json and no other text.
 Format your output as a json entry as follows:
 
-{"entity-name": "<name of the entity>", "entity-gender":"<gender of the entity>", "gender-justification": "<reasoning for the gender identification>", "sentiment": "<sentiment towards the entity>", "reason": "<reasoning for the entity identification>"}
-Output only the json and no other text.
+{"entity-name": "<name of the entity>", "entity-gender":"<gender of the entity>", "sentiment": "<sentiment towards the entity>", "sentiment-reason": "<reasoning for the portrayed sentiment>"}
+
+<image>
+
+For the image above, provide the name of the entity, the gender of the entity (if applicable), sentiment towards the entity, and reasoning for the chosen sentiment.
 
 """
 
@@ -97,6 +98,6 @@ If there are no frames from the list that are clearly communicated, choose "None
 
 PROMPT_DICT_PIXTRAL = {
     'mini_multiple_frames': SYS_PROMPT + FRAMING_PROMPT + FRAMES_no_num + MINI_MULTIPLE_FRAMES_TASK_PROMPT,
-    'actor_entity': SYS_PROMPT + prompt_entity
+    'prompt_entity': SYS_PROMPT + prompt_entity
     # 'normal_multiple_frames': SYS_PROMPT + FRAMING_PROMPT + FRAMES_no_num + MULTIPLE_FRAMES_TASK_PROMPT
 }

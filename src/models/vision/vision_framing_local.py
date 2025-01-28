@@ -24,10 +24,6 @@ logger = logging.getLogger(__name__)
 script_dir = Path(__file__).resolve().parent    
 logger.info(f"Script directory: {script_dir}")
 
-img_path = f"data_pixtral_llava/images/"
-        
-logger.info(f"Image path: {img_path}")
-
 def file_to_data_url(file_path: str):
     """
     Convert a local image file to a data URL.
@@ -39,30 +35,46 @@ def file_to_data_url(file_path: str):
     
     return f"data:{mime_type};base64,{encoded_string}"
 
-def annotate_frames(model_code, output_dir, input_file_path)-> None:
+def annotate_frames(model_code, output_dir, input_pkl_path, csvfiles_base_dirpath, imgfiles_base_dirpath)-> None:
 
     model_name_short = model_code.lower().split('/')[1].split('-')[0]
     unfound_images = []
+    
+    # load pickle file
+    with open(input_pkl_path, "rb") as f:
+        pkl_month_uuids = pickle.load(f)
 
-    data_df = pd.read_csv(input_file_path)
+    month_folder = list(pkl_month_uuids.keys())[0]
+    monthly_uuids = pkl_month_uuids[month_folder]
+    
+    img_path = os.path.join(imgfiles_base_dirpath, month_folder)
+    logger.info(f"Image will be loaded from: {img_path}")
+    
+    input_file_path = os.path.join(csvfiles_base_dirpath, f"{month_folder}.csv")
+    logger.info(f"Loading CSV from path: {input_file_path}")
+    
+    og_data_df = pd.read_csv(input_file_path)
+    logger.info(f"Original Dataframe shape: {og_data_df.shape}, UUIDs to load: {len(monthly_uuids)}")
+    data_df = og_data_df[og_data_df['id'].isin(monthly_uuids)]
+    logger.info(f"Filtered Dataframe shape: {data_df.shape}, UUIDs to load: {len(monthly_uuids)}")
+    
     input_file_path = Path(input_file_path)
     output_dir = Path(output_dir)
-    output_file = output_dir/f"multipleframes_{input_file_path.stem}_{model_name_short}_anno.jsonl"
-    output_fail_file = output_dir/f"{model_name_short}_anno_fail.tsv"
+    output_file = output_dir/f"visionframes_{input_file_path.stem}_{model_name_short}_anno.jsonl"
+    output_fail_file = output_dir/f"visionframes_{input_file_path.stem}_{model_name_short}_anno_fail.tsv"
     # data_csv_df = data_csv_df.sample(n=100, random_state=42)
-    uuids = data_df["uuid"].tolist()
+    # uuids = data_df["uuid"].tolist()
 
-    logger.info(f"Processing UUIDs: {len(uuids)}")
-    logger.info(f"Loading CSV from path: {input_file_path}")
     logger.info(f"Output dir: {output_dir}")
-    logger.info(f"Output file: {output_file}")
+    logger.info(f"Output file: {output_file}, Does it exists? {output_file.exists()}")
 
-    if output_file.exists():
-        logging.info(f"Existed! Deleting existing file: {output_file}")
-        os.remove(output_file)
-    if output_fail_file.exists():
-        logging.info(f"Existed! Deleting existing file: {output_fail_file}")
-        os.remove(output_fail_file)
+    # dont delete because we want to append to the file
+    # if output_file.exists():
+    #     logging.info(f"Existed! Deleting existing file: {output_file}")
+    #     os.remove(output_file)
+    # if output_fail_file.exists():
+    #     logging.info(f"Existed! Deleting existing file: {output_fail_file}")
+    #     os.remove(output_fail_file)
     
     if model_code == "mistralai/Pixtral-12B-2409":
         sampling_params = SamplingParams(temperature=0.2, max_tokens=1024)
@@ -75,7 +87,7 @@ def annotate_frames(model_code, output_dir, input_file_path)-> None:
     
     model_prompt_dict = PROMPT_DICT_PIXTRAL
 
-    for uuid in uuids:
+    for uuid in monthly_uuids:
 
         # load image from image directory
         image_file_name = os.path.join(img_path, f"{uuid}.jpg")
@@ -151,12 +163,14 @@ def annotate_frames(model_code, output_dir, input_file_path)-> None:
 def main():
     parser = argparse.ArgumentParser(description='Annotate image frames using a VLLM model')
     parser.add_argument('--model_name', type=str, help='Model name', default='mistralai/Pixtral-12B-2409')
-    parser.add_argument('--data_file', type=str, help='Data file with image urls', default="/projects/frame_align/data/raw/2023-24/default/datawithtopiclabels.csv")
-    parser.add_argument('--output_dir', type=str, help='Directory name for saving annotated frames', default="default")
+    # parser.add_argument('--data_file', type=str, help='Data file with image urls', default="/projects/frame_align/data/raw/2023-24/default/datawithtopiclabels.csv")
+    parser.add_argument('--output_dir', type=str, help='Directory name for saving annotated frames', default="/projects/frame_align/data/annotated/vision")
+    parser.add_argument('--pkl_file_path', type=str, help='Pickle file path with image uuids', default="/projects/frame_align/data/uuid_splits/set_9.pkl")
+    parser.add_argument('--csvfiles_base_dir', type=str, help='Directory name from where to load text files', default="/projects/frame_align/data/filtered/text")
+    parser.add_argument('--imgfiles_base_dir', type=str, help='Directory name from where to load images', default="/projects/frame_align/data/filtered/vision")
     args = parser.parse_args()
 
-    # annotate_frames(args.model_name, args.data_file, args.dir_name)
-    annotate_frames(args.model_name, args.output_dir, args.data_file)
+    annotate_frames(args.model_name, args.output_dir, args.pkl_file_path, args.csvfiles_base_dir, args.imgfiles_base_dir)
 
 if __name__ == "__main__":
     main()
