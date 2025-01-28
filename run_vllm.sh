@@ -1,10 +1,10 @@
 #!/bin/bash
-#SBATCH --job-name=sy_framing           # Job name
-#SBATCH --array=0-28%10                   # Array range (29 PKLs total)
+#SBATCH --job-name=sy_framing          # Job name
+#SBATCH --array=0-28%8                 # Array range (29 PKLs total, 8 at a time)
 #SBATCH --gres=gpu:a40:1 
 #SBATCH --cpus-per-task=4              # 4 CPUs per task
 #SBATCH --mem=30GB                     # 30GB of memory
-#SBATCH --time=10:00:00                # Runtime
+#SBATCH --time=48:00:00                # Runtime
 #SBATCH --partition=gpu
 
 # -----------------------------------------------------------------------------
@@ -21,12 +21,13 @@ else
 fi
 
 # Dynamically generate the list of UUID PKL files: set_1.pkl to set_29.pkl
-max_pkl=3 # swe can change this but remeber to change the array range. 0-28 is for 29 files
+max_pkl=29 # swe can change this but remeber to change the array range. 0-28 is for 29 files
+echo "Generating list of UUID PKL files: set_1.pkl to set_${max_pkl}.pkl"ß
 uuid_pkl_list=($(for i in $(seq 1 $max_pkl); do echo "set_${i}.pkl"; done))
 
 # Set this to True for test mode (truncates each PKL's list-values),
 # or False for full mode (uses original PKL data).
-run_test=True  
+run_test=False  
 
 # Directory for your *original* PKLs
 original_dir="${base_dir}/uuid_splits"
