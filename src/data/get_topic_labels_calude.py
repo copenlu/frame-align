@@ -16,15 +16,6 @@ logger = logging.getLogger(__name__)
 
 client = anthropic.Anthropic()
 
-def get_bertopic_topics(data_dir="./data/raw/2023-24"):
-    data_path = Path(data_dir)
-    topics = []
-    for month_dir in data_path.iterdir():
-        df = pd.read_csv(month_dir/"datawithtopics_merged.csv")
-        topics.extend(df['auto_topic_label'].unique().tolist())
-    topics = list(set(topics))
-    pickle.dump(topics, open(data_dir/"bertopic_topics.pkl", "wb"))
-    return None
 
 def prompt_claude(system_prompt, user_prompt):
     message = client.messages.create(
@@ -42,12 +33,18 @@ def prompt_claude(system_prompt, user_prompt):
                 )
     return message
     
-def get_topic_labels(data_dir="./data/raw/2023-24"):
-    topics_file = Path(f"{data_dir}/bertopic_topics.pkl")
+def get_topic_labels(data_dir="/projects/frame_align/data/annotated"):
+    topics_file = Path(f"{data_dir}/unique_topics.pkl")
     if not topics_file.exists():
-        logger.info("Getting BERTopic topics")
-        get_bertopic_topics(data_dir)
+        logger.info("Topics file not found. ")
+        exit()
     topics = pickle.load(open(topics_file, "rb"))
+    test = True
+    # select 5 random topics if test flag is set to True
+    if test:
+        topics = topics[:5]
+    
+
     topic_label_file = Path(f"{data_dir}/topic_labels.json")
     if topic_label_file.exists():
         topic_label_dict = json.load(topic_label_file.open())
@@ -80,7 +77,7 @@ def get_topic_labels(data_dir="./data/raw/2023-24"):
             continue
     json.dump(topic_label_dict, open(topic_label_file, "w"))
 
-def merge_topic_labels(data_dir="./data/raw/2023-24"):
+def merge_topic_labels(data_dir="/projects/frame_align/data/annotated"):
     topic_label_file = Path(f"{data_dir}/topic_labels.json")
     topic_label_dict = json.load(open(topic_label_file))
     topic_label_list = list(set(topic_label_dict.values()))
