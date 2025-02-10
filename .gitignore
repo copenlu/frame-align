@@ -101,3 +101,5 @@ scratch/
 
 # zip files
 *.zip
+
+*.pkl

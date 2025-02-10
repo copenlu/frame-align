@@ -126,7 +126,7 @@ def get_topic_labels(data_dir="/projects/frame_align/data/annotated"):
                 with open(f"{data_dir}/latest_topic_label_errors.tsv", "a") as f:
                     f.write(f"Batch_{batch_idx}\t{str(message)}\n")
                     
-        if batch_idx % 100 == 0:
+        if batch_idx % 10 == 0:
             logger.info(f"Saving topic_label_dict to {topic_label_file}")
             print(f"Saving topic_label_dict to {topic_label_file}")
             json.dump(topic_label_dict, open(topic_label_file.stem + f"_{batch_idx}.json", "w"))
