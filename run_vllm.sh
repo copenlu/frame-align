@@ -1,9 +1,9 @@
 #!/bin/bash
-#SBATCH --job-name=sy_framing          # Job name
-#SBATCH --array=0-28%8                 # Array range (29 PKLs total, 8 at a time)
-#SBATCH --gres=gpu:a40:1 
+#SBATCH --job-name=sy_late_frame          # Job name
+#SBATCH --array=16-28%4                 # Array range (29 PKLs total, 8 at a time)
+#SBATCH --gres=gpu:a100:1 
 #SBATCH --cpus-per-task=4              # 4 CPUs per task
-#SBATCH --mem=30GB                     # 30GB of memory
+#SBATCH --mem=40GB                     # 30GB of memory
 #SBATCH --time=48:00:00                # Runtime
 #SBATCH --partition=gpu
 
@@ -20,10 +20,15 @@ else
     echo "Base directory exists: ${base_dir}"
 fi
 
-# Dynamically generate the list of UUID PKL files: set_1.pkl to set_29.pkl
-max_pkl=29 # swe can change this but remeber to change the array range. 0-28 is for 29 files
-echo "Generating list of UUID PKL files: set_1.pkl to set_${max_pkl}.pkl"ß
-uuid_pkl_list=($(for i in $(seq 1 $max_pkl); do echo "set_${i}.pkl"; done))
+# Dynamically generate the list of UUID PKL files. In total we have set_1.pkl to set_29.pkl
+max_pkl=29  # We can change this but remember to change the array range. 
+start_pkl=17  # Start index
+echo "Generating list of UUID PKL files: set_${start_pkl}.pkl to set_${max_pkl}.pkl"
+
+uuid_pkl_list=($(for i in $(seq $start_pkl $max_pkl); do echo "set_${i}.pkl"; done))
+
+# Print list for verification
+echo "UUID PKL List: ${uuid_pkl_list[@]}"
 
 # Set this to True for test mode (truncates each PKL's list-values),
 # or False for full mode (uses original PKL data).
@@ -46,7 +51,8 @@ fi
 # -----------------------------------------------------------------------------
 # 2) SELECT CURRENT PKL (BASED ON SLURM_ARRAY_TASK_ID)
 # -----------------------------------------------------------------------------
-current_pkl_file="${uuid_pkl_list[$SLURM_ARRAY_TASK_ID]}"
+current_pkl_file="${uuid_pkl_list[$((SLURM_ARRAY_TASK_ID - 16))]}"
+echo "Current PKL file: ${current_pkl_file}"
 
 # Make sure the selected PKL file actually exists
 if [[ ! -f "${original_dir}/${current_pkl_file}" ]]; then
